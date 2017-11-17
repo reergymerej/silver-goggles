@@ -118,3 +118,57 @@ I just added a link from the boilerplate to the text file.  That works for
 now.  It's ocurred to me that I will be referencing code a _lot_ in this - and
 in particular states.  I'll need a good way to document that.  Let's just rely
 on Git for now.
+
+There.  Check 31b6c302d2ee643ef22e943a6b9a38dc891f1c0b to see where things
+stand for now.  I'll have to make this project public and actually push it to
+Github.  Maybe there's a good convention for referencing SHAs in a blog.  I
+don't want to keep making Gists ever 12 seconds.
+
+...
+
+I just created the repo with the suggested name.  I haven't done that in a
+while.  https://github.com/reergymerej/silver-goggles
+
+Now it's very public.  I hope work doesn't watch my commits in Github if I get
+inspired in the middle of the day to do a little writing.
+
+...
+
+I'm trying to login to Heroku with the toolbelt, but I'm seeing some weird
+errors.
+
+```
+~/Ideas/blog/site$ heroku login
+ ▸    stat /Users/jeremygreer/.local/share/heroku/client/bin/heroku: not a directory
+ ▸    fork/exec /Users/jeremygreer/.local/share/heroku/client/bin/heroku: not a directory
+ ▸    stat /Users/jeremygreer/.local/share/heroku/client/bin/heroku: not a directory
+ ▸    fork/exec /Users/jeremygreer/.local/share/heroku/client/bin/heroku: not a directory
+```
+
+I wonder if this is because of the High Sierra upgrade.  It smells like it, so
+I opened XCode because it needs to install dependencies and get my signature
+on EULA and crap sometimes and I heard from work there may be something.  It
+couldn't hurt.
+
+nope
+
+Does it work from other directories where I used to use it?
+
+nope
+
+Can I reinstall it?  I think I used brew, but I'll just check Heroku.
+
+...wait...
+
+I've got down lots of rabbit holes.  This always happens.  What am I trying to
+do?  Create an app in Heroku and get the URL.  I can do that through the GUI
+easily and figure out this crap later.
+
+...and done 1 minute later.
+
+I wonder if there's a way to timestamp each line of the text document.  That
+would be cool to show _how long_ it takes to write the text.
+
+heroku git:remote -a silver-goggles
+
+
