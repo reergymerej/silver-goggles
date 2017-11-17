@@ -243,3 +243,15 @@ remote:  !     Outdated Yarn lockfile
 ```
 
 Dang it.
+
+```
+  554  yarn
+  555  git add .
+  556  git commit
+  557  git push heroku master
+  558  heroku open
+```
+
+Thar she blows.
+
+We're online.  Now let's not suck.
