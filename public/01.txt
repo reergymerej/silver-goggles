@@ -169,6 +169,56 @@ easily and figure out this crap later.
 I wonder if there's a way to timestamp each line of the text document.  That
 would be cool to show _how long_ it takes to write the text.
 
-heroku git:remote -a silver-goggles
+...
 
+Dang it.
 
+```
+~/Ideas/blog/site$ git remote -v
+origin	git@github.com:reergymerej/silver-goggles.git (fetch)
+origin	git@github.com:reergymerej/silver-goggles.git (push)
+~/Ideas/blog/site$ git remote add heroku https://git.heroku.com/silver-goggles.git
+~/Ideas/blog/site$ git remote -v
+heroku	https://git.heroku.com/silver-goggles.git (fetch)
+heroku	https://git.heroku.com/silver-goggles.git (push)
+origin	git@github.com:reergymerej/silver-goggles.git (fetch)
+origin	git@github.com:reergymerej/silver-goggles.git (push)
+~/Ideas/blog/site$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	modified:   public/01.txt
+
+~/Ideas/blog/site$ fg
+nvim .
+
+[1]+  Stopped                 nvim .
+~/Ideas/blog/site$ git commit -m 'setup heroku remote'
+[master 5582472] setup heroku remote
+ 1 file changed, 54 insertions(+)
+~/Ideas/blog/site$ git push heroku master
+remote: !	Your account jeremy.greer@XXXXXXXXXXXXXXXX.com does not have access to silver-goggles.
+fatal: unable to access 'https://git.heroku.com/silver-goggles.git/': The requested URL returned error: 403
+~/Ideas/blog/site$ heroku login
+ ▸    stat /Users/jeremygreer/.local/share/heroku/client/bin/heroku: not a directory
+ ▸    fork/exec /Users/jeremygreer/.local/share/heroku/client/bin/heroku: not a directory
+ ▸    stat /Users/jeremygreer/.local/share/heroku/client/bin/heroku: not a directory
+ ▸    fork/exec /Users/jeremygreer/.local/share/heroku/client/bin/heroku: not a directory
+~/Ideas/blog/site$
+
+```
+
+I guess I'll have to login with the toolbelt afterall.  :D
+
+```
+  538  brew install heroku/brew/heroku
+  539  brew link --overwrite heroku
+  540  heroku login
+```
+
+Problem solved.  I have to use my personal credentials instead of work.  I
+installed a Heroku plugin to manage both, but it never seemed to work.  I just
+get my password from Lastpass and login manually.  It's often easier to do
+things the dumb way.
