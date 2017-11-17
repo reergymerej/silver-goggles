@@ -222,3 +222,24 @@ Problem solved.  I have to use my personal credentials instead of work.  I
 installed a Heroku plugin to manage both, but it never seemed to work.  I just
 get my password from Lastpass and login manually.  It's often easier to do
 things the dumb way.
+
+
+```
+  544  git add .
+  545  git status
+  546  git commit
+  547  git push heroku master
+  548  git status
+  549  fg
+  550  fg
+  551  history
+  552  history
+
+  ...
+
+remote: -----> Build failed
+remote:
+remote:  !     Outdated Yarn lockfile
+```
+
+Dang it.
