@@ -1,0 +1,120 @@
+So I was thinking I'd like to do something meaningful.  What in the world
+could that be?  Helping people seems to universally work as a way to find
+meaning.  What can I help with?  "Here's a website.  It will help you!"  I
+don't know.
+
+Maybe starting a blog or some type of resource to help people learn to code
+would be cool.  There is no shortage of blogs or tech articles out there,
+though.  What could I do differently?
+
+One thing you don't see is complete honesty.  It may be unprofessional and
+maybe severely undermine confidence, but what if someone showed you their
+mistakes?  Not as a gag reel or some sort of ironic thing, but more as a
+candid view.  That may make things more approachable.  Mistakes are valuable
+because you get to learn from them, so sharing your mistakes seems like it
+would increase the value.
+
+So, the idea is not to be an unpolished slacker, but to provide complete
+openness along with instruction.  To start with, a blog probably shouldn't be
+a finished, beautiful product.  It's basically an open journal, right?
+Punctuation and grammar are fine, but it should probably be pretty rough and
+raw.
+
+So here, what the heck.  Let's start with this.  I'm not sure where I'm going,
+what the point is, or how it will turn out, but this is my project.  From
+inception to completion as transparent as possible, I'm going to document it.
+
+...
+
+In the interest of _somewhat_ tolerable writing, I need to pick an audience,
+though.  I'm going to imagine...
+
+Well, I trailed off imagining myself at different points in my life when I was
+learing to program.
+
+Screw it.  I'm just going to talk to the terminal.  If I start talking to "the
+audience" the tone will change and I'll start worrying too much about _how_
+I'm saying things rather than _what_ I'm saying.
+
+...
+
+OK, so what are the goals?
+
+1.  Transparency - I want mistakes to be visible, ignorance to be highlighted,
+and the documentation to be off the cuff.  This is to show that even
+successful dudes who have been writing and studying code for many years and
+are pretty good at what they do are just regular guys full of doubt,
+ignorance, and potential mistakes.
+
+2.  Create a Blog - The blog should be super easy to update (to encourage it
+happen regularly), provide lots of detail, and have very "raw" content.
+
+I would like to get something up ASAP, so that it doesn't all appear at once
+at the end of the project.  Honestly, most (practically all) of my projects
+die the day after I start them.  I get really pumped, start working, get
+sidetracked with infrastructure or find another cooler idea along the way...
+There's always something, so the sooner I can get this "launched" the better
+change it has of surviving past next week.
+
+
+What's the absolute fastest way to get an app out there into the world?  This
+is not a paid promotion, but I bet I can get this into the world in the next
+10 minutes with CRA and Heroku.
+
+Here's the plan.
+
+1.  create the app
+2.  post this as static content
+3.  deploy as a new free app in Heroku
+
+
+(Side note: It's going to become a pain in the ass documenting all of this
+stuff.  Maybe I could just log the terminal history or something.)
+
+```
+create-react-app site
+```
+
+I may elaborate on all this stuff later, but maybe not.  There are plenty of
+sources out there already.
+
+This file is 01.txt in the dir above the `site` dir I just created.
+
+```
+/Users/jeremygreer/Ideas/blog/
+▼ site/
+  ► public/
+  ► src/
+    package.json
+    README.md
+    yarn.lock
+  01.txt
+```
+
+I'm sure I'll have resources _other_ than the site, but now I need to move the
+text into the site.  What if I just symlink it and keep it separate for now?
+I don't know what that may do.  Let's just keep it simple and move.
+
+```
+</jeremygreer/Ideas/blog/site/
+▼ public/
+    01.txt
+    favicon.ico
+    index.html
+    manifest.json
+► src/
+  package.json
+  README.md
+  yarn.lock
+```
+
+OK, simple.  For the first pass, we'll just have links from the main site to
+the resource.  That's kind of cool.  I like the resources be just plain old
+text.  That makes them portable (they should probably be markdown though).
+
+...
+
+I just added a link from the boilerplate to the text file.  That works for
+now.  It's ocurred to me that I will be referencing code a _lot_ in this - and
+in particular states.  I'll need a good way to document that.  Let's just rely
+on Git for now.
