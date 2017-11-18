@@ -51,3 +51,8 @@ Back to the main task.  How do we make it easier to add entries?  I like the
 whole new text file in an editor thing.  The terminal commands are being
 logged easily enough.  Maybe we'll just make a quick script to read the
 directory and spit out some JSON the app can use.
+
+current commit: fb4ee94, fb4ee94aba4a8a6c1dba60d3cfdc3a642bc5eafb
+https://github.com/reergymerej/silver-goggles/commit/fb4ee94
+
+
