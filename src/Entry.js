@@ -1,5 +1,9 @@
 import React from 'react'
 
+const TYPE = {
+  TEXT: 'TEXT',
+}
+
 const parseCommentary = (commentary) => {
   const gitRegex = /ref:git:([a-z0-9]+)/gi
   const parts = commentary.split(gitRegex)
@@ -8,7 +12,7 @@ const parseCommentary = (commentary) => {
   return parts
     .map(part => {
       return {
-        type: 'text',
+        type: TYPE.TYPE,
         value: 'xxx',
       }
     })
@@ -30,7 +34,7 @@ const ParsedCommentary = (props) => {
     <div>
       {
         parsedCommentaryBlocks.map((block, i) => {
-          if (block.type === 'text') {
+          if (block.type === TYPE.TEXT) {
             return <TextBlock value={block.value} />
           }
           return <GitRefBlock />
