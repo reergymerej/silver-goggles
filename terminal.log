@@ -497,4 +497,9 @@ TypeError: fs.basename is not a function
     at Function.Module.runMain (module.js:665:10)
     at startup (bootstrap_node.js:201:16)
 bash-3.2$ ./scripts/index-entries.js
+bash-3.2$ git add .
+bash-3.2$ git commit -m 'fi [Kx basename re[K[Kmethod call'
+[master 331c144] fix basename method call
+ 3 files changed, 39 insertions(+), 3 deletions(-)
+ rewrite src/entries.json (100%)
 bash-3.2$ 
