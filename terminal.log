@@ -461,4 +461,40 @@ Date:   Fri Nov 17 21:47:39 2017 -0600[m
     add node-dir to regular dependencies[m
 [m
 [33mcommit 463a4c47c49e0286c19ec1100a1c792501b4972a[m[m
-:[K[K:[K[K[?1l>bash-3.2$ git
+:[K[K:[K[K[?1l>bash-3.2$ git add src/ && git commi t-m '[K[K[K[K[K[Kt -m 'use[K[K[Kuse [K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K . && git commi t-m [K[K[K[K[Kt -m 'include name with entry definition'
+[master de33f4a] include name with entry definition
+ 3 files changed, 59 insertions(+), 3 deletions(-)
+bash-3.2$ ./scripts/r[Kindex-entries.js
+/Users/jeremygreer/Ideas/blog/site/scripts/index-entries.js:17
+    name: fs.base(entryFileName),
+             ^
+
+TypeError: fs.base is not a function
+    at translateTextEntry (/Users/jeremygreer/Ideas/blog/site/scripts/index-entries.js:17:14)
+    at Array.map (<anonymous>)
+    at Object.<anonymous> (/Users/jeremygreer/Ideas/blog/site/scripts/index-entries.js:24:23)
+    at Module._compile (module.js:624:30)
+    at Object.Module._extensions..js (module.js:635:10)
+    at Module.load (module.js:545:32)
+    at tryModuleLoad (module.js:508:12)
+    at Function.Module._load (module.js:500:3)
+    at Function.Module.runMain (module.js:665:10)
+    at startup (bootstrap_node.js:201:16)
+bash-3.2$ ./scripts/index-entries.js
+/Users/jeremygreer/Ideas/blog/site/scripts/index-entries.js:17
+    name: fs.basename(entryFileName),
+             ^
+
+TypeError: fs.basename is not a function
+    at translateTextEntry (/Users/jeremygreer/Ideas/blog/site/scripts/index-entries.js:17:14)
+    at Array.map (<anonymous>)
+    at Object.<anonymous> (/Users/jeremygreer/Ideas/blog/site/scripts/index-entries.js:24:23)
+    at Module._compile (module.js:624:30)
+    at Object.Module._extensions..js (module.js:635:10)
+    at Module.load (module.js:545:32)
+    at tryModuleLoad (module.js:508:12)
+    at Function.Module._load (module.js:500:3)
+    at Function.Module.runMain (module.js:665:10)
+    at startup (bootstrap_node.js:201:16)
+bash-3.2$ ./scripts/index-entries.js
+bash-3.2$ 

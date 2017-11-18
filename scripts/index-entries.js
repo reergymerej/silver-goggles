@@ -14,7 +14,7 @@ const files = dir.files(dirPath, 'file', null, {
 
 const translateTextEntry = (entryFileName) => {
   return {
-    name: fs.base(entryFileName),
+    name: path.basename(entryFileName),
     commentary: fs.readFileSync(entryFileName, 'utf8'),
     resources: {
     },
