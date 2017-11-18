@@ -24,13 +24,13 @@ const getEntryFromDir = (entryDir) => {
   const terminalLogPath = path.resolve(entryDir, 'terminal.log')
   const commentary = readFileIfExists(commentaryPath)
   const terminalLog = readFileIfExists(terminalLogPath)
+  const name = path.basename(entryDir)
   return {
-    name: path.basename(entryDir),
+    uri: `/entries/${name}/commentary.txt`,
+    name,
     commentary,
     resources: {
-      terminal: [
-        terminalLog,
-      ],
+      terminal: terminalLog && `${name}/terminal.log`,
     },
   }
 }
