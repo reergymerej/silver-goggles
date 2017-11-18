@@ -11,11 +11,19 @@ const entryDirs = dir.files(entriesPath, 'dir', null, {
   shortName: false,
 })
 
+const readFileIfExists = (filePath) => {
+  try {
+    return fs.readFileSync(filePath, 'utf8')
+  } catch (e) {
+    return null
+  }
+}
+
 const getEntryFromDir = (entryDir) => {
   const commentaryPath = path.resolve(entryDir, 'commentary.txt')
   const terminalLogPath = path.resolve(entryDir, 'terminal.log')
-  const commentary = fs.readFileSync(commentaryPath, 'utf8')
-  const terminalLog = fs.readFileSync(terminalLogPath, 'utf8')
+  const commentary = readFileIfExists(commentaryPath)
+  const terminalLog = readFileIfExists(terminalLogPath)
   return {
     name: path.basename(entryDir),
     commentary,
