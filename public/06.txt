@@ -1,0 +1,81 @@
+
+Sat Nov 18 09:58:47 CST 2017
+
+There are two issues I'm thinking of.  The first is how to record all the
+data.  The second is how to present it.  I'm figuring out ways to manage the
+first right now, but I'd like the presentation to work outside of how the data
+is collected.  I don't want to dictate how it's done or what tools should be
+used.  That's not really flexible.  So, although I'm figuring it out as I go,
+I'll just skip over the recording part for now.
+
+The second part, the presentation, is what I want to focus on.  We've already
+got a way to read entries and show them in the browser, but let's do something
+more elaborate.  At a basic level, each entry in the system will contain...
+
+
+* commentary - This is the meat of the system.  This is what I'm writing now
+  and will be the primary content.
+
+* resources - Various types of additional content that enhance, and may be
+  referenced by, the commentary.
+
+** terminal logs - what I typed, what came out
+
+** code - a Git log or something that can refer to code in a particular state
+
+** images - screenshots gathered for the commentary
+
+** web history - pages visited during the commentary
+
+
+Eventually, I want a way to present all of these together and somehow synced
+by time.  For starters, though, let's just put them all together.
+
+How will we describe them to the system?
+
+```
+{
+  "commentary": "blah blah blah",
+  "resources": []
+}
+```
+
+I want the resources grouped by type.
+
+```
+{
+  "commentary": "blah blah blah",
+  "resources": {
+    "terminal": "blah blah blah",
+    "code": "xxx",
+    "images": [
+    ],
+    "web-history": [
+    ],
+  }
+}
+```
+
+Some of these resource types will be ordered lists.  For consistency, let's
+make them all ordered lists, even if they contain only one thing.
+
+
+```
+{
+  "commentary": "blah blah blah",
+  "resources": {
+    "terminal": [
+      "blah blah blah"
+    ],
+    "code": [
+      "xxx"
+    ],
+    "images": [
+      "xxx"
+    ],
+    "web-history": [
+      "xxx"
+    ],
+  }
+}
+```
