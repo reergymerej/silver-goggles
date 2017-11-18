@@ -14,6 +14,7 @@ const files = dir.files(dirPath, 'file', null, {
 
 const translateTextEntry = (entryFileName) => {
   return {
+    name: fs.base(entryFileName),
     commentary: fs.readFileSync(entryFileName, 'utf8'),
     resources: {
     },
@@ -24,5 +25,4 @@ const entries = files.map(translateTextEntry)
 
 const outPath = path.resolve(__dirname, '../src/entries.json')
 const output = JSON.stringify(entries)
-console.log(output)
-// fs.writeFileSync(outPath, output)
+fs.writeFileSync(outPath, output)

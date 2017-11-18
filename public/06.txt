@@ -91,3 +91,14 @@ Before changing everything, let's rejigger the entries we spit out of our
 `index-entries.js` script and make sure the UI can understand this new
 structure.  Then we can go back and change how the entries are read by the
 script.
+
+ref: 9a4b976641859fc2ce81abd57ba696a32348059d
+
+OK, this looks like a start.  Let's change the UI to show it the way we want.
+
+
+Crap.  I just realized we lost the names of the entries.  That's OK for now.
+They weren't meaningful.  We should probably allow for them in the future,
+though.  Either using dates or allowing optional titles or something.
+
+... There's no time like the present.  Let's add the name of the file for now.
