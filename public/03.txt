@@ -83,3 +83,8 @@ e7fd3a5
 We've now got a script that reads our public directory and spits out some JSON
 in our source directory.  We _should_ (I hope) be able to use Webpack to load
 this resource into the app and iterate over it.  Let's see!
+
+6332a4acb1cf72cd2f6e990fd8fd020470a227a4
+
+Cool beans.  CRA is nicely configured.  Webpack's doing the magic, but CRA
+took care of configuring it for us.  Super easy.
