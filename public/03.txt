@@ -75,3 +75,11 @@ Don't do that.
 
 We've got to constantly keep ourselves in check.  So, pride be damned.  Let's
 find the easiest way to read files already sitting in npm waiting for us.
+
+...
+
+e7fd3a5
+
+We've now got a script that reads our public directory and spits out some JSON
+in our source directory.  We _should_ (I hope) be able to use Webpack to load
+this resource into the app and iterate over it.  Let's see!
