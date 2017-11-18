@@ -146,3 +146,11 @@ It's ocurred to me that I'll probably want to share debugging stuff in the
 browser.  How the heck can I do that?  Will it need to be a video?
 
 
+error:
+
+```
+    at HTMLUnknownElement.callCallback (react-dom.development.js:540)
+    at Object.invokeGuardedCallbackDev (react-dom.development.js:579)
+    at invokeGuardedCallback (react-dom.development.js:436)
+    at renderRoot (react-dom.development.js:10386)
+```

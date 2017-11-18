@@ -32,7 +32,7 @@ class App extends Component {
     currentEntry: null,
   }
 
-  handleEntrySelected = (entry) => {
+  handleEntryClicked = (entry) => {
     this.setState({ currentEntry: entry })
   }
 
@@ -41,11 +41,10 @@ class App extends Component {
       <div className="App">
         {
           entries.map(entry => (
-            <a
+            <ClickableEntry
               key={entry.name}
-              href="#"
-              onClick={this.handleEntrySelected.bind(this, entry)}
-              >{entry.name}</a>
+              onClick={this.handleEntryClicked}
+            />
           ))
         }
         <div>

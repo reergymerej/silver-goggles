@@ -509,4 +509,9 @@ bash-3.2$ git add .
 bash-3.2$ git commit -m[K-all[K[K[K[Km '' --ano[K[Kllow-empty-message
 [master 36b4bc8] 
  3 files changed, 17 insertions(+), 1 deletion(-)
-bash-3.2$ git add . git commi[K[K[K[K[K[K[K[K[K&& [K git commit -m ''
+bash-3.2$ git add . git commi[K[K[K[K[K[K[K[K[K&& [K git commit -m '' --all[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccommit -m '' --allow-empty-message
+bash-3.2$ git add .
+bash-3.2$ git [12@(reverse-i-search)`':[C[C[C[C[Cc': git commit -m '' --allow-empty-message[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1@o[C[C[C[C[C[C[C[14Pbash-3.2$[C[C[C[C[C[C
+[master ae048fa] 
+ 3 files changed, 58 insertions(+), 2 deletions(-)
+bash-3.2$ 
