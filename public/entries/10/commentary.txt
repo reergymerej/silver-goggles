@@ -1,0 +1,88 @@
+
+Sat Nov 18 15:59:52 CST 2017
+
+We've got our terminal logs showing (linked at least) in our entries.  Now
+let's spice up the entries themselves.  Let's turn the commit hashes into
+links to the source code.
+
+We don't want to alter the actual entries, though, just add a presentation
+tweak.  We'll do this at first by just doing a simple find/replace type trick
+on the text in Entry.js.  Currently, it just renders the text in a `<pre>`
+tag.  That's pretty nice, so we'll keep most of it like that.  Except we'll
+want to replace any of our Git references with a link.  That means our
+contents will change from
+
+```
+<pre>{...}</pre>
+```
+
+to
+
+```
+<pre>{...}</pre>
+<a />
+<pre>{...}</pre>
+<a />
+<pre>{...}</pre>
+```
+
+First, we'll hardcode some bunk data to see that it works alright.
+
+ref:git:ebc4e61
+
+Seems good.  Now we need to process the commentary string and return an array
+of components, preformatted blocks for just text or anchor tags for our
+references.
+
+ref:git:35a23a2
+
+This is a test to see how it will work.  It seems to be OK.  Now, instead of
+returning random crap in `parseCommentary`, we're going to actually split it
+based on our reference tags.  It may be ametuerish, but I like doing stuff
+like this in the debugger, so I'm going to put a breakpoint there and tinker
+until I get the regex right.
+
+I've just added a screenshot of this.  Although we don't know how to handle
+those yet, it's pretty clear we'll need to reference them somehow, so we'll
+just go with the same convention.
+
+ref:images:01.png
+
+We've got some regex now to find all the instances in a commentary string.  We
+can keep calling `exec` and get the substring match until it's exhausted.  I
+don't remember exactly how to deal with splitting this stuff up, but I'm
+betting we can use replace in a pretty straightforward way.
+
+ref:images:02.png
+
+My regex needed a little tweaking.  Match looks good because it returns an
+array, but we don't get the captured group or the stuff between the matches.
+
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split
+
+
+We're getting close.
+
+ref:git:3ba51c1
+ref:images:03.png
+
+The first goal is to get the stuff to show.  After that, we can tweak it to
+make it work better.
+
+I'm finding that for little commentary, I can use Git with a quick commit
+message.
+
+ref:git:67b4a28
+
+This is probably a huge misuse of Git, but what the heck.
+
+ref:git:de74344
+
+We are now splitting them apart correctly.  Now to update the component so it
+points to the commit in Git.
+
+ref:git:545f389
+
+There it is.  It's working in all its ugliness.  This is a good time to stop
+and take a victory lap.

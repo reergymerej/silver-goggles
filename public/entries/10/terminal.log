@@ -1,0 +1,229 @@
+Script started on Sat Nov 18 15:57:59 2017
+?1034hbash-3.2$ ls
+README.md	build		package.json	public		src		yarn.lock
+README.md~	node_modules	package.json~	scripts 	terminal.log
+bash-3.2$ mvKgit mv src/KpK
+App.css 		  ClickableEntry.js	    index.css
+App.css~		  ClickableEntry.js~	    index.js
+App.js			  Entry.js		    logo.svg
+App.js~ 		  Entry.js~		    registerServiceWorker.js
+App.test.js		  entries.json
+bash-3.2$ git mv srcKpublic/terminal-logs/03.terminal.log public/entries/03/terminal.log
+bash-3.2$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	32mrenamed:    public/terminal-logs/03.terminal.log -> public/entries/03/terminal.logm
+
+bash-3.2$ git commit -m 'move log for 03 in place'
+[master 240019a] move log for 03 in place
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ rename public/{terminal-logs/03.terminal.log => entries/03/terminal.log} (100%)
+bash-3.2$ ./scripts/index-entries.js
+bash-3.2$ mkdir public/entries/10/
+bash-3.2$ touch public/entries/10/commentary.Ktxt
+bash-3.2$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	31mmodified:   src/Entry.jsm
+	31mmodified:   src/entries.jsonm
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	31mpublic/entries/10/m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+bash-3.2$ git add src/Entry.js
+bash-3.2$ git commit -m '' --allow-empty-commit
+error: unknown option `allow-empty-commit'
+usage: git commit [<options>] [--] <pathspec>...
+
+    -q, --quiet 	  suppress summary after successful commit
+    -v, --verbose	  show diff in commit message template
+
+Commit message options
+    -F, --file <file>	  read message from file
+    --author <author>	  override author for commit
+    --date <date>	  override date for commit
+    -m, --message <message>
+			  commit message
+    -c, --reedit-message <commit>
+			  reuse and edit message from specified commit
+    -C, --reuse-message <commit>
+			  reuse message from specified commit
+    --fixup <commit>	  use autosquash formatted message to fixup specified commit
+    --squash <commit>	  use autosquash formatted message to squash specified commit
+    --reset-author	  the commit is authored by me now (used with -C/-c/--amend)
+    -s, --signoff	  add Signed-off-by:
+    -t, --template <file>
+			  use specified template file
+    -e, --edit		  force edit of commit
+    --cleanup <default>   how to strip spaces and #comments from message
+    --status		  include status in commit message template
+    -S, --gpg-sign[=<key-id>]
+			  GPG sign commit
+
+Commit contents options
+    -a, --all		  commit all changed files
+    -i, --include	  add specified files to index for commit
+    --interactive	  interactively add files
+    -p, --patch 	  interactively add changes
+    -o, --only		  commit only specified files
+    -n, --no-verify	  bypass pre-commit hook
+    --dry-run		  show what would be committed
+    --short		  show status concisely
+    --branch		  show branch information
+    --porcelain 	  machine-readable output
+    --long		  show status in long format (default)
+    -z, --null		  terminate entries with NUL
+    --amend		  amend previous commit
+    --no-post-rewrite	  bypass post-rewrite hook
+    -u, --untracked-files[=<mode>]
+			  show untracked files, optional modes: all, normal, no. (Default: all)
+
+bash-3.2$ git commit -m '' --allow-empty-commiKmessage
+[master ebc4e61]
+ 1 file changed, 8 insertions(+)
+bash-3.2$ gi tadKgit status
+On branch master
+Your branch is ahead of 'origin/master' by 2 commits.
+  (use "git push" to publish your local commits)
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	31mmodified:   src/Entry.jsm
+	31mmodified:   src/entries.jsonm
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	31mpublic/entries/10/m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+bash-3.2$ git add src/Entry.js
+bash-3.2$ git commit -m 'silKdummy rendering differentKparsed commentary'
+[master 35a23a2] dummy rendering parsed commentary
+ 1 file changed, 35 insertions(+), 11 deletions(-)
+bash-3.2$ mv ~/Desktop/
+.DS_Store
+.localized
+2017-11-15-49578912844354208005692921423204347046179298302899520098-49578912844354208005692921423204347046179298302899520098 (1)
+Postman.app/
+Screen Shot 2017-11-18 at 4.18.43 PM.png
+snowplow.pem
+ngsh-3.2$ mv ~/Desktop/Screen\ Shot\ 2017-11-18\ at\ 4.18.43\ PM.png ./public/entries/10/images/01.p
+ngsh-3.2$ mv !KK~/Desktop/Screen\ Shot\ 2017-11-18\ at\ 4.25.26\ PM.png ./public/entries/10/images/02.p
+ngsh-3.2$ mv !KK!K~K/Desktop/Screen\ Shot\ 2017-11-18\ at\ 4.31.39\ PM.png ./public/entries/10/images/03.p
+bash-3.2$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 3 commits.
+  (use "git push" to publish your local commits)
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	31mmodified:   src/Entry.jsm
+	31mmodified:   src/entries.jsonm
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	31mpublic/entries/10/m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+bash-3.2$ git add src/Entry.js
+bash-3.2$ git commit -m 'adKparsKsplit apartKrt commentary, render dummy blocks'
+[master 3ba51c1] split apart commentary, render dummy blocks
+ 1 file changed, 8 insertions(+), 7 deletions(-)
+bash-3.2$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 4 commits.
+  (use "git push" to publish your local commits)
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	31mmodified:   src/Entry.jsm
+	31mmodified:   src/entries.jsonm
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	31mpublic/entries/10/m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+bash-3.2$ git add src/Entry.js
+bash-3.2$ git commit -m '' -Kstub part type'
+[master 3b65a90] stub part type
+ 1 file changed, 8 insertions(+), 3 deletions(-)
+bash-3.2$ git add .Ksrc/
+bash-3.2$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 5 commits.
+  (use "git push" to publish your local commits)
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	32mmodified:   src/Entry.jsm
+	32mmodified:   src/entries.jsonm
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	31mpublic/entries/10/m
+
+bash-3.2$ git reset sKrc/entries.jsonKgit commit -m 'use constant instaKead of random string'
+[master 67b4a28] use constant instead of random string
+ 2 files changed, 7 insertions(+), 3 deletions(-)
+ rewrite src/entries.json (81%)
+bash-3.2$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 6 commits.
+  (use "git push" to publish your local commits)
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	31mmodified:   src/Entry.jsm
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	31mpublic/entries/10/m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+bash-3.2$ git add src/
+Kvalue.andgtype'mmit -m 'pull outKlook at each part to see if there aKis a git cK hash, use that to determin ifKKe the
+[master de74344] look at each part to see if there is a git hash, use that to determine the value and type
+ 1 file changed, 13 insertions(+), 7 deletions(-)
+bash-3.2$ git add Ksrc/
+bash-3.2$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 7 commits.
+  (use "git push" to publish your local commits)
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	32mmodified:   src/Entry.jsm
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	31mpublic/entries/10/m
+
+bash-3.2$ git commit -m 'render real link to giKGithub'
+[master 545f389] render real link to Github
+ 1 file changed, 5 insertions(+), 3 deletions(-)
+bash-3.2$
+bash-3.2$ exit
+
+Script done on Sat Nov 18 16:51:04 2017
