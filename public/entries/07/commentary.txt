@@ -38,3 +38,8 @@ I believe I forgot to rename the text files.  Oops.
 ref: 551dc7d
 
 Now everything is named correcly.
+
+ref: c2d1268
+
+Except this file!  I just changed it.  Let's commit everything and push it up
+so we can start working on the resources part.
