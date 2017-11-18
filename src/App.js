@@ -9,6 +9,24 @@ const Entry = (props) => (
   </div>
 )
 
+class ClickableEntry extends React.Component {
+  handleClick = event => {
+    event.preventDefault()
+    this.props.onClick(this.props.entry)
+  }
+
+  render() {
+    return (
+      <a
+        onClick={this.handleClick}
+        href="#"
+      >
+        {this.props.entry.name}
+      </a>
+    )
+  }
+}
+
 class App extends Component {
   state = {
     currentEntry: null,
@@ -26,7 +44,7 @@ class App extends Component {
             <a
               key={entry.name}
               href="#"
-              onPress={this.handleEntrySelected.bind(this, entry)}
+              onClick={this.handleEntrySelected.bind(this, entry)}
               >{entry.name}</a>
           ))
         }
