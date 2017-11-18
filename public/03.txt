@@ -38,3 +38,16 @@ adding entries easier.
 
 I will probably forget the commands I've figured out that I want to use here,
 so I'm going to note them in the README.
+
+...
+
+OK, I've indulged.  I took a few notes in the README.  I've found that so much
+learning happens tangentally to the task at hand.  I used to get so upset at
+all the rabbit holes when I just wanted to make a thing that did blah.  I've
+since learned that much of the process _is_ the process of learning and
+exploring the many subtasks that stand between you and the objective.
+
+Back to the main task.  How do we make it easier to add entries?  I like the
+whole new text file in an editor thing.  The terminal commands are being
+logged easily enough.  Maybe we'll just make a quick script to read the
+directory and spit out some JSON the app can use.
