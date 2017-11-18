@@ -1,0 +1,90 @@
+
+Sat Nov 18 14:14:15 CST 2017
+
+Let's show some resources!
+
+```
+▼ public/
+  ▼ entries/
+    ▼ 01/
+        commentary.txt
+    ▼ 02/
+        commentary.txt
+    ▼ 03/
+        commentary.txt
+    ▼ 04/
+        commentary.txt
+    ▼ 05/
+        commentary.txt
+    ▼ 06/
+        commentary.txt
+        terminal.log
+    ▼ 07/
+        commentary.txt
+        terminal.log
+    ▼ 08/
+        commentary.txt
+        terminal.log
+```
+
+#note Maybe directory trees are another type of resource we want to show.
+
+ref:git:b4f06a2
+
+I thought read would fail for missing files, so this isn't really unexpected.
+
+ref:terminal
+
+```
+bash-3.2$ ./scripts/index-entries.js
+fs.js:653
+  return binding.open(pathModule._makeLong(path), stringToFlags(flags), mode);
+                 ^
+
+Error: ENOENT: no such file or directory, open '/Users/jeremygreer/Ideas/blog/site/public/entries/01/terminal.log'
+    at Object.fs.openSync (fs.js:653:18)
+    at Object.fs.readFileSync (fs.js:554:33)
+    at getEntryFromDir (/Users/jeremygreer/Ideas/blog/site/scripts/index-entries.js:18:26)
+```
+
+TODO: We need to prefix each command in the terminal.log with a timestamp so
+we have some way to tie references here to there.
+
+We need to handle reading the terminal logs more gracefully.
+
+ref:git:42d4e6cf78f347d161710cb39ffe7bb6c5735d4a
+
+ref:terminal
+
+We've really got to get the linter set up.  I usually do it first thing, but I
+don't want to get distracted yet.  Once the problem is big enough, we'll deal
+with it.
+
+```
+/Users/jeremygreer/Ideas/blog/site/scripts/index-entries.js:32
+      terminal: terminal && `${name}/terminal.log`,
+                ^
+
+ReferenceError: terminal is not defined
+    at getEntryFromDir (/Users/jeremygreer/Ideas/blog/site/scripts/index-entries.js:32:17)
+    at Array.map (<anonymous>)
+```
+
+...
+
+It's becoming confusing to display the terminal.log.  That could be because
+I'm sick, I'm watching TV with the family, or it's just confusing.  Let's
+regroup.
+
+Each entry will have a URI associated with it, as should each of its
+resources.  Let's ensure each entity we're describing in our JSON has a URI
+with it.
+
+ref:git:fb30e4c
+
+ref:git:44d08c8
+
+We've not got uri values for our two entities we're tracking right now, the
+entry and the terminal.log.
+
+Let's wrap this entry up and get ready to do something cooler.

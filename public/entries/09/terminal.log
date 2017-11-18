@@ -1,0 +1,456 @@
+Script started on Sat Nov 18 14:13:38 2017
+?1034hbash-3.2$ K./sKgit status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	31mmodified:   scripts/index-entries.jsm
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	31mpublic/entries/09/m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+bash-3.2$ git add scripts/
+bash-3.2$ git commiKdiff --cached
+1mdiff --git a/scripts/index-entries.js b/scripts/index-entries.jsmm
+1mindex 16444fa..0ff3c97 100755mm
+1m--- a/scripts/index-entries.jsmm
+1m+++ b/scripts/index-entries.jsmm
+36m@@ -13,11 +13,16 @@m mconst entryDirs = dir.files(entriesPath, 'dir', null, {mm
+ mm
+ const getEntryFromDir = (entryDir) => {mm
+   const commentaryPath = path.resolve(entryDir, 'commentary.txt')mm
+32m+m32m  const terminalLogPath = path.resolve(entryDir, 'terminal.log')mm
+   const commentary = fs.readFileSync(commentaryPath, 'utf8')mm
+32m+m32m  const terminalLog = fs.readFileSync(terminalLogPath, 'utf8')mm
+   return {mm
+     name: path.basename(entryDir),mm
+     commentary,mm
+     resources: {mm
+32m+m32m      terminal: [mm
+32m+m32m	terminalLog,mm
+32m+m32m      ],mm
+     },mm
+   }mm
+ }mm
+K?1lbash-3.2$ git adKcommit -m 'reKreturn terminal resources'K
+[master b4f06a2] return terminal resources
+ 1 file changed, 5 insertions(+)
+bash-3.2$ ./scripts/index-entries.js
+fs.js:653
+  return binding.open(pathModule._makeLong(path), stringToFlags(flags), mode);
+		 ^
+
+Error: ENOENT: no such file or directory, open '/Users/jeremygreer/Ideas/blog/site/public/entries/01/terminal.log'
+    at Object.fs.openSync (fs.js:653:18)
+    at Object.fs.readFileSync (fs.js:554:33)
+    at getEntryFromDir (/Users/jeremygreer/Ideas/blog/site/scripts/index-entries.js:18:26)
+    at Array.map (<anonymous>)
+    at Object.<anonymous> (/Users/jeremygreer/Ideas/blog/site/scripts/index-entries.js:30:27)
+    at Module._compile (module.js:624:30)
+    at Object.Module._extensions..js (module.js:635:10)
+    at Module.load (module.js:545:32)
+    at tryModuleLoad (module.js:508:12)
+    at Function.Module._load (module.js:500:3)
+bash-3.2$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	31mmodified:   scripts/index-entries.jsm
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	31mpublic/entries/09/m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+bash-3.2$ git dK./scripts/index-entries.js
+bash-3.2$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	31mmodified:   scripts/index-entries.jsm
+	31mmodified:   src/entries.jsonm
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	31mpublic/entries/09/m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+bash-3.2$ git add src/ scripts/
+bash-3.2$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	32mmodified:   scripts/index-entries.jsm
+	32mmodified:   src/entries.jsonm
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	31mpublic/entries/09/m
+
+bash-3.2$ git commit -m 'savKfelyKfailKhanldeKdle missingK logKterminal.logK`
+> '
+[master 1276405] handle missing terminal.log`
+ 2 files changed, 11 insertions(+), 3 deletions(-)
+ rewrite src/entries.json (68%)
+bash-3.2$ git commit --amend 'handle missing terminal.log'
+error: pathspec 'handle missing terminal.log' did not match any file(s) known to git.
+bash-3.2$ git commit --am1@m 'handle missing terminal.log'
+error: unknown option `ammend'
+usage: git commit [<options>] [--] <pathspec>...
+
+    -q, --quiet 	  suppress summary after successful commit
+    -v, --verbose	  show diff in commit message template
+
+Commit message options
+    -F, --file <file>	  read message from file
+    --author <author>	  override author for commit
+    --date <date>	  override date for commit
+    -m, --message <message>
+			  commit message
+    -c, --reedit-message <commit>
+			  reuse and edit message from specified commit
+    -C, --reuse-message <commit>
+			  reuse message from specified commit
+    --fixup <commit>	  use autosquash formatted message to fixup specified commit
+    --squash <commit>	  use autosquash formatted message to squash specified commit
+    --reset-author	  the commit is authored by me now (used with -C/-c/--amend)
+    -s, --signoff	  add Signed-off-by:
+    -t, --template <file>
+			  use specified template file
+    -e, --edit		  force edit of commit
+    --cleanup <default>   how to strip spaces and #comments from message
+    --status		  include status in commit message template
+    -S, --gpg-sign[=<key-id>]
+			  GPG sign commit
+
+Commit contents options
+    -a, --all		  commit all changed files
+    -i, --include	  add specified files to index for commit
+    --interactive	  interactively add files
+    -p, --patch 	  interactively add changes
+    -o, --only		  commit only specified files
+    -n, --no-verify	  bypass pre-commit hook
+    --dry-run		  show what would be committed
+    --short		  show status concisely
+    --branch		  show branch information
+    --porcelain 	  machine-readable output
+    --long		  show status in long format (default)
+    -z, --null		  terminate entries with NUL
+    --amend		  amend previous commit
+    --no-post-rewrite	  bypass post-rewrite hook
+    -u, --untracked-files[=<mode>]
+			  show untracked files, optional modes: all, normal, no. (Default: all)
+
+bash-3.2$ git commit --ammend 1@-1@m1@missing terminal.log'
+error: unknown option `ammend'
+usage: git commit [<options>] [--] <pathspec>...
+
+    -q, --quiet 	  suppress summary after successful commit
+    -v, --verbose	  show diff in commit message template
+
+Commit message options
+    -F, --file <file>	  read message from file
+    --author <author>	  override author for commit
+    --date <date>	  override date for commit
+    -m, --message <message>
+			  commit message
+    -c, --reedit-message <commit>
+			  reuse and edit message from specified commit
+    -C, --reuse-message <commit>
+			  reuse message from specified commit
+    --fixup <commit>	  use autosquash formatted message to fixup specified commit
+    --squash <commit>	  use autosquash formatted message to squash specified commit
+    --reset-author	  the commit is authored by me now (used with -C/-c/--amend)
+    -s, --signoff	  add Signed-off-by:
+    -t, --template <file>
+			  use specified template file
+    -e, --edit		  force edit of commit
+    --cleanup <default>   how to strip spaces and #comments from message
+    --status		  include status in commit message template
+    -S, --gpg-sign[=<key-id>]
+			  GPG sign commit
+
+Commit contents options
+    -a, --all		  commit all changed files
+    -i, --include	  add specified files to index for commit
+    --interactive	  interactively add files
+    -p, --patch 	  interactively add changes
+    -o, --only		  commit only specified files
+    -n, --no-verify	  bypass pre-commit hook
+    --dry-run		  show what would be committed
+    --short		  show status concisely
+    --branch		  show branch information
+    --porcelain 	  machine-readable output
+    --long		  show status in long format (default)
+    -z, --null		  terminate entries with NUL
+    --amend		  amend previous commit
+    --no-post-rewrite	  bypass post-rewrite hook
+    -u, --untracked-files[=<mode>]
+			  show untracked files, optional modes: all, normal, no. (Default: all)
+
+bash-3.2$ gitKgit commiK loKg
+33mcommit 1276405365b05acd4a9172822d08c020e3a81029mm
+Author: Jeremy Greer <jeremy.greer.atl@gmail.com>m
+Date:	Sat Nov 18 14:41:36 2017 -0600m
+m
+    handle missing terminal.log`m
+m
+33mcommit b4f06a26fa08354ea3c73083ac693c0f2fd3f74emm
+Author: Jeremy Greer <jeremy.greer.atl@gmail.com>m
+Date:	Sat Nov 18 14:27:36 2017 -0600m
+m
+    return terminal resourcesm
+m
+33mcommit 3eb673abd741902f6fd1e2051bd9b150bf4777f6mm
+Author: Jeremy Greer <jeremy.greer.atl@gmail.com>m
+Date:	Sat Nov 18 13:59:49 2017 -0600m
+m
+    finish 08m
+m
+33mcommit ffe70312da67e7cc3384cb4a289bc3e17247d0e9mm
+Author: Jeremy Greer <jeremy.greer.atl@gmail.com>m
+Date:	Sat Nov 18 13:42:05 2017 -0600m
+m
+    move components into own filesm
+m
+33mcommit 87bc6e2df3a6b2141b2af9405fa4e8db9e7472f3mm
+Author: Jeremy Greer <jeremy.greer.atl@gmail.com>m
+Date:	Sat Nov 18 12:50:37 2017 -0600m
+m
+    use actual link to commentarym
+m
+33mcommit 934b4d9188dff985014e3b4b79b31bbfa62714c8mm
+Author: Jeremy Greer <jeremy.greer.atl@gmail.com>m
+Date:	Sat Nov 18 12:44:22 2017 -0600m
+m
+    add notes on how to create a new entrym
+m
+33mcommit 303ed12b58ebfec5eff1eb03bdde20350f2db176mm
+Author: Jeremy Greer <jeremy.greer.atl@gmail.com>m
+Date:	Sat Nov 18 12:43:23 2017 -0600m
+K?1lbash-3.2$ git commit --amend
+?1000h?2004h?1049h?1h?2004h1;40r?12;25h?12l?25h27mm38;5;252m48;5;234mH2J?25l40;1H"~/Ideas/blog/site/.git/COMMIT_EDITMSG" 18L, 482C2;1H▽6n2;1H  1;1H>c1;1H38;5;208m48;5;235m1   m38;5;252m48;5;234m38;5;81m48;5;236mhandle missing terminal.log`m38;5;252m48;5;234m48;5;236m								       m38;5;252m48;5;234m2;1H38;5;243m48;5;235m  1
+  2 m38;5;252m48;5;234m38;5;59m# Please enter the commit message for your changes. Lines startingm38;5;252m48;5;234m
+38;5;243m48;5;235m  3 m38;5;252m48;5;234m38;5;59m# with '#' will be ignored, and an empty message aborts the commit.m38;5;252m48;5;234m
+38;5;243m48;5;235m  4 m38;5;252m48;5;234m38;5;59m#m38;5;252m48;5;234m
+38;5;243m48;5;235m  5 m38;5;252m48;5;234m38;5;59m# Date:      Sat Nov 18 14:41:36 2017 -0600m38;5;252m48;5;234m
+38;5;243m48;5;235m  6 m38;5;252m48;5;234m38;5;59m#m38;5;252m48;5;234m
+38;5;243m48;5;235m  7 m38;5;252m48;5;234m38;5;59m# On branch m38;5;252m48;5;234m38;5;141mmasterm38;5;252m48;5;234m
+38;5;243m48;5;235m  8 m38;5;252m48;5;234m38;5;59m# Your branch is ahead of 'm38;5;252m48;5;234m38;5;141morigin/masterm38;5;252m48;5;234m38;5;59m' by 2 commits.m38;5;252m48;5;234m
+38;5;243m48;5;235m  9 m38;5;252m48;5;234m38;5;59m#   (use "git push" to publish your local commits)m38;5;252m48;5;234m
+38;5;243m48;5;235m 10 m38;5;252m48;5;234m38;5;59m#m38;5;252m48;5;234m
+38;5;243m48;5;235m 11 m38;5;252m48;5;234m38;5;59m# m38;5;252m48;5;234m38;5;148mChanges to be committed:m38;5;252m48;5;234m
+38;5;243m48;5;235m 12 m38;5;252m48;5;234m38;5;59m#	 m38;5;252m48;5;234m38;5;81mmodifiedm38;5;252m48;5;234m38;5;59m: m38;5;252m48;5;234m38;5;141m  scripts/index-entries.jsm38;5;252m48;5;234m
+38;5;243m48;5;235m 13 m38;5;252m48;5;234m38;5;59m#	 m38;5;252m48;5;234m38;5;81mmodifiedm38;5;252m48;5;234m38;5;59m: m38;5;252m48;5;234m38;5;141m  src/entries.jsonm38;5;252m48;5;234m
+38;5;243m48;5;235m 14 m38;5;252m48;5;234m38;5;59m#m38;5;252m48;5;234m
+38;5;243m48;5;235m 15 m38;5;252m48;5;234m38;5;59m# m38;5;252m48;5;234m38;5;148mUntracked files:m38;5;252m48;5;234m
+38;5;243m48;5;235m 16 m38;5;252m48;5;234m38;5;59m#	 m38;5;252m48;5;234m38;5;141mpublic/entries/09/m38;5;252m48;5;234m
+38;5;243m48;5;235m 17 m38;5;252m48;5;234m38;5;59m#m38;5;252m48;5;234m
+?25l?1002l?2004l".git/COMMIT_EDITMSG" 18L, 481C written 						     20;1H~												      21;1H~												       22;1H~													23;1H~													 24;1H~ 												  25;1H~												   26;1H~												    27;1H~												     28;1H~												      29;1H~												       30;1H~													31;1H~													 32;1H~ 												  33;1H~												   34;1H~												    35;1H~												     36;1H~												      37;1H~												       38;1H~													m38;5;252m48;5;234m39;1H7m38;5;59m48;5;234m.git/COMMIT_EDITMSG								     1,1	    All1;5H?12l?25h?1000l?1002h?25lm38;5;252m48;5;234m40;90H~1;5H40;90H 1;638;5;81m48;5;236mHm38;5;252m48;5;234m39;21H7m38;5;59m48;5;234m[+]61C21;6H?12l?25h?25lm38;5;252m48;5;234m40;1HType  :qa!  and press <Enter> to abandon all changes and exit Vim1;6H?12l?25h?25l40;90Hu1;6H40;1H1 change; before #1  1 seconds ago40;35HK1;5H38;5;81m48;5;236mhm38;5;252m48;5;234m39;21H7m38;5;59m48;5;234m	60C11;5H?12l?25h?25lm38;5;252m48;5;234m40;90H$1;5H40;90H 1;32H39;85H7m38;5;59m48;5;234m281;32H?12l?25h?25lm38;5;252m48;5;234m40;90Hx1;32H40;90H 1;32H40;90Hdl1;32H40;90H  1;31H1C48;5;236m m38;5;252m48;5;234m39;21H7m38;5;59m48;5;234m[+]62C71;31H?12l?25h?25lm38;5;252m48;5;234m40;90H:1;31H40;1HK40;1H:?2004h?12l?25hwq
+39;49m?2004l?1l?12l?25h?1049l[master 42d4e6c] handle missing terminal.log
+ Date: Sat Nov 18 14:41:36 2017 -0600
+ 2 files changed, 11 insertions(+), 3 deletions(-)
+ rewrite src/entries.json (68%)
+bash-3.2$ git log
+33mcommit 42d4e6cf78f347d161710cb39ffe7bb6c5735d4amm
+Author: Jeremy Greer <jeremy.greer.atl@gmail.com>m
+Date:	Sat Nov 18 14:41:36 2017 -0600m
+m
+    handle missing terminal.logm
+m
+33mcommit b4f06a26fa08354ea3c73083ac693c0f2fd3f74emm
+Author: Jeremy Greer <jeremy.greer.atl@gmail.com>m
+Date:	Sat Nov 18 14:27:36 2017 -0600m
+m
+    return terminal resourcesm
+m
+33mcommit 3eb673abd741902f6fd1e2051bd9b150bf4777f6mm
+Author: Jeremy Greer <jeremy.greer.atl@gmail.com>m
+Date:	Sat Nov 18 13:59:49 2017 -0600m
+m
+    finish 08m
+m
+33mcommit ffe70312da67e7cc3384cb4a289bc3e17247d0e9mm
+Author: Jeremy Greer <jeremy.greer.atl@gmail.com>m
+Date:	Sat Nov 18 13:42:05 2017 -0600m
+m
+    move components into own filesm
+m
+33mcommit 87bc6e2df3a6b2141b2af9405fa4e8db9e7472f3mm
+Author: Jeremy Greer <jeremy.greer.atl@gmail.com>m
+Date:	Sat Nov 18 12:50:37 2017 -0600m
+m
+    use actual link to commentarym
+m
+33mcommit 934b4d9188dff985014e3b4b79b31bbfa62714c8mm
+Author: Jeremy Greer <jeremy.greer.atl@gmail.com>m
+Date:	Sat Nov 18 12:44:22 2017 -0600m
+m
+    add notes on how to create a new entrym
+m
+33mcommit 303ed12b58ebfec5eff1eb03bdde20350f2db176mm
+Author: Jeremy Greer <jeremy.greer.atl@gmail.com>m
+Date:	Sat Nov 18 12:43:23 2017 -0600m
+K?1lSC
+bash-3.2$ ./scripts/index-entries.js
+bash-3.2$ ./scripts/index-entries.js
+/Users/jeremygreer/Ideas/blog/site/scripts/index-entries.js:32
+      terminal: terminal && `${name}/terminal.log`,
+		^
+
+ReferenceError: terminal is not defined
+    at getEntryFromDir (/Users/jeremygreer/Ideas/blog/site/scripts/index-entries.js:32:17)
+    at Array.map (<anonymous>)
+    at Object.<anonymous> (/Users/jeremygreer/Ideas/blog/site/scripts/index-entries.js:37:27)
+    at Module._compile (module.js:624:30)
+    at Object.Module._extensions..js (module.js:635:10)
+    at Module.load (module.js:545:32)
+    at tryModuleLoad (module.js:508:12)
+    at Function.Module._load (module.js:500:3)
+    at Function.Module.runMain (module.js:665:10)
+    at startup (bootstrap_node.js:201:16)
+bash-3.2$ ./scripts/index-entries.js
+bash-3.2$ git staKatus
+On branch master
+Your branch is ahead of 'origin/master' by 2 commits.
+  (use "git push" to publish your local commits)
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	31mmodified:   scripts/index-entries.jsm
+	31mmodified:   src/Entry.jsm
+	31mmodified:   src/entries.jsonm
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	31mpublic/entries/09/m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+bash-3.2$ ./scripts/index-entries.js
+bash-3.2$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 2 commits.
+  (use "git push" to publish your local commits)
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	31mmodified:   scripts/index-entries.jsm
+	31mmodified:   src/ClickableEntry.jsm
+	31mmodified:   src/Entry.jsm
+	31mmodified:   src/entries.jsonm
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	31mpublic/entries/09/m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+bash-3.2$ git add src/ scripts/
+bash-3.2$ iKgit commit -mK 'add KUKRI to entryK'
+[master fb30e4c] add URI to entry
+ 4 files changed, 21 insertions(+), 14 deletions(-)
+ rewrite src/entries.json (99%)
+CCCCCCCCCCCCC./scripts/index-entries.jsry'
+bash-3.2$ ./scripts/index-entries.js
+/Users/jeremygreer/Ideas/blog/site/scripts/index-entries.js:36
+  return {
+  ^^^^^^
+
+SyntaxError: Unexpected token return
+    at createScript (vm.js:74:10)
+    at Object.runInThisContext (vm.js:116:10)
+    at Module._compile (module.js:588:28)
+    at Object.Module._extensions..js (module.js:635:10)
+    at Module.load (module.js:545:32)
+    at tryModuleLoad (module.js:508:12)
+    at Function.Module._load (module.js:500:3)
+    at Function.Module.runMain (module.js:665:10)
+    at startup (bootstrap_node.js:201:16)
+    at bootstrap_node.js:626:3
+bash-3.2$ ./scripts/index-entries.js
+bash-3.2$ ./scripts/index-entries.js
+bash-3.2$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 3 commits.
+  (use "git push" to publish your local commits)
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	31mmodified:   scripts/index-entries.jsm
+	31mmodified:   src/Entry.jsm
+	31mmodified:   src/entries.jsonm
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	31mpublic/entries/09/m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+bash-3.2$ git add src/ scripts/
+bash-3.2$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 3 commits.
+  (use "git push" to publish your local commits)
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	32mmodified:   scripts/index-entries.jsm
+	32mmodified:   src/Entry.jsm
+	32mmodified:   src/entries.jsonm
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	31mpublic/entries/09/m
+
+bash-3.2$ git commit -m 'add uri to entry and terminal log, show link to log when available'
+bash-3.2$ git commit -m 'add uri to entry and terminal log, show link to log when available'
+[master 44d08c8] add uri to entry and terminal log, show link to log when available
+ 3 files changed, 19 insertions(+), 8 deletions(-)
+ rewrite src/entries.json (97%)
+bash-3.2$ git push
+Counting objects: 25, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (21/21), done.
+Writing objects: 100% (25/25), 34.05 KiB | 0 bytes/s, done.
+Total 25 (delta 14), reused 0 (delta 0)
+remote: Resolving deltas: 100% (14/14), completed with 3 local objects.K
+To git@github.com:reergymerej/silver-goggles.git
+   3eb673a..44d08c8  master -> master
+bash-3.2$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	31mpublic/entries/09/m
+
+nothing added to commit but untracked files present (use "git add" to track)
+bash-3.2$ git addKgit add .
+bash-3.2$ exit
+exit
+
+Script done on Sat Nov 18 15:40:56 2017
