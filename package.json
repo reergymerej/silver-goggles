@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "node-dir": "^0.1.17",
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
     "react-scripts": "1.0.17"
@@ -15,7 +16,5 @@
     "entries": "./scripts/index-entries.js",
     "eject": "react-scripts eject"
   },
-  "devDependencies": {
-    "node-dir": "^0.1.17"
-  }
+  "devDependencies": {}
 }

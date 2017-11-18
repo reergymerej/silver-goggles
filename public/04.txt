@@ -6,3 +6,17 @@ log for the terminal.  Another problem has come up.  Those logs need to be
 tied to the entries.  For now, we'll just manually rename the to match the
 filename of the entry it corresponds to.
 
+
+Fri Nov 17 21:45:40 CST 2017
+
+It's not showing the new entry in heroku.  I don't think the build step is
+happening, so I added
+
+```
+    "heroku-postbuild": "./scripts/index-entries.js",
+```
+
+to package.json.  The movie my wife is watching is ending as is our session!
+Oh no!  I'm panicking.
+
+
