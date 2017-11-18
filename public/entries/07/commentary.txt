@@ -18,3 +18,23 @@ ref: 5bb2e5a
 
 We've got it reading from the new structure with one file.  Now let's move the
 rest of them.
+
+ref: 673df2e13989f6fc3567ea0e4e789d949b464cfa
+
+They've been moved.  Now let's run the indexing script again and see if
+everything shows in the UI as before.
+
+ref: terminal
+
+```
+Error: ENOENT: no such file or directory, open '/Users/jeremygreer/Ideas/blog/site/public/entries/04/commentary.txt'
+    at Object.fs.openSync (fs.js:653:18)
+    at Object.fs.readFileSync (fs.js:554:33)
+    at getEntryFromDir (/Users/jeremygreer/Ideas/blog/site/scripts/index-entries.js:16:25)
+```
+
+I believe I forgot to rename the text files.  Oops.
+
+ref: 551dc7d
+
+Now everything is named correcly.

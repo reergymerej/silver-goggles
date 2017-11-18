@@ -23,8 +23,7 @@ const getEntryFromDir = (entryDir) => {
 }
 
 const entries = entryDirs.map(getEntryFromDir)
-console.log(entries)
-
 const outPath = path.resolve(__dirname, '../src/entries.json')
 const output = JSON.stringify(entries)
+
 fs.writeFileSync(outPath, output)
