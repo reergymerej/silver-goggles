@@ -79,3 +79,15 @@ make them all ordered lists, even if they contain only one thing.
   }
 }
 ```
+
+It is pretty easy to represent this stuff in the filesystem.  So we could have
+each entry (commentary, blog... I've got to figure out the names for things)
+reside in a directory.  That directory can optionally have subdirectories that
+define the attached resources.
+
+TODO: We'll have to standardize the resource names.
+
+Before changing everything, let's rejigger the entries we spit out of our
+`index-entries.js` script and make sure the UI can understand this new
+structure.  Then we can go back and change how the entries are read by the
+script.

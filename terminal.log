@@ -1,1 +1,393 @@
 Script started on Sat Nov 18 10:12:21 2017
+[?1034hbash-3.2$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	[31mpublic/06.txt[m
+	[31mterminal.log[m
+
+nothing added to commit but untracked files present (use "git add" to track)
+bash-3.2$ git add .
+bash-3.2$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	[32mnew file:   public/06.txt[m
+	[32mnew file:   terminal.log[m
+
+bash-3.2$ git commit
+[?1000h[?2004h[?1049h[?1h=[?2004h[1;40r[?12;25h[?12l[?25h[27m[m[38;5;252m[48;5;234m[H[2J[?25l[40;1H"~/Ideas/blog/site/.git/COMMIT_EDITMSG" 10L, 291C[2;1H▽[6n[2;1H  [1;1H[>c[1;1H[38;5;243m[48;5;235m  1 [m[38;5;252m[48;5;234m
+[38;5;208m[48;5;235m2   [m[38;5;252m[48;5;234m[38;5;59m[48;5;236m# Please enter the commit message for your changes. Lines starting[m[38;5;252m[48;5;234m[48;5;236m                              [m[38;5;252m[48;5;234m[3;1H[38;5;243m[48;5;235m  1 [m[38;5;252m[48;5;234m[38;5;59m# with '#' will be ignored, and an empty message aborts the commit.[m[38;5;252m[48;5;234m
+[38;5;243m[48;5;235m  2 [m[38;5;252m[48;5;234m[38;5;59m# On branch [m[38;5;252m[48;5;234m[38;5;141mmaster[m[38;5;252m[48;5;234m
+[38;5;243m[48;5;235m  3 [m[38;5;252m[48;5;234m[38;5;59m# Your branch is up-to-date with '[m[38;5;252m[48;5;234m[38;5;141morigin/master[m[38;5;252m[48;5;234m[38;5;59m'.[m[38;5;252m[48;5;234m
+[38;5;243m[48;5;235m  4 [m[38;5;252m[48;5;234m[38;5;59m#[m[38;5;252m[48;5;234m
+[38;5;243m[48;5;235m  5 [m[38;5;252m[48;5;234m[38;5;59m# [m[38;5;252m[48;5;234m[38;5;148mChanges to be committed:[m[38;5;252m[48;5;234m
+[38;5;243m[48;5;235m  6 [m[38;5;252m[48;5;234m[38;5;59m#       [m[38;5;252m[48;5;234m[38;5;81mnew file[m[38;5;252m[48;5;234m[38;5;59m: [m[38;5;252m[48;5;234m[38;5;141m  public/06.txt[m[38;5;252m[48;5;234m
+[38;5;243m[48;5;235m  7 [m[38;5;252m[48;5;234m[38;5;59m#       [m[38;5;252m[48;5;234m[38;5;81mnew file[m[38;5;252m[48;5;234m[38;5;59m: [m[38;5;252m[48;5;234m[38;5;141m  terminal.log[m[38;5;252m[48;5;234m
+[38;5;243m[48;5;235m  8 [m[38;5;252m[48;5;234m[38;5;59m#[m[38;5;252m[48;5;234m
+[38;5;237m~                                                                                                   [12;1H~                                                                                                   [13;1H~                                                                                                   [14;1H~                                                                                                   [15;1H~                                                                                                   [16;1H~                                                                                                   [17;1H~                                                                                                   [18;1H~                                                                                                   [19;1H~                                                                                                   [20;1H~                                                                                                   [21;1H~                                                                                                   [22;1H~                                                                                                   [23;1H~                                                                                                   [24;1H~                                                                                                   [25;1H~                                                                                                   [26;1H~                                                                                                   [27;1H~                                                                                                   [28;1H~                                                                                                   [29;1H~                                                                                                   [30;1H~                                                                                                   [31;1H~                                                                                                   [32;1H~                                                                                                   [33;1H~                                                                                                   [34;1H~                                                                                                   [35;1H~                                                                                                   [36;1H~                                                                                                   [37;1H~                                                                                                   [38;1H~                                                                                                   [m[38;5;252m[48;5;234m[39;1H[7m[38;5;59m[48;5;234m.git/COMMIT_EDITMSG                                                               2,1            All[2;5H[?12l[?25h[?1000l[?1002h[?25l[m[38;5;252m[48;5;234m[40;90Hi[2;5H[40;90H [2;5H[40;1H[38;5;186m-- INSERT --[m[38;5;252m[48;5;234m[40;13H[K[2;5H[?12l[?25h[?25l[40;1H[K[2;5H[?12l[?25h[?25l[40;90Hg[2;5H[?12l[?25h[?25l[40;90H [2;5H[40;90Hgg[2;5H[40;90H  [1;5H[38;5;208m[48;5;235m1   [m[38;5;252m[48;5;234m[48;5;236m                                                                                                [m[38;5;252m[48;5;234m[2;1H[38;5;243m[48;5;235m  1 [m[38;5;252m[48;5;234m[38;5;59m# Please enter the commit message for your changes. Lines starting[m[38;5;252m[48;5;234m[2;71H[K[3;3H[38;5;243m[48;5;235m2
+  3
+  4
+  5
+  6
+  7
+  8
+  9[m[38;5;252m[48;5;234m[39;83H[7m[38;5;59m[48;5;234m1,0-1[1;5H[?12l[?25h[?25l[m[38;5;252m[48;5;234m[40;90Hi[1;5H[40;90H [1;5H[40;1H[38;5;186m-- INSERT --[m[38;5;252m[48;5;234m[39;85H[7m[38;5;59m[48;5;234m1  [1;5H[?12l[?25h[?25l[m[38;5;252m[48;5;234m[38;5;81m[48;5;236ma[m[38;5;252m[48;5;234m[39;21H[7m[38;5;59m[48;5;234m[+][61C2[1;6H[?12l[?25h[?25l[m[38;5;252m[48;5;234m[38;5;81m[48;5;236md[m[38;5;252m[48;5;234m[39;85H[7m[38;5;59m[48;5;234m3[1;7H[?12l[?25h[?25l[m[38;5;252m[48;5;234m[40;1H[K[39;85H[7m[38;5;59m[48;5;234m2[1;6H[?12l[?25h[?25l[m[38;5;252m[48;5;234m[40;1HType  :qa!  and press <Enter> to abandon all changes and exit Vim[1;6H[?12l[?25h[?25l[40;90H^Z[1;6H[40;1H
+[39;49m[?2004l[?1l>[?12l[?25h[?1049l[?1002l[?2004l
+[1]+  Stopped                 git commit
+bash-3.2$ fg
+git commit
+[?1002h[?2004h[?1049h[?1h=[?2004h[?12;25h[?12l[?25h[27m[m[38;5;252m[48;5;234m[H[2J[?25l[1;1H[38;5;208m[48;5;235m1   [m[38;5;252m[48;5;234m[38;5;81m[48;5;236mad[m[38;5;252m[48;5;234m[48;5;236m                                                                                              [m[38;5;252m[48;5;234m[2;1H[38;5;243m[48;5;235m  1 [m[38;5;252m[48;5;234m[38;5;59m# Please enter the commit message for your changes. Lines starting[m[38;5;252m[48;5;234m
+[38;5;243m[48;5;235m  2 [m[38;5;252m[48;5;234m[38;5;59m# with '#' will be ignored, and an empty message aborts the commit.[m[38;5;252m[48;5;234m
+[38;5;243m[48;5;235m  3 [m[38;5;252m[48;5;234m[38;5;59m# On branch [m[38;5;252m[48;5;234m[38;5;141mmaster[m[38;5;252m[48;5;234m
+[38;5;243m[48;5;235m  4 [m[38;5;252m[48;5;234m[38;5;59m# Your branch is up-to-date with '[m[38;5;252m[48;5;234m[38;5;141morigin/master[m[38;5;252m[48;5;234m[38;5;59m'.[m[38;5;252m[48;5;234m
+[38;5;243m[48;5;235m  5 [m[38;5;252m[48;5;234m[38;5;59m#[m[38;5;252m[48;5;234m
+[38;5;243m[48;5;235m  6 [m[38;5;252m[48;5;234m[38;5;59m# [m[38;5;252m[48;5;234m[38;5;148mChanges to be committed:[m[38;5;252m[48;5;234m
+[38;5;243m[48;5;235m  7 [m[38;5;252m[48;5;234m[38;5;59m#       [m[38;5;252m[48;5;234m[38;5;81mnew file[m[38;5;252m[48;5;234m[38;5;59m: [m[38;5;252m[48;5;234m[38;5;141m  public/06.txt[m[38;5;252m[48;5;234m
+[38;5;243m[48;5;235m  8 [m[38;5;252m[48;5;234m[38;5;59m#       [m[38;5;252m[48;5;234m[38;5;81mnew file[m[38;5;252m[48;5;234m[38;5;59m: [m[38;5;252m[48;5;234m[38;5;141m  terminal.log[m[38;5;252m[48;5;234m
+[38;5;243m[48;5;235m  9 [m[38;5;252m[48;5;234m[38;5;59m#[m[38;5;252m[48;5;234m
+[38;5;237m~                                                                                                   [12;1H~                                                                                                   [13;1H~                                                                                                   [14;1H~                                                                                                   [15;1H~                                                                                                   [16;1H~                                                                                                   [17;1H~                                                                                                   [18;1H~                                                                                                   [19;1H~                                                                                                   [20;1H~                                                                                                   [21;1H~                                                                                                   [22;1H~                                                                                                   [23;1H~                                                                                                   [24;1H~                                                                                                   [25;1H~                                                                                                   [26;1H~                                                                                                   [27;1H~                                                                                                   [28;1H~                                                                                                   [29;1H~                                                                                                   [30;1H~                                                                                                   [31;1H~                                                                                                   [32;1H~                                                                                                   [33;1H~                                                                                                   [34;1H~                                                                                                   [35;1H~                                                                                                   [36;1H~                                                                                                   [37;1H~                                                                                                   [38;1H~                                                                                                   [m[38;5;252m[48;5;234m[39;1H[7m[38;5;59m[48;5;234m.git/COMMIT_EDITMSG [+]                                                           1,2            All[1;6H[?12l[?25h[?25l[?12l[?25h[?25l[m[38;5;252m[48;5;234m[40;90H:[1;6H[40;90H[K[40;1H:[?2004h[?12l[?25hq[?25l[40;2H[K[40;2H[?12l[?25h [?25l[1;6H[?12l[?25h[?25l[40;90H:[1;6H[40;90H[K[40;1H:[?2004h[?12l[?25hwa[?25l[40;3H[K[40;3H[?12l[?25h[?25l[40;2H[K[40;2H[?12l[?25h [?25l[1;6H[?12l[?25h[?25l[40;90H:[1;6H[40;90H[K[40;1H:[?2004h[?12l[?25hqa![?25l[?1002l[?2004l[40;1H[K[40;1H[?2004l[?1l>[?12l[?25h[?1049lAborting commit due to empty commit message.
+bash-3.2$ "[Kco[K[Kecho "Sorry. I keep forgetting to commit inline.  Opening Vim really messes with the logig ng [K[K[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kgi ng of commands."
+Sorry. I keep forgetting to commit inline.  Opening Vim really messes with the logging of commands.
+bash-3.2$ git commit -m '[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kgit commit --help
+[?1049h[?1h=GIT-COMMIT(1)                           Git Manual                           GIT-COMMIT(1)
+
+[1mNAME[0m
+       git-commit - Record changes to the repository
+
+[1mSYNOPSIS[0m
+       [4mgit[24m [4mcommit[24m [-a | --interactive | --patch] [-s] [-v] [-u<mode>] [--amend]
+                  [--dry-run] [(-c | -C | --fixup | --squash) <commit>]
+                  [-F <file> | -m <msg>] [--reset-author] [--allow-empty]
+                  [--allow-empty-message] [--no-verify] [-e] [--author=<author>]
+                  [--date=<date>] [--cleanup=<mode>] [--[no-]status]
+                  [-i | -o] [-S[<keyid>]] [--] [<file>...]
+
+[1mDESCRIPTION[0m
+       Stores the current contents of the index in a new commit along with a log message
+       from the user describing the changes.
+
+       The content to be added can be specified in several ways:
+
+        1. by using [4mgit[24m [4madd[24m to incrementally "add" changes to the index before using the
+           [4mcommit[24m command (Note: even modified files must be "added");
+
+        2. by using [4mgit[24m [4mrm[24m to remove files from the working tree and the index, again
+           before using the [4mcommit[24m command;
+
+        3. by listing files as arguments to the [4mcommit[24m command, in which case the commit
+           will ignore changes staged in the index, and instead record the current content
+           of the listed files (which must already be known to Git);
+
+        4. by using the -a switch with the [4mcommit[24m command to automatically "add" changes
+           from all known files (i.e. all files that are already listed in the index) and
+           to automatically "rm" files in the index that have been removed from the
+           working tree, and then perform the actual commit;
+
+        5. by using the --interactive or --patch switches with the [4mcommit[24m command to
+           decide one by one which files or hunks should be part of the commit, before
+           finalizing the operation. See the "Interactive Mode" section of [1mgit-add[0m(1) to
+           learn how to operate these modes.
+
+:[K[K/[Kee[Kmm[Kpp[Ktt[Kyy[K[1;1HGIT-COMMIT(1)                           Git Manual                           GIT-COMMIT(1)
+[2;1H
+[3;1H[1mNAME[0m
+[4;1H       git-commit - Record changes to the repository
+[5;1H
+[6;1H[1mSYNOPSIS[0m
+[7;1H       [4mgit[24m [4mcommit[24m [-a | --interactive | --patch] [-s] [-v] [-u<mode>] [--amend]
+[8;1H                  [--dry-run] [(-c | -C | --fixup | --squash) <commit>]
+[9;1H                  [-F <file> | -m <msg>] [--reset-author] [--allow-empty]
+[10;1H                  [--allow-empty-message] [--no-verify] [-e] [--author=<author>]
+[11;1H                  [--date=<date>] [--cleanup=<mode>] [--[no-]status]
+[12;1H                  [-i | -o] [-S[<keyid>]] [--] [<file>...]
+[13;1H
+[14;1H[1mDESCRIPTION[0m
+[15;1H       Stores the current contents of the index in a new commit along with a log message
+[16;1H       from the user describing the changes.
+[17;1H
+[18;1H       The content to be added can be specified in several ways:
+[19;1H
+[20;1H        1. by using [4mgit[24m [4madd[24m to incrementally "add" changes to the index before using the
+[21;1H           [4mcommit[24m command (Note: even modified files must be "added");
+[22;1H
+[23;1H        2. by using [4mgit[24m [4mrm[24m to remove files from the working tree and the index, again
+[24;1H           before using the [4mcommit[24m command;
+[25;1H
+[26;1H        3. by listing files as arguments to the [4mcommit[24m command, in which case the commit
+[27;1H           will ignore changes staged in the index, and instead record the current content
+[28;1H           of the listed files (which must already be known to Git);
+[29;1H
+[30;1H        4. by using the -a switch with the [4mcommit[24m command to automatically "add" changes
+[31;1H           from all known files (i.e. all files that are already listed in the index) and
+[32;1H           to automatically "rm" files in the index that have been removed from the
+[33;1H           working tree, and then perform the actual commit;
+[34;1H
+[35;1H        5. by using the --interactive or --patch switches with the [4mcommit[24m command to
+[36;1H           decide one by one which files or hunks should be part of the commit, before
+[37;1H           finalizing the operation. See the "Interactive Mode" section of [1mgit-add[0m(1) to
+[38;1H           learn how to operate these modes.
+[39;1H
+[40;1H[1;1HGIT-COMMIT(1)                           Git Manual                           GIT-COMMIT(1)
+[2;1H
+[3;1H[1mNAME[0m
+[4;1H       git-commit - Record changes to the repository
+[5;1H
+[6;1H[1mSYNOPSIS[0m
+[7;1H       [4mgit[24m [4mcommit[24m [-a | --interactive | --patch] [-s] [-v] [-u<mode>] [--amend]
+[8;1H                  [--dry-run] [(-c | -C | --fixup | --squash) <commit>]
+[9;1H                  [-F <file> | -m <msg>] [--reset-author] [--allow-[7mempty[27m]
+[10;1H                  [--allow-[7mempty[27m-message] [--no-verify] [-e] [--author=<author>]
+[11;1H                  [--date=<date>] [--cleanup=<mode>] [--[no-]status]
+[12;1H                  [-i | -o] [-S[<keyid>]] [--] [<file>...]
+[13;1H
+[14;1H[1mDESCRIPTION[0m
+[15;1H       Stores the current contents of the index in a new commit along with a log message
+[16;1H       from the user describing the changes.
+[17;1H
+[18;1H       The content to be added can be specified in several ways:
+[19;1H
+[20;1H        1. by using [4mgit[24m [4madd[24m to incrementally "add" changes to the index before using the
+[21;1H           [4mcommit[24m command (Note: even modified files must be "added");
+[22;1H
+[23;1H        2. by using [4mgit[24m [4mrm[24m to remove files from the working tree and the index, again
+[24;1H           before using the [4mcommit[24m command;
+[25;1H
+[26;1H        3. by listing files as arguments to the [4mcommit[24m command, in which case the commit
+[27;1H           will ignore changes staged in the index, and instead record the current content
+[28;1H           of the listed files (which must already be known to Git);
+[29;1H
+[30;1H        4. by using the -a switch with the [4mcommit[24m command to automatically "add" changes
+[31;1H           from all known files (i.e. all files that are already listed in the index) and
+[32;1H           to automatically "rm" files in the index that have been removed from the
+[33;1H           working tree, and then perform the actual commit;
+[34;1H
+[35;1H        5. by using the --interactive or --patch switches with the [4mcommit[24m command to
+[36;1H           decide one by one which files or hunks should be part of the commit, before
+[37;1H           finalizing the operation. See the "Interactive Mode" section of [1mgit-add[0m(1) to
+[38;1H           learn how to operate these modes.
+[39;1H
+[40;1H       The --dry-run option can be used to obtain a summary of what is included by any of
+       the above for the next commit by giving the same set of parameters (options and
+       paths).
+
+       If you make a commit and then find a mistake immediately after that, you can
+       recover from it with [4mgit[24m [4mreset[24m.
+
+[1mOPTIONS[0m
+:[K[K[?1l>[?1049lbash-3.2$ git commit --allow-empty
+[?1000h[?2004h[?1049h[?1h=[?2004h[1;40r[?12;25h[?12l[?25h[27m[m[38;5;252m[48;5;234m[H[2J[?25l[40;1H"~/Ideas/blog/site/.git/COMMIT_EDITMSG" 13L, 353C[2;1H▽[6n[2;1H  [1;1H[>c[1;1H[38;5;208m[48;5;235m1   [m[38;5;252m[48;5;234m[48;5;236m                                                                                                [m[38;5;252m[48;5;234m[2;1H[38;5;243m[48;5;235m  1 [m[38;5;252m[48;5;234m[38;5;59m# Please enter the commit message for your changes. Lines starting[m[38;5;252m[48;5;234m
+[38;5;243m[48;5;235m  2 [m[38;5;252m[48;5;234m[38;5;59m# with '#' will be ignored, and an empty message aborts the commit.[m[38;5;252m[48;5;234m
+[38;5;243m[48;5;235m  3 [m[38;5;252m[48;5;234m[38;5;59m# On branch [m[38;5;252m[48;5;234m[38;5;141mmaster[m[38;5;252m[48;5;234m
+[38;5;243m[48;5;235m  4 [m[38;5;252m[48;5;234m[38;5;59m# Your branch is up-to-date with '[m[38;5;252m[48;5;234m[38;5;141morigin/master[m[38;5;252m[48;5;234m[38;5;59m'.[m[38;5;252m[48;5;234m
+[38;5;243m[48;5;235m  5 [m[38;5;252m[48;5;234m[38;5;59m#[m[38;5;252m[48;5;234m
+[38;5;243m[48;5;235m  6 [m[38;5;252m[48;5;234m[38;5;59m# [m[38;5;252m[48;5;234m[38;5;148mChanges to be committed:[m[38;5;252m[48;5;234m
+[38;5;243m[48;5;235m  7 [m[38;5;252m[48;5;234m[38;5;59m#       [m[38;5;252m[48;5;234m[38;5;81mnew file[m[38;5;252m[48;5;234m[38;5;59m: [m[38;5;252m[48;5;234m[38;5;141m  public/06.txt[m[38;5;252m[48;5;234m
+[38;5;243m[48;5;235m  8 [m[38;5;252m[48;5;234m[38;5;59m#       [m[38;5;252m[48;5;234m[38;5;81mnew file[m[38;5;252m[48;5;234m[38;5;59m: [m[38;5;252m[48;5;234m[38;5;141m  terminal.log[m[38;5;252m[48;5;234m
+[38;5;243m[48;5;235m  9 [m[38;5;252m[48;5;234m[38;5;59m#[m[38;5;252m[48;5;234m
+[38;5;243m[48;5;235m 10 [m[38;5;252m[48;5;234m[38;5;59m# [m[38;5;252m[48;5;234m[38;5;148mChanges not staged for commit:[m[38;5;252m[48;5;234m
+[38;5;243m[48;5;235m 11 [m[38;5;252m[48;5;234m[38;5;59m#       [m[38;5;252m[48;5;234m[38;5;81mmodified[m[38;5;252m[48;5;234m[38;5;59m: [m[38;5;252m[48;5;234m[38;5;141m  terminal.log[m[38;5;252m[48;5;234m
+[38;5;243m[48;5;235m 12 [m[38;5;252m[48;5;234m[38;5;59m#[m[38;5;252m[48;5;234m
+[38;5;237m~                                                                                                   [15;1H~                                                                                                   [16;1H~                                                                                                   [17;1H~                                                                                                   [18;1H~                                                                                                   [19;1H~                                                                                                   [20;1H~                                                                                                   [21;1H~                                                                                                   [22;1H~                                                                                                   [23;1H~                                                                                                   [24;1H~                                                                                                   [25;1H~                                                                                                   [26;1H~                                                                                                   [27;1H~                                                                                                   [28;1H~                                                                                                   [29;1H~                                                                                                   [30;1H~                                                                                                   [31;1H~                                                                                                   [32;1H~                                                                                                   [33;1H~                                                                                                   [34;1H~                                                                                                   [35;1H~                                                                                                   [36;1H~                                                                                                   [37;1H~                                                                                                   [38;1H~                                                                                                   [m[38;5;252m[48;5;234m[39;1H[7m[38;5;59m[48;5;234m.git/COMMIT_EDITMSG                                                               1,0-1          All[1;5H[?12l[?25h[?1000l[?1002h[?25l[m[38;5;252m[48;5;234m[40;90H:[1;5H[40;1H[K[40;1H:[?2004h[?12l[?25h[?25l[40;1H[K[1;5H[?12l[?25h[?25l[40;90H:[1;5H[40;90H[K[40;1H:[?2004h[?12l[?25hq![?25l[?1002l[?2004l[40;1H[K[40;1H[?2004l[?1l>[?12l[?25h[?1049lAborting commit due to empty commit message.
+bash-3.2$ git commit -m '' --allow-empty
+Aborting commit due to empty commit message.
+bash-3.2$ git commit -m '' --allow-empty
+bash-3.2$ git commit --e[Khelp
+[?1049h[?1h=GIT-COMMIT(1)                           Git Manual                           GIT-COMMIT(1)
+
+[1mNAME[0m
+       git-commit - Record changes to the repository
+
+[1mSYNOPSIS[0m
+       [4mgit[24m [4mcommit[24m [-a | --interactive | --patch] [-s] [-v] [-u<mode>] [--amend]
+                  [--dry-run] [(-c | -C | --fixup | --squash) <commit>]
+                  [-F <file> | -m <msg>] [--reset-author] [--allow-empty]
+                  [--allow-empty-message] [--no-verify] [-e] [--author=<author>]
+                  [--date=<date>] [--cleanup=<mode>] [--[no-]status]
+                  [-i | -o] [-S[<keyid>]] [--] [<file>...]
+
+[1mDESCRIPTION[0m
+       Stores the current contents of the index in a new commit along with a log message
+       from the user describing the changes.
+
+       The content to be added can be specified in several ways:
+
+        1. by using [4mgit[24m [4madd[24m to incrementally "add" changes to the index before using the
+           [4mcommit[24m command (Note: even modified files must be "added");
+
+        2. by using [4mgit[24m [4mrm[24m to remove files from the working tree and the index, again
+           before using the [4mcommit[24m command;
+
+        3. by listing files as arguments to the [4mcommit[24m command, in which case the commit
+           will ignore changes staged in the index, and instead record the current content
+           of the listed files (which must already be known to Git);
+
+        4. by using the -a switch with the [4mcommit[24m command to automatically "add" changes
+           from all known files (i.e. all files that are already listed in the index) and
+           to automatically "rm" files in the index that have been removed from the
+           working tree, and then perform the actual commit;
+
+        5. by using the --interactive or --patch switches with the [4mcommit[24m command to
+           decide one by one which files or hunks should be part of the commit, before
+           finalizing the operation. See the "Interactive Mode" section of [1mgit-add[0m(1) to
+           learn how to operate these modes.
+
+:[K[K/[Kee[Kmm[Kpp[Ktt[Kyy[K[1;1HGIT-COMMIT(1)                           Git Manual                           GIT-COMMIT(1)
+[2;1H
+[3;1H[1mNAME[0m
+[4;1H       git-commit - Record changes to the repository
+[5;1H
+[6;1H[1mSYNOPSIS[0m
+[7;1H       [4mgit[24m [4mcommit[24m [-a | --interactive | --patch] [-s] [-v] [-u<mode>] [--amend]
+[8;1H                  [--dry-run] [(-c | -C | --fixup | --squash) <commit>]
+[9;1H                  [-F <file> | -m <msg>] [--reset-author] [--allow-empty]
+[10;1H                  [--allow-empty-message] [--no-verify] [-e] [--author=<author>]
+[11;1H                  [--date=<date>] [--cleanup=<mode>] [--[no-]status]
+[12;1H                  [-i | -o] [-S[<keyid>]] [--] [<file>...]
+[13;1H
+[14;1H[1mDESCRIPTION[0m
+[15;1H       Stores the current contents of the index in a new commit along with a log message
+[16;1H       from the user describing the changes.
+[17;1H
+[18;1H       The content to be added can be specified in several ways:
+[19;1H
+[20;1H        1. by using [4mgit[24m [4madd[24m to incrementally "add" changes to the index before using the
+[21;1H           [4mcommit[24m command (Note: even modified files must be "added");
+[22;1H
+[23;1H        2. by using [4mgit[24m [4mrm[24m to remove files from the working tree and the index, again
+[24;1H           before using the [4mcommit[24m command;
+[25;1H
+[26;1H        3. by listing files as arguments to the [4mcommit[24m command, in which case the commit
+[27;1H           will ignore changes staged in the index, and instead record the current content
+[28;1H           of the listed files (which must already be known to Git);
+[29;1H
+[30;1H        4. by using the -a switch with the [4mcommit[24m command to automatically "add" changes
+[31;1H           from all known files (i.e. all files that are already listed in the index) and
+[32;1H           to automatically "rm" files in the index that have been removed from the
+[33;1H           working tree, and then perform the actual commit;
+[34;1H
+[35;1H        5. by using the --interactive or --patch switches with the [4mcommit[24m command to
+[36;1H           decide one by one which files or hunks should be part of the commit, before
+[37;1H           finalizing the operation. See the "Interactive Mode" section of [1mgit-add[0m(1) to
+[38;1H           learn how to operate these modes.
+[39;1H
+[40;1H[1;1HGIT-COMMIT(1)                           Git Manual                           GIT-COMMIT(1)
+[2;1H
+[3;1H[1mNAME[0m
+[4;1H       git-commit - Record changes to the repository
+[5;1H
+[6;1H[1mSYNOPSIS[0m
+[7;1H       [4mgit[24m [4mcommit[24m [-a | --interactive | --patch] [-s] [-v] [-u<mode>] [--amend]
+[8;1H                  [--dry-run] [(-c | -C | --fixup | --squash) <commit>]
+[9;1H                  [-F <file> | -m <msg>] [--reset-author] [--allow-[7mempty[27m]
+[10;1H                  [--allow-[7mempty[27m-message] [--no-verify] [-e] [--author=<author>]
+[11;1H                  [--date=<date>] [--cleanup=<mode>] [--[no-]status]
+[12;1H                  [-i | -o] [-S[<keyid>]] [--] [<file>...]
+[13;1H
+[14;1H[1mDESCRIPTION[0m
+[15;1H       Stores the current contents of the index in a new commit along with a log message
+[16;1H       from the user describing the changes.
+[17;1H
+[18;1H       The content to be added can be specified in several ways:
+[19;1H
+[20;1H        1. by using [4mgit[24m [4madd[24m to incrementally "add" changes to the index before using the
+[21;1H           [4mcommit[24m command (Note: even modified files must be "added");
+[22;1H
+[23;1H        2. by using [4mgit[24m [4mrm[24m to remove files from the working tree and the index, again
+[24;1H           before using the [4mcommit[24m command;
+[25;1H
+[26;1H        3. by listing files as arguments to the [4mcommit[24m command, in which case the commit
+[27;1H           will ignore changes staged in the index, and instead record the current content
+[28;1H           of the listed files (which must already be known to Git);
+[29;1H
+[30;1H        4. by using the -a switch with the [4mcommit[24m command to automatically "add" changes
+[31;1H           from all known files (i.e. all files that are already listed in the index) and
+[32;1H           to automatically "rm" files in the index that have been removed from the
+[33;1H           working tree, and then perform the actual commit;
+[34;1H
+[35;1H        5. by using the --interactive or --patch switches with the [4mcommit[24m command to
+[36;1H           decide one by one which files or hunks should be part of the commit, before
+[37;1H           finalizing the operation. See the "Interactive Mode" section of [1mgit-add[0m(1) to
+[38;1H           learn how to operate these modes.
+[39;1H
+[40;1H       The --dry-run option can be used to obtain a summary of what is included by any of
+       the above for the next commit by giving the same set of parameters (options and
+       paths).
+
+       If you make a commit and then find a mistake immediately after that, you can
+       recover from it with [4mgit[24m [4mreset[24m.
+
+[1mOPTIONS[0m
+:[K[K/[K       -a, --all
+:[K[K/[K...skipping...
+       --allow-[7mempty[27m
+           Usually recording a commit that has the exact same tree as its sole parent
+           commit is a mistake, and the command prevents you from making such a commit.
+           This option bypasses the safety, and is primarily for use by foreign SCM
+           interface scripts.
+
+       --allow-[7mempty[27m-message
+           Like --allow-[7mempty[27m this command is primarily for use by foreign SCM interface
+           scripts. It allows you to create a commit with an [7mempty[27m commit message without
+           using plumbing commands like [1mgit-commit-tree[0m(1).
+
+       --cleanup=<mode>
+           This option determines how the supplied commit message should be cleaned up
+           before committing. The [4m<mode>[24m can be strip, whitespace, verbatim, scissors or
+           default.
+
+           strip
+               Strip leading and trailing [7mempty[27m lines, trailing whitespace, commentary and
+               collapse consecutive [7mempty[27m lines.
+
+           whitespace
+               Same as strip except #commentary is not removed.
+
+           verbatim
+               Do not change the message at all.
+
+           scissors
+               Same as whitespace, except that everything from (and including) the line "#
+               ------------------------ >8 ------------------------" is truncated if the
+               message is to be edited. "#" can be customized with core.commentChar.
+
+           default
+               Same as strip if the message is to be edited. Otherwise whitespace.
+
+           The default can be changed by the [4mcommit.cleanup[24m configuration variable (see
+           [1mgit-config[0m(1)).
+
+       -e, --edit
+           The message taken from file with -F, command line with -m, and from commit
+:[K[K[?1l>[?1049lbash-3.2$ git commit --allow-empty-message
+[?1000h[?2004h[?1049h[?1h=[?2004h[1;40r[?12;25h[?12l[?25h[27m[m[38;5;252m[48;5;234m[H[2J[?25l[40;1H"~/Ideas/blog/site/.git/COMMIT_EDITMSG" 13L, 353C[2;1H▽[6n[2;1H  [1;1H[>c[1;1H[38;5;208m[48;5;235m1   [m[38;5;252m[48;5;234m[48;5;236m                                                                                                [m[38;5;252m[48;5;234m[2;1H[38;5;243m[48;5;235m  1 [m[38;5;252m[48;5;234m[38;5;59m# Please enter the commit message for your changes. Lines starting[m[38;5;252m[48;5;234m
+[38;5;243m[48;5;235m  2 [m[38;5;252m[48;5;234m[38;5;59m# with '#' will be ignored, and an empty message aborts the commit.[m[38;5;252m[48;5;234m
+[38;5;243m[48;5;235m  3 [m[38;5;252m[48;5;234m[38;5;59m# On branch [m[38;5;252m[48;5;234m[38;5;141mmaster[m[38;5;252m[48;5;234m
+[38;5;243m[48;5;235m  4 [m[38;5;252m[48;5;234m[38;5;59m# Your branch is up-to-date with '[m[38;5;252m[48;5;234m[38;5;141morigin/master[m[38;5;252m[48;5;234m[38;5;59m'.[m[38;5;252m[48;5;234m
+[38;5;243m[48;5;235m  5 [m[38;5;252m[48;5;234m[38;5;59m#[m[38;5;252m[48;5;234m
+[38;5;243m[48;5;235m  6 [m[38;5;252m[48;5;234m[38;5;59m# [m[38;5;252m[48;5;234m[38;5;148mChanges to be committed:[m[38;5;252m[48;5;234m
+[38;5;243m[48;5;235m  7 [m[38;5;252m[48;5;234m[38;5;59m#       [m[38;5;252m[48;5;234m[38;5;81mnew file[m[38;5;252m[48;5;234m[38;5;59m: [m[38;5;252m[48;5;234m[38;5;141m  public/06.txt[m[38;5;252m[48;5;234m
+[38;5;243m[48;5;235m  8 [m[38;5;252m[48;5;234m[38;5;59m#       [m[38;5;252m[48;5;234m[38;5;81mnew file[m[38;5;252m[48;5;234m[38;5;59m: [m[38;5;252m[48;5;234m[38;5;141m  terminal.log[m[38;5;252m[48;5;234m
+[38;5;243m[48;5;235m  9 [m[38;5;252m[48;5;234m[38;5;59m#[m[38;5;252m[48;5;234m
+[38;5;243m[48;5;235m 10 [m[38;5;252m[48;5;234m[38;5;59m# [m[38;5;252m[48;5;234m[38;5;148mChanges not staged for commit:[m[38;5;252m[48;5;234m
+[38;5;243m[48;5;235m 11 [m[38;5;252m[48;5;234m[38;5;59m#       [m[38;5;252m[48;5;234m[38;5;81mmodified[m[38;5;252m[48;5;234m[38;5;59m: [m[38;5;252m[48;5;234m[38;5;141m  terminal.log[m[38;5;252m[48;5;234m
+[38;5;243m[48;5;235m 12 [m[38;5;252m[48;5;234m[38;5;59m#[m[38;5;252m[48;5;234m
+[38;5;237m~                                                                                                   [15;1H~                                                                                                   [16;1H~                                                                                                   [17;1H~                                                                                                   [18;1H~                                                                                                   [19;1H~                                                                                                   [20;1H~                                                                                                   [21;1H~                                                                                                   [22;1H~                                                                                                   [23;1H~                                                                                                   [24;1H~                                                                                                   [25;1H~                                                                                                   [26;1H~                                                                                                   [27;1H~                                                                                                   [28;1H~                                                                                                   [29;1H~                                                                                                   [30;1H~                                                                                                   [31;1H~                                                                                                   [32;1H~                                                                                                   [33;1H~                                                                                                   [34;1H~                                                                                                   [35;1H~                                                                                                   [36;1H~                                                                                                   [37;1H~                                                                                                   [38;1H~                                                                                                   [m[38;5;252m[48;5;234m[39;1H[7m[38;5;59m[48;5;234m.git/COMMIT_EDITMSG                                                               1,0-1          All[1;5H[?12l[?25h[?1000l[?1002h[?25l[m[38;5;252m[48;5;234m[40;90H:[1;5H[40;1H[K[40;1H:[?2004h[?12l[?25hq![?25l[?1002l[?2004l[40;1H[K[40;1H[?2004l[?1l>[?12l[?25h[?1049l[master a8d4115] 
+ 2 files changed, 82 insertions(+)
+ create mode 100644 public/06.txt
+ create mode 100644 terminal.log
+bash-3.2$ git push
+Counting objects: 5, done.
+Delta compression using up to 8 threads.
+Compressing objects:  25% (1/4)   Compressing objects:  50% (2/4)   Compressing objects:  75% (3/4)   Compressing objects: 100% (4/4)   Compressing objects: 100% (4/4), done.
+Writing objects:  20% (1/5)   Writing objects:  40% (2/5)   Writing objects:  60% (3/5)   Writing objects:  80% (4/5)   Writing objects: 100% (5/5)   Writing objects: 100% (5/5), 1.27 KiB | 0 bytes/s, done.
+Total 5 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas:   0% (0/2)   [Kremote: Resolving deltas:  50% (1/2)   [Kremote: Resolving deltas: 100% (2/2)   [Kremote: Resolving deltas: 100% (2/2), completed with 2 local objects.[K
+To git@github.com:reergymerej/silver-goggles.git
+   6f9037f..a8d4115  master -> master
+bash-3.2$ 
