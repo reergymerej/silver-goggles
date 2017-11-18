@@ -1,0 +1,8 @@
+
+Fri Nov 17 21:37:40 CST 2017
+
+This is a test to verify that new entries show up.  I also just committed the
+log for the terminal.  Another problem has come up.  Those logs need to be
+tied to the entries.  For now, we'll just manually rename the to match the
+filename of the entry it corresponds to.
+

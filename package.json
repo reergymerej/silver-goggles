@@ -9,7 +9,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "yarn entries && react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "entries": "./scripts/index-entries.js",
     "eject": "react-scripts eject"
