@@ -28,3 +28,166 @@ As an aside, it's fun to start a project, even if it seems dumb, because you
 start to get all these other ideas as you go along.  Another point is you are
 never quite sure what the idea is at first.  It invariably changes as you go
 along, which is part of what I want to capture here.
+
+...
+
+I know I can redirect the terminal output using `somecommand > file.txt`, but
+how can I do it while also reading?
+
+https://askubuntu.com/questions/420981/how-do-i-save-terminal-output-to-a-file
+
+`tee` seems a good candidate, but I've never used it.  I only remember reading
+about it in the Node docs.
+
+
+```
+man tee
+
+
+DESCRIPTION
+     The tee utility copies standard input to standard output, making a copy
+     in zero or more files.  The output is unbuffered.
+```
+
+So something like
+
+```
+printenv | tee output.txt
+```
+
+will show the environment variables _and_ save the output to the log.  That's
+cool for a single command, but I don't want to pipe everything.  I'll surely
+forget.
+
+After searching a bit, I've seen `script` referenced a few times.  I wonder if
+it would be useful to also log the things I'm searching and reading?  I bet
+so.  We'll have to figure out a way to include web history.
+
+Let's see what `script` is all about.
+
+
+```
+man script
+
+
+DESCRIPTION
+     The script utility makes a typescript of everything printed on your terminal.  It is
+     useful for students who need a hardcopy record of an interactive session as proof of
+     an assignment, as the typescript file can be printed out later with lpr(1).
+
+```
+
+Wow.  This is pretty close to perfect, except the result looks like garbage.
+There's a log of formatting and whatnot in it.  Still...
+
+`script ./terminal.log` starts dumping all the output to `./terminal.log`
+until I call `exit`.  Pretty good.  Now how do we clear it up?
+
+https://superuser.com/questions/236930/how-to-clean-up-output-of-linux-script-command
+
+`col -bfp < terminal.log` seems pretty decent.  It fixes most of the
+formatting, but it looks like you can still see some weirdness like when I
+compulsively clear the terminal with `cmd+k`.
+
+Let's to another quick test to see what it outputs.
+
+Here's the unprocessed version.
+
+```
+Script started on Fri Nov 17 19:08:34 2017
+[?1034hbash-3.2$ e[Kecho "hello"
+hello
+bash-3.2$ ls
+site		terminal.log
+bash-3.2$ cd site
+bash-3.2$ ls
+README.md	node_modules	package.json	public		src		yarn.lock
+bash-3.2$ man tee
+[?1049h[?1h=
+TEE(1)                    BSD General Commands Manual                   TEE(1)
+
+[1mNAME[0m
+     [1mtee[0m -- pipe fitting
+
+[1mSYNOPSIS[0m
+     [1mtee[0m [[1m-ai[0m] [[4mfile[24m [4m...[24m]
+
+[1mDESCRIPTION[0m
+     The [1mtee[0m utility copies standard input to standard output, making a copy in zero or
+     more files.  The output is unbuffered.
+
+     The following options are available:
+
+     [1m-a[0m      Append the output to the files rather than overwriting them.
+
+     [1m-i[0m      Ignore the SIGINT signal.
+
+     The following operands are available:
+
+     file  A pathname of an output [4mfile[24m.
+
+     The [1mtee[0m utility takes the default action for all signals, except in the event of the
+     [1m-i[0m option.
+
+     The [1mtee[0m utility exits 0 on success, and >0 if an error occurs.
+
+[1mSTANDARDS[0m
+     The [1mtee[0m function is expected to be POSIX IEEE Std 1003.2 (``POSIX.2'') compatible.
+
+BSD                              June 6, 1993                              BSD
+[7m(END)[27m[K[K[?1l>[?1049lbash-3.2$ exit
+exit
+
+Script done on Fri Nov 17 19:10:19 2017
+```
+
+And after running through `col -bfp < terminal.log > terminal.log.clean`...
+```
+Script started on Fri Nov 17 19:08:34 2017
+?1034hbash-3.2$ Kecho "hello"
+hello
+bash-3.2$ ls
+site		terminal.log
+bash-3.2$ cd site
+bash-3.2$ ls
+README.md	node_modules	package.json	public		src		yarn.lock
+bash-3.2$ man tee
+?1049h?1h
+TEE(1)			  BSD General Commands Manual			TEE(1)
+
+1mNAME0m
+     1mtee0m -- pipe fitting
+
+1mSYNOPSIS0m
+     1mtee0m [1m-ai0m] [4mfile24m 4m...24m]
+
+1mDESCRIPTION0m
+     The 1mtee0m utility copies standard input to standard output, making a copy in zero or
+     more files.  The output is unbuffered.
+
+     The following options are available:
+
+     1m-a0m	 Append the output to the files rather than overwriting them.
+
+     1m-i0m	 Ignore the SIGINT signal.
+
+     The following operands are available:
+
+     file  A pathname of an output 4mfile24m.
+
+     The 1mtee0m utility takes the default action for all signals, except in the event of the
+     1m-i0m option.
+
+     The 1mtee0m utility exits 0 on success, and >0 if an error occurs.
+
+1mSTANDARDS0m
+     The 1mtee0m function is expected to be POSIX IEEE Std 1003.2 (``POSIX.2'') compatible.
+
+BSD				 June 6, 1993				   BSD
+K?1l?1049lbash-3.2$ exit
+exit
+
+Script done on Fri Nov 17 19:10:19 2017
+```
+
+This is good.  It's better than nothing for sure.
