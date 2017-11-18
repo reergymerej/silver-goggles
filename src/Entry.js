@@ -6,11 +6,16 @@ const parseCommentary = (commentary) => {
   // These are all just strings.  We have to return them with some indicator of
   // what type of data they are.
   return parts
+    .map(part => {
+      return {
+        type: 'text',
+        value: 'xxx',
+      }
+    })
 }
 
 const TextBlock = (props) => (
   <pre>
-    some text
     {props.value}
   </pre>
 )
@@ -25,8 +30,8 @@ const ParsedCommentary = (props) => {
     <div>
       {
         parsedCommentaryBlocks.map((block, i) => {
-          if (i % 2 === 0) {
-            return <TextBlock />
+          if (block.type === 'text') {
+            return <TextBlock value={block.value} />
           }
           return <GitRefBlock />
         })
