@@ -1,0 +1,75 @@
+
+Sat Nov 18 12:27:26 CST 2017
+
+Now that we're reading the structures, here are the things jumping out:
+
+1.  It's becoming more difficult to create an entry.  It's not exactly hard,
+but I want to make it dummy proof.
+
+2.  Since we're creating an inventory in JSON of the entries (to simulate a
+DB) we don't really _have_ to keep the assets in the public part.  However, I
+dig the graceful degredation.  For whatever reason, if there's no JS, the
+assets are still out there and understandable.  Again, the text commentary is
+the real data.  Everything else is just presentation.  Let's leave the assets
+public so they can exist "on their own."
+
+
+Let's deal with #1 first.  We could script something, but... meh... I don't
+want focus on _how_ the assets are created.  For now, we'll just put a note in
+the README of what to do when starting a new entry.
+
+
+https://stackoverflow.com/questions/3637660/how-to-exclude-file-only-from-root-folder-in-git
+
+ref:git:934b4d9
+
+...
+
+So to support non-js environments, theoretical old webspiders and paranoid
+nerds with text-based browsers, let's change the links in our UI to point to
+the static assets.  If JS is off, the native browser instructions will still
+work.
+
+ref:git:87bc6e2
+
+It works, not let's refactor a bit.
+
+ref:git:ffe7031
+
+Looking good.
+
+...
+
+One of the problems I see a lot is preemptive design.  It generally takes the
+form of a bunch of people who don't really understand the problem, half-paying
+attention, prescribing technical designs geared toward showing the other
+people in the room how smart they are.  That's usually through extensive
+complexity or anticipation of all sorts of scenarios that may (or probably
+_won't_) come up.
+
+This is lame.
+
+It breeds complexity and creates a ton of burden on the system.  Those things
+lead to bugs and systems that almost impossible to comprehend and terrible to
+work in.
+
+I get the appeal, though.  It's fun to brainstorm and think of all the what
+ifs, but it's like a paranoia.  I'm not advocating for driving blind, just
+making small sensible improvements.  Along those lines, I'm sure I could sit
+with a whiteboard or notepad and figure out the optimal data structure for the
+entities we're using here, a system to succinctly reference related assets,
+and a clever way to tie it all together, but there's a very real danger I
+could get stuck in some planning mania.  I'd end up in a frenzy of design and
+eventually have system with lots of complexity, mandated only by my
+imagination.  And I'd probably have lots of oversights, too.
+
+It's fun to do this and I've done it many times, but we're doing something
+different here.  It's all baby steps.  As an example, I know we want to
+reference resources from our commentary somehow, but I'm not sure _how_ we're
+going to do that yet.  I put in some links and a few `ref` notes.  Those have
+evolved naturally to include the _type_ of resource as well as the unique ID,
+so now it's `ref:git:ffe7031`.  The data structure has evolved in a similar
+way as you've seen, just like the way we create new entries and save logs has
+changed due to necessity.  My hope is that allowing things to evolve
+organically like this will provide a much more natural, enjoyable, and stable
+system that one designed beforehand.

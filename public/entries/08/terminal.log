@@ -1,0 +1,157 @@
+Script started on Sat Nov 18 12:40:53 2017
+?1034hbash-3.2$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	31mmodified:   README.mdm
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	31mpublic/entries/08/m
+	31mterminal.logm
+
+no changes added to commit (use "git add" and/or "git commit -a")
+bash-3.2$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	31mmodified:   .gitignorem
+	31mmodified:   README.mdm
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	31mpublic/entries/08/m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+bash-3.2$ git add .gitignore
+bash-3.2$ git ocmKcommit -m 'ignore unclean terminal.log'
+[master 3e10f87] ignore unclean terminal.log
+ 1 file changed, 2 insertions(+)
+bash-3.2$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	31mmodified:   README.mdm
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	31mpublic/entries/08/m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+bash-3.2$ git add .gitignore
+bash-3.2$ git diff --cached
+1mdiff --git a/.gitignore b/.gitignoremm
+1mindex ac050b6..2d26ae5 100644mm
+1m--- a/.gitignoremm
+1m+++ b/.gitignoremm
+36m@@ -20,4 +20,4 @@m mnpm-debug.log*mm
+ yarn-debug.log*mm
+ yarn-error.log*mm
+ mm
+31m-terminal.logmm
+32m+m32m/terminal.logmm
+K?1lbash-3.2$ git commit -m 'ingoreKgnore _ONLY_ terminal.log at root'
+[master 303ed12] ignore _ONLY_ terminal.log at root
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+bash-3.2$ git push
+Counting objects: 6, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 626 bytes | 0 bytes/s, done.
+Total 6 (delta 4), reused 0 (delta 0)
+remote: Resolving deltas: 100% (4/4), completed with 2 local objects.K
+To git@github.com:reergymerej/silver-goggles.git
+   c5bc644..303ed12  master -> master
+bash-3.2$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	31mmodified:   README.mdm
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	31mpublic/entries/08/m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+bash-3.2$ git add README.md
+bash-3.2$ git commit -m 'add notes on how to craeteKeate  Ka new entry'
+[master 934b4d9] add notes on how to create a new entry
+ 1 file changed, 37 insertions(+)
+bash-3.2$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	31mmodified:   src/App.jsm
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	31mpublic/entries/08/m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+bash-3.2$ git add s
+fatal: pathspec 's' did not match any files
+bash-3.2$ git add src/
+bash-3.2$ git commit -m 'use actual link to asKcommentary'
+[master 87bc6e2] use actual link to commentary
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+bash-3.2$ ./scripts/Kindex-entries.js
+bash-3.2$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 2 commits.
+  (use "git push" to publish your local commits)
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	31mmodified:   src/App.jsm
+	31mmodified:   src/entries.jsonm
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	31mpublic/entries/08/m
+	31msrc/ClickableEntry.jsm
+	31msrc/Entry.jsm
+
+no changes added to commit (use "git add" and/or "git commit -a")
+bash-3.2$ git add src
+bash-3.2$ git commit -m 'refactor UI, puKmove components into own Kfiles'
+[master ffe7031] move components into own files
+ 4 files changed, 39 insertions(+), 31 deletions(-)
+ create mode 100644 src/ClickableEntry.js
+ create mode 100644 src/Entry.js
+bash-3.2$ git push
+Counting objects: 14, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (14/14), done.
+Writing objects: 100% (14/14), 3.24 KiB | 0 bytes/s, done.
+Total 14 (delta 8), reused 0 (delta 0)
+remote: Resolving deltas: 100% (8/8), completed with 4 local objects.K
+To git@github.com:reergymerej/silver-goggles.git
+   303ed12..ffe7031  master -> master
+bash-3.2$ exit
+exit
+
+Script done on Sat Nov 18 13:58:56 2017
