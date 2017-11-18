@@ -55,4 +55,23 @@ directory and spit out some JSON the app can use.
 current commit: fb4ee94, fb4ee94aba4a8a6c1dba60d3cfdc3a642bc5eafb
 https://github.com/reergymerej/silver-goggles/commit/fb4ee94
 
+Whoops.  I always forget the shebang for Node.  225841b
 
+https://stackoverflow.com/questions/24253027/node-and-shebang-help-executing-via-command-line
+
+First, we need to read the directory, then we need to spit out JSON with each
+of the file names.  There are many very smart ways to do this, but we don't
+need that.  We just need a fast and easy way.  This is not a permanent or
+performant solution.
+
+It serves us well to stop for a second and talk this through.  I was just
+about to refresh myself on the Node fs API before I rememembered to write what
+I was thinking.  It is very likely I would have spent the rest of the night
+figuring out cool ways to read the files, written some npm module to do it,
+got distracted with npm configurations, and ended up stranded with some half
+assed other chunk of code when bedtime called.
+
+Don't do that.
+
+We've got to constantly keep ourselves in check.  So, pride be damned.  Let's
+find the easiest way to read files already sitting in npm waiting for us.
