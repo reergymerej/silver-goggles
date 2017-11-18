@@ -20,3 +20,13 @@ to package.json.  The movie my wife is watching is ending as is our session!
 Oh no!  I'm panicking.
 
 
+Fri Nov 17 21:53:25 CST 2017
+
+To https://git.heroku.com/silver-goggles.git
+ ! [remote rejected] master -> master (pre-receive hook declined)
+error: failed to push some refs to 'https://git.heroku.com/silver-goggles.git'
+~/Ideas/blog/site$ heroku config:set NODE_MODULES_CACHE=false
+Setting NODE_MODULES_CACHE and r
+
+
+After several rejections, turning off the NODE_MODULES_CACHE let it through.

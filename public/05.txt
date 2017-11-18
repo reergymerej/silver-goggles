@@ -1,0 +1,16 @@
+
+Sat Nov 18 06:44:19 CST 2017
+
+This idea is starting to crystalize.  The problem is anyway.  It is difficult
+to write about code in a useful way.  There is code everywhere and lots of
+articles about it, often accompanied by code snippets or repos, but it seems
+like there could be a better way to do it.  Recording my screen and voice
+would capture everything I want, mistakes and all, but it doesn't result in a
+searchable string of text.
+
+How can we go into "record mode" and capture:
+
+* code as it's written
+* terminal i/o
+* screenshots
+* commentary
