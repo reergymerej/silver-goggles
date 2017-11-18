@@ -1,0 +1,571 @@
+Script started on Fri Nov 17 20:57:18 2017
+?1034hbash-3.2$ pqKwd
+/Users/jeremygreer/Ideas/blog
+bash-3.2$ ls
+site			terminal.log		terminal.log.clean
+bash-3.2$ cd site
+bash-3.2$ ls
+README.md	node_modules	public		yarn.lock
+README.md~	package.json	src
+bash-3.2$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	31mmodified:   README.mdm
+	31mmodified:   src/App.cssm
+	31mmodified:   src/App.jsm
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	31mpublic/03.txtm
+
+no changes added to commit (use "git add" and/or "git commit -a")
+bash-3.2$ git add .
+bash-3.2$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	32mmodified:   README.mdm
+	32mnew file:   public/03.txtm
+	32mmodified:   src/App.cssm
+	32mmodified:   src/App.jsm
+
+bash-3.2$ git commit
+?1000h?2004h?1049h?1h?2004h1;40r?12;25h?12l?25h27mm38;5;252m48;5;234mH2J?25l40;1H"~/Ideas/blog/site/.git/COMMIT_EDITMSG" 12L, 339C2;1H▽6n2;1H  1;1H>c1;1H38;5;243m48;5;235m  8
+  7 m38;5;252m48;5;234m38;5;59m# Please enter the commit message for your changes. Lines startingm38;5;252m48;5;234m
+38;5;243m48;5;235m  6 m38;5;252m48;5;234m38;5;59m# with '#' will be ignored, and an empty message aborts the commit.m38;5;252m48;5;234m
+38;5;243m48;5;235m  5 m38;5;252m48;5;234m38;5;59m# On branch m38;5;252m48;5;234m38;5;141mmasterm38;5;252m48;5;234m
+38;5;243m48;5;235m  4 m38;5;252m48;5;234m38;5;59m# Your branch is up-to-date with 'm38;5;252m48;5;234m38;5;141morigin/masterm38;5;252m48;5;234m38;5;59m'.m38;5;252m48;5;234m
+38;5;243m48;5;235m  3 m38;5;252m48;5;234m38;5;59m#m38;5;252m48;5;234m
+38;5;243m48;5;235m  2 m38;5;252m48;5;234m38;5;59m# m38;5;252m48;5;234m38;5;148mChanges to be committed:m38;5;252m48;5;234m
+38;5;243m48;5;235m  1 m38;5;252m48;5;234m38;5;59m#	 m38;5;252m48;5;234m38;5;81mmodifiedm38;5;252m48;5;234m38;5;59m: m38;5;252m48;5;234m38;5;141m  README.mdm38;5;252m48;5;234m
+38;5;208m48;5;235m9   m38;5;252m48;5;234m38;5;59m48;5;236m# m38;5;252m48;5;234m48;5;236m      m38;5;252m48;5;234m38;5;81m48;5;236mnew filem38;5;252m48;5;234m38;5;59m48;5;236m: m38;5;252m48;5;234m38;5;141m48;5;236m  public/03.txtm38;5;252m48;5;234m48;5;236m							       m38;5;252m48;5;234m10;1H38;5;243m48;5;235m  1 m38;5;252m48;5;234m38;5;59m#	m38;5;252m48;5;234m38;5;81mmodifiedm38;5;252m48;5;234m38;5;59m: m38;5;252m48;5;234m38;5;141m  src/App.cssm38;5;252m48;5;234m
+38;5;243m48;5;235m  2 m38;5;252m48;5;234m38;5;59m#	 m38;5;252m48;5;234m38;5;81mmodifiedm38;5;252m48;5;234m38;5;59m: m38;5;252m48;5;234m38;5;141m  src/App.jsm38;5;252m48;5;234m
+38;5;243m48;5;235m  3 m38;5;252m48;5;234m38;5;59m#m38;5;252m48;5;234m
+38;5;208m48;5;235m1   m38;5;252m48;5;234m48;5;236m							     14;1H~				  m38;5;252m48;5;234m2;3H38;5;243m48;5;235m1			      15;1H~												       16;1H~													17;1H~													 18;1H~ 												  19;1H~												   20;1H~												    21;1H~												     22;1H~												      23;1H~												       24;1H~													25;1H~													 26;1H~ 												  27;1H~												   28;1H~												    29;1H~												     30;1H~												      31;1H~												       32;1H~													33;1H~													 34;1H~ 												  35;1H~												   36;1H~												    37;1H~												     38;1H~												      m38;5;252m48;5;234m39;1H7m38;5;59m48;5;234m.git/COMMIT_EDITMSG								   9,1		  All9;5H?12l?25h?1000l?1002h?25lm38;5;252m48;5;234m40;90Hg9;5H?12l?25h?25l40;90H 9;5H40;90Hgg9;5H40;90H  1;5H
+  2
+  3
+
+  5
+  6
+  7
+  8 m38;5;252m48;5;234m38;5;59m#       m38;5;252m48;5;234m38;5;81mnew filem38;5;252m48;5;234m38;5;59m: m38;5;252m48;5;234m38;5;141m  public/03.txtm38;5;252m48;5;234m9;38HK10;3H38;5;243m48;5;235m9
+ 10
+?25l?1002l?2004l".git/COMMIT_EDITMSG"m12L,;362C1writtenH?12l?25h?25lm38;5;252m48;5;234m40;90Hi1;5H40;90H 1;5H40;1H38;5;186m-- INSERT --m38;5;252m48;5;234m40;13HK39;85H7m38;5;59m48;5;234m1  1;5H?12l?25h?25lm38;5;252m48;5;234m38;5;81m48;5;236mam38;5;252m48;5;234m39;21H7m38;5;59m48;5;234m[+]61C21;6H?12l?25h?25lm38;5;252m48;5;234m38;5;81m48;5;236mdm38;5;252m48;5;234m39;85H7m38;5;59m48;5;234m31;7H?12l?25h?25lm38;5;252m48;5;234m38;5;81m48;5;236mdm38;5;252m48;5;234m39;85H7m38;5;59m48;5;234m41;8H?12l?25h?25lm38;5;252m48;5;234m38;5;81m48;5;236m m38;5;252m48;5;234m39;85H7m38;5;59m48;5;234m51;9H?12l?25h?25lm38;5;252m48;5;234m38;5;81m48;5;236mrm38;5;252m48;5;234m39;85H7m38;5;59m48;5;234m61;10H?12l?25h?25lm38;5;252m48;5;234m38;5;81m48;5;236mem38;5;252m48;5;234m39;85H7m38;5;59m48;5;234m71;11H?12l?25h?25lm38;5;252m48;5;234m38;5;81m48;5;236mam38;5;252m48;5;234m39;85H7m38;5;59m48;5;234m81;12H?12l?25h?25lm38;5;252m48;5;234m38;5;81m48;5;236mdm38;5;252m48;5;234m39;85H7m38;5;59m48;5;234m91;13H?12l?25h?25lm38;5;252m48;5;234m38;5;81m48;5;236mmm38;5;252m48;5;234m39;85H7m38;5;59m48;5;234m101;14H?12l?25h?25lm38;5;252m48;5;234m38;5;81m48;5;236mem38;5;252m48;5;234m39;86H7m38;5;59m48;5;234m11;15H?12l?25h?25lm38;5;252m48;5;23448;5;236m m38;5;252m48;5;234m39;86H7m38;5;59m48;5;234m01;14H?12l?25h?25lm38;5;252m48;5;23448;5;236m m38;5;252m48;5;234m39;85H7m38;5;59m48;5;234m9 1;13H?12l?25h?25lm38;5;252m48;5;23448;5;236m m38;5;252m48;5;234m39;85H7m38;5;59m48;5;234m81;12H?12l?25h?25lm38;5;252m48;5;23448;5;236m m38;5;252m48;5;234m39;85H7m38;5;59m48;5;234m71;11H?12l?25h?25lm38;5;252m48;5;23448;5;236m m38;5;252m48;5;234m39;85H7m38;5;59m48;5;234m61;10H?12l?25h?25lm38;5;252m48;5;23448;5;236m m38;5;252m48;5;234m39;85H7m38;5;59m48;5;234m51;9H?12l?25h?25lm38;5;252m48;5;234m38;5;81m48;5;236mnm38;5;252m48;5;234m39;85H7m38;5;59m48;5;234m61;10H?12l?25h?25lm38;5;252m48;5;234m38;5;81m48;5;236mom38;5;252m48;5;234m39;85H7m38;5;59m48;5;234m71;11H?12l?25h?25lm38;5;252m48;5;234m38;5;81m48;5;236mtm38;5;252m48;5;234m39;85H7m38;5;59m48;5;234m81;12H?12l?25h?25lm38;5;252m48;5;234m38;5;81m48;5;236mem38;5;252m48;5;234m39;85H7m38;5;59m48;5;234m91;13H?12l?25h?25lm38;5;252m48;5;234m38;5;81m48;5;236msm38;5;252m48;5;234m39;85H7m38;5;59m48;5;234m101;14H?12l?25h?25lm38;5;252m48;5;234m38;5;81m48;5;236m m38;5;252m48;5;234m39;86H7m38;5;59m48;5;234m11;15H?12l?25h?25lm38;5;252m48;5;234m38;5;81m48;5;236mtm38;5;252m48;5;234m39;86H7m38;5;59m48;5;234m21;16H?12l?25h?25lm38;5;252m48;5;234m38;5;81m48;5;236mom38;5;252m48;5;234m39;86H7m38;5;59m48;5;234m31;17H?12l?25h?25lm38;5;252m48;5;234m38;5;81m48;5;236m m38;5;252m48;5;234m39;86H7m38;5;59m48;5;234m41;18H?12l?25h?25lm38;5;252m48;5;234m38;5;81m48;5;236mrm38;5;252m48;5;234m39;86H7m38;5;59m48;5;234m51;19H?12l?25h?25lm38;5;252m48;5;234m38;5;81m48;5;236mem38;5;252m48;5;234m39;86H7m38;5;59m48;5;234m61;20H?12l?25h?25lm38;5;252m48;5;234m38;5;81m48;5;236mam38;5;252m48;5;234m39;86H7m38;5;59m48;5;234m71;21H?12l?25h?25lm38;5;252m48;5;234m38;5;81m48;5;236mdm38;5;252m48;5;234m39;86H7m38;5;59m48;5;234m81;22H?12l?25h?25lm38;5;252m48;5;234m38;5;81m48;5;236mmm38;5;252m48;5;234m39;86H7m38;5;59m48;5;234m91;23H?12l?25h?25lm38;5;252m48;5;234m38;5;81m48;5;236mem38;5;252m48;5;234m39;85H7m38;5;59m48;5;234m201;24H?12l?25h?25lm38;5;252m48;5;234m40;1HK39;85H7m38;5;59m48;5;234m191;23H?12l?25h?25lm38;5;252m48;5;234m40;90H;1;23H40;90H 1;23H?12l?25h?25l40;90Ha1;23H40;90H 1;24H40;1H38;5;186m-- INSERT --m38;5;252m48;5;234m39;85H7m38;5;59m48;5;234m201;24H?12l?25h?25lm38;5;252m48;5;234m38;5;81m48;5;236m,m38;5;252m48;5;234m39;86H7m38;5;59m48;5;234m11;25H?12l?25h?25lm38;5;252m48;5;234m38;5;81m48;5;236m m38;5;252m48;5;234m39;86H7m38;5;59m48;5;234m21;26H?12l?25h?25lm38;5;252m48;5;234m38;5;81m48;5;236m0m38;5;252m48;5;234m39;86H7m38;5;59m48;5;234m31;27H?12l?25h?25lm38;5;252m48;5;234m38;5;81m48;5;236m3m38;5;252m48;5;234m39;86H7m38;5;59m48;5;234m41;28H?12l?25h?25lm38;5;252m48;5;234m40;1HK39;86H7m38;5;59m48;5;234m31;27H?12l?25h?25lm38;5;252m48;5;234m40;90H:1;27H40;90HK40;1H:?2004h?12l?25hwq
+39;49m?2004l?1l?12l?25h?1049l[master 0944a23] add notes to readme, 03
+ 4 files changed, 66 insertions(+), 2229 deletions(-)
+ rewrite README.md (99%)
+ create mode 100644 public/03.txt
+bash-3.2$ git push
+Counting objects: 8, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (8/8), done.
+Writing objects: 100% (8/8), 1.88 KiB | 0 bytes/s, done.
+Total 8 (delta 4), reused 0 (delta 0)
+remote: Resolving deltas: 100% (4/4), completed with 4 local objects.K
+To git@github.com:reergymerej/silver-goggles.git
+   3364740..0944a23  master -> master
+bash-3.2$ git push heroku master
+Counting objects: 8, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (8/8), done.
+Writing objects: 100% (8/8), 1.88 KiB | 0 bytes/s, done.
+Total 8 (delta 4), reused 0 (delta 0)
+remote: Compressing source files... done.K
+remote: Building source:K
+remote:
+remote: -----> Node.js app detectedK
+remote:
+remote: -----> Creating runtime environmentK
+remote:        K
+remote:        NPM_CONFIG_LOGLEVEL=errorK
+remote:        NPM_CONFIG_PRODUCTION=trueK
+remote:        NODE_VERBOSE=falseK
+remote:        NODE_ENV=productionK
+remote:        NODE_MODULES_CACHE=trueK
+remote:
+remote: -----> Installing binariesK
+remote:        engines.node (package.json):  unspecifiedK
+remote:        engines.npm (package.json):   unspecified (use default)K
+remote:        engines.yarn (package.json):  unspecified (use default)K
+remote:        K
+remote:        Resolving node version 8.x...K
+remote:        Downloading and installing node 8.9.1...K
+remote:        Using default npm version: 5.5.1K
+remote:        Resolving yarn version 1.x...K
+remote:        Downloading and installing yarn (1.3.2)...K
+remote:        Installed yarn 1.3.2K
+remote:
+remote: -----> Restoring cacheK
+remote:        Loading 2 from cacheDirectories (default):K
+remote:        - node_modulesK
+remote:        - bower_components (not cached - skipping)K
+remote:
+remote: -----> Building dependenciesK
+remote:        Installing node modules (yarn.lock)K
+remote:        yarn install v1.3.2K
+remote:        [1/4] Resolving packages...K
+remote:        success Already up-to-date.K
+remote:        Done in 1.02s.K
+remote:
+remote: -----> Caching buildK
+remote:        Clearing previous node cacheK
+remote:        Saving 2 cacheDirectories (default):K
+remote:        - node_modulesK
+remote:        - bower_components (nothing to cache)K
+remote:
+remote: -----> Build succeeded!K
+remote: -----> Discovering process typesK
+remote:        Procfile declares types	   -> (none)K
+remote:        Default types for buildpack -> webK
+remote:
+remote: -----> Compressing...K
+remote:        Done: 39.8MK
+remote: -----> Launching...K
+remote:        Released v7K
+remote:        https://silver-goggles.herokuapp.com/ deployed to HerokuK
+remote:
+remote: Verifying deploy... done.K
+To https://git.heroku.com/silver-goggles.git
+   3364740..0944a23  master -> master
+bash-3.2$ exit
+exit
+
+Script done on Fri Nov 17 21:01:26 2017
+Script started on Fri Nov 17 21:02:52 2017
+?1034hbash-3.2$ git add .
+fatal: Not a git repository (or any of the parent directories): .git
+bash-3.2$ git status
+fatal: Not a git repository (or any of the parent directories): .git
+bash-3.2$ pwd
+/Users/jeremygreer/Ideas/blog
+bash-3.2$ ls
+site			terminal.log		terminal.log.clean	terminal.log.clean~
+bash-3.2$ cd site/
+bash-3.2$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	31mmodified:   public/03.txtm
+
+no changes added to commit (use "git add" and/or "git commit -a")
+bash-3.2$ git add .
+bash-3.2$ git diff --cached
+1mdiff --git a/public/03.txt b/public/03.txtmm
+1mindex 1acd6c2..7bea780 100644mm
+1m--- a/public/03.txtmm
+1m+++ b/public/03.txtmm
+36m@@ -38,3 +38,16 @@m madding entries easier.mm
+ mm
+ I will probably forget the commands I've figured out that I want to use here,mm
+ so I'm going to note them in the README.mm
+32m+mm
+32m+m32m...mm
+32m+mm
+32m+m32mOK, I've indulged.  I took a few notes in the README.  I've found that so muchmm
+32m+m32mlearning happens tangentally to the task at hand.  I used to get so upset atmm
+32m+m32mall the rabbit holes when I just wanted to make a thing that did blah.	I'vemm
+32m+m32msince learned that much of the process _is_ the process of learning andmm
+32m+m32mexploring the many subtasks that stand between you and the objective.mm
+32m+mm
+32m+m32mBack to the main task.	How do we make it easier to add entries?  I like themm
+32m+m32mwhole new text file in an editor thing.  The terminal commands are beingmm
+32m+m32mlogged easily enough.  Maybe we'll just make a quick script to read themm
+32m+m32mdirectory and spit out some JSON the app can use.mm
+K?1lbash-3.2$ Kgit commit -m Kgit commit -m 'start figKuring way to addKgenerate index of entriesK'
+[master fb4ee94] start figuring way to generate index of entries
+ 1 file changed, 13 insertions(+)
+bash-3.2$ git log
+33mcommit fb4ee94aba4a8a6c1dba60d3cfdc3a642bc5eafbmm
+Author: Jeremy Greer <jeremy.greer.atl@gmail.com>m
+Date:	Fri Nov 17 21:08:04 2017 -0600m
+m
+    start figuring way to generate index of entriesm
+m
+33mcommit 0944a232a6317a24a556b4b21b5db3487f2da8f6mm
+Author: Jeremy Greer <jeremy.greer.atl@gmail.com>m
+Date:	Fri Nov 17 20:58:33 2017 -0600m
+m
+    add notes to readme, 03m
+m
+33mcommit 3364740b5ad17fe13fdd5d6db882fa678708a30cmm
+Author: Jeremy Greer <jeremy.greer.atl@gmail.com>m
+Date:	Fri Nov 17 19:22:14 2017 -0600m
+m
+    learn how to log all terminal work with `script`m
+    T#m
+m
+33mcommit 845bc82d5ad7f2dc84f68df62e9650be86215229mm
+Author: Jeremy Greer <jeremy.greer.atl@gmail.com>m
+Date:	Fri Nov 17 18:32:38 2017 -0600m
+m
+    add entry 2m
+m
+33mcommit 72d77af49e01fcb9d2e465dc5f334a0fca7cf8b3mm
+Author: Jeremy Greer <jeremy.greer.atl@gmail.com>m
+Date:	Fri Nov 17 16:30:43 2017 -0600m
+m
+    comment on how we got onlinem
+m
+33mcommit 5335665dcd8ae4b807eb7442c90b72b806448366mm
+Author: Jeremy Greer <jeremy.greer.atl@gmail.com>m
+Date:	Fri Nov 17 16:28:40 2017 -0600m
+m
+    yarn againm
+m
+33mcommit 7081b18ea0c51a4d90cee8fda1b69e115396321cmm
+Author: Jeremy Greer <jeremy.greer.atl@gmail.com>m
+K?1lbash-3.2$ fb4ee94
+bash-3.2$ ls
+README.md	node_modules	public		src
+README.md~	package.json	scripts 	yarn.lock
+bash-3.2$ git push
+Counting objects: 4, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 785 bytes | 0 bytes/s, done.
+Total 4 (delta 3), reused 0 (delta 0)
+remote: Resolving deltas: 100% (3/3), completed with 3 local objects.K
+To git@github.com:reergymerej/silver-goggles.git
+   0944a23..fb4ee94  master -> master
+bash-3.2$ pwd
+/Users/jeremygreer/Ideas/blog/site
+bash-3.2$ chmKod K+x ./scripts/index-entries.js
+bash-3.2$ ./scripts/index-entries.js
+bash: ./scripts/index-entries.js: /usr/lib/bin: bad interpreter: No such file or directory
+bash-3.2$ git add .
+bash-3.2$ git commit -m 'wrong node shebang'
+[master 225841b] wrong node shebang
+ 2 files changed, 8 insertions(+)
+ create mode 100755 scripts/index-entries.js
+CCCCCCCCCCC./scripts/index-entries.jshebang'
+yo
+bash-3.2$ yarn add node-dir --dev
+2K1G1myarn add v1.3.222m
+2K1G2m[1/4]22m 🔍  Resolving packages...
+1G⠁ 0K1G⠂ node-dir0K1G⠄ node-dir0K1G⡀ node-dir0K1G⢀ node-dir0K2K1G2K1G2m[2/4]22m 🚚  Fetching packages...
+2K1G1G[------------------------------------------------------------------------------------------] 0/10201G[###########-----------------------------------------------------------------------------] 122/10201G[######################------------------------------------------------------------------] 256/10201G[####################################----------------------------------------------------] 415/10201G[##################################################--------------------------------------] 576/10201G[#################################################################-----------------------] 751/10201G[###############################################################################---------] 916/10201G[#######################################################################################] 1019/10202K1G2m[3/4]22m 🔗  Linking dependencies...
+1G[#######################################################################################] 1020/10202K1G2K1G1G[------------------------------------------------------------------------------------------] 0/10792K1G2K1G1G[--------] 0/81G[########] 8/82K1G2K1G1G[------------------------------------------------------------------------------------------] 0/19931G[##################----------------------------------------------------------------------] 397/19931G[#####################################---------------------------------------------------] 835/19931G[################################################---------------------------------------] 1099/19932K1G2m[4/4]22m 📃  Building fresh packages...
+2K1G
+2K1G
+2K1G
+2K1G
+1G⠁ 0K1G1A⠁ 0K1G1B1G2A⠁ 0K1G2B1G3A⠁ 0K1G3B1G4A⠁ 0K1G4B1G4A2K4B1G3A2K3B1G2A2K2B1G1A2K1B2K1G4A1G[#################################################--------------------------------------] 1125/19932K1G32msuccess39m Saved lockfile.
+2K1G32msuccess39m Saved 1 new dependency.
+└─ node-dir@0.1.17
+2K1G2K1G✨   Done in 3.30s.
+bash-3.2$ yarn add node-dir --dev
+2K1G1myarn add v1.3.222m
+2K1G2m[1/4]22m 🔍  Resolving packages...
+1G⠁ 0K1G⠂ node-dir0K1G⠄ node-dir0K1G⡀ node-dir0K1G⢀ node-dir0K1G⠠ node-dir0K1G⠐ node-dir0K1G⠈ node-dir0K1G⠁ node-dir0K1G⠂ node-dir0K1G⠄ node-dir0K1G⡀ node-dir0K1G⢀ node-dir0K1G⠠ node-dir0K1G⠐ node-dir0K1G⠈ node-dir0K1G⠁ node-dir0K^C
+CCCCCCCCCC./scripts/index-entries.js
+[ '01.txt',
+  '01.txt~',
+  '02.txt',
+  '02.txt~',
+  '03.txt',
+  '03.txt~',
+  'favicon.ico',
+  'index.html',
+  'manifest.json' ]
+bash-3.2$ node
+1G0J> 3G'asdf'.test
+90mundefined39m
+1G0J> 3G1G0J> 'asdf'.test14G1G0J> 'asdf'.tes13G1G0J> 'asdf'.te12G1G0J> 'asdf'.t11G1G0J> 'asdf'.10Gmatch
+36m[Function: match]39m
+1G0J> 3G'asdf.txt!1G0J> 'asdf.txt12G~'.match(/\.txt$/)
+1mnull22m
+1G0J> 3G1G0J> 'asdf.txt~'.match(/\.txt$/)30G1D1D1D1D1D1D1D1D1D1D1D1D1D1D1D1D1D1G0J> 'asdf.txt'.match(/\.txt$/)12G17C
+[ 32m'.txt'39m, index: 33m439m, input: 32m'asdf.txt'39m ]
+1G0J> 3G
+(To exit, press ^C again or type .exit)
+1G0J> 3G
+bash-3.2$ ./scripts/index-entries.js
+[ '01.txt', '02.txt', '03.txt' ]
+bash-3.2$ ./scripts/index-entries.js
+bash-3.2$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	31mmodified:   package.jsonm
+	31mmodified:   public/03.txtm
+	31mmodified:   scripts/index-entries.jsm
+	31mmodified:   yarn.lockm
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	31msrc/entries.jsonm
+
+no changes added to commit (use "git add" and/or "git commit -a")
+bash-3.2$ cat src/entries.json
+CCCCCCCCCC11Pgit.statush-3.2$ cat src/entries.json
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	31mmodified:   package.jsonm
+	31mmodified:   public/03.txtm
+	31mmodified:   scripts/index-entries.jsm
+	31mmodified:   yarn.lockm
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	31msrc/entries.jsonm
+
+no changes added to commit (use "git add" and/or "git commit -a")
+CCCCCCCCCC11P./scripts/index-entries.js
+CCCCCCCCCC17Pgitpstatusex-entries.js
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	31mmodified:   package.jsonm
+	31mmodified:   public/03.txtm
+	31mmodified:   scripts/index-entries.jsm
+	31mmodified:   yarn.lockm
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	31msrc/entries.jsonm
+
+no changes added to commit (use "git add" and/or "git commit -a")
+CCCCCCCCCC17Pcatpsrc/entries.json.js
+["01.txt","02.txt","03.txt"]bash-3.2$ git add .
+bash-3.2$ yarn entries
+2K1G1myarn run v1.3.222m
+2K1G2m$ ./scripts/index-entries.js22m
+2K1G✨   Done in 0.14s.
+bash-3.2$ git add .
+bash-3.2$ git commit
+?1000h?2004h?1049h?1h?2004h1;40r?12;25h?12l?25h27mm38;5;252m48;5;234mH2J?25l40;1H"~/Ideas/blog/site/.git/COMMIT_EDITMSG" 14L, 441C2;1H▽6n2;1H  1;1H>c1;1H38;5;208m48;5;235m1   m38;5;252m48;5;234m48;5;236m												   m38;5;252m48;5;234m2;1H38;5;243m48;5;235m  1 m38;5;252m48;5;234m38;5;59m# Please enter the commit message for your changes. Lines startingm38;5;252m48;5;234m
+38;5;243m48;5;235m  2 m38;5;252m48;5;234m38;5;59m# with '#' will be ignored, and an empty message aborts the commit.m38;5;252m48;5;234m
+38;5;243m48;5;235m  3 m38;5;252m48;5;234m38;5;59m# On branch m38;5;252m48;5;234m38;5;141mmasterm38;5;252m48;5;234m
+38;5;243m48;5;235m  4 m38;5;252m48;5;234m38;5;59m# Your branch is ahead of 'm38;5;252m48;5;234m38;5;141morigin/masterm38;5;252m48;5;234m38;5;59m' by 1 commit.m38;5;252m48;5;234m
+38;5;243m48;5;235m  5 m38;5;252m48;5;234m38;5;59m#   (use "git push" to publish your local commits)m38;5;252m48;5;234m
+38;5;243m48;5;235m  6 m38;5;252m48;5;234m38;5;59m#m38;5;252m48;5;234m
+38;5;243m48;5;235m  7 m38;5;252m48;5;234m38;5;59m# m38;5;252m48;5;234m38;5;148mChanges to be committed:m38;5;252m48;5;234m
+38;5;243m48;5;235m  8 m38;5;252m48;5;234m38;5;59m#	 m38;5;252m48;5;234m38;5;81mmodifiedm38;5;252m48;5;234m38;5;59m: m38;5;252m48;5;234m38;5;141m  package.jsonm38;5;252m48;5;234m
+38;5;243m48;5;235m  9 m38;5;252m48;5;234m38;5;59m#	 m38;5;252m48;5;234m38;5;81mmodifiedm38;5;252m48;5;234m38;5;59m: m38;5;252m48;5;234m38;5;141m  public/03.txtm38;5;252m48;5;234m
+38;5;243m48;5;235m 10 m38;5;252m48;5;234m38;5;59m#	 m38;5;252m48;5;234m38;5;81mmodifiedm38;5;252m48;5;234m38;5;59m: m38;5;252m48;5;234m38;5;141m  scripts/index-entries.jsm38;5;252m48;5;234m
+38;5;243m48;5;235m 11 m38;5;252m48;5;234m38;5;59m#	 m38;5;252m48;5;234m38;5;81mnew filem38;5;252m48;5;234m38;5;59m: m38;5;252m48;5;234m38;5;141m  src/entries.jsonm38;5;252m48;5;234m
+38;5;243m48;5;235m 12 m38;5;252m48;5;234m38;5;59m#	 m38;5;252m48;5;234m38;5;81mmodifiedm38;5;252m48;5;234m38;5;59m: m38;5;252m48;5;234m38;5;141m  yarn.lockm38;5;252m48;5;234m
+38;5;243m48;5;235m 13 m38;5;252m48;5;234m38;5;59m#m38;5;252m48;5;234m
+?25l?1002l?2004l".git/COMMIT_EDITMSG" 14L, 475C written 						     16;1H~												      17;1H~												       18;1H~													19;1H~													 20;1H~ 												  21;1H~												   22;1H~												    23;1H~												     24;1H~												      25;1H~												       26;1H~													27;1H~													 28;1H~ 												  29;1H~												   30;1H~												    31;1H~												     32;1H~												      33;1H~												       34;1H~													35;1H~													 36;1H~ 												  37;1H~												   38;1H~												    m38;5;252m48;5;234m39;1H7m38;5;59m48;5;234m.git/COMMIT_EDITMSG								 1,0-1		All1;5H?12l?25h?1000l?1002h?25lm38;5;252m48;5;234m40;90Hi1;5H40;90H 1;5H40;1H38;5;186m-- INSERT --m38;5;252m48;5;234m40;13HK39;85H7m38;5;59m48;5;234m1	1;5H?12l?25h?25lm38;5;252m48;5;234m40;1HK39;85H7m38;5;59m48;5;234m0-11;5H?12l?25h?25lm38;5;252m48;5;234m40;90H:1;5H40;90HK40;1H:?2004h?12l?25h?25l40;1HK1;5H?12l?25h?25l40;90Hi1;5H40;90H 1;5H40;1H38;5;186m-- INSERT --m38;5;252m48;5;234m39;85H7m38;5;59m48;5;234m1  1;5H?12l?25h?25lm38;5;252m48;5;234m38;5;81m48;5;236mam38;5;252m48;5;234m39;21H7m38;5;59m48;5;234m[+]61C21;6H?12l?25h?25lm38;5;252m48;5;234m38;5;81m48;5;236mdm38;5;252m48;5;234m39;85H7m38;5;59m48;5;234m31;7H?12l?25h?25lm38;5;252m48;5;234m38;5;81m48;5;236mdm38;5;252m48;5;234m39;85H7m38;5;59m48;5;234m41;8H?12l?25h?25lm38;5;252m48;5;234m38;5;81m48;5;236m m38;5;252m48;5;234m39;85H7m38;5;59m48;5;234m51;9H?12l?25h?25lm38;5;252m48;5;234m38;5;81m48;5;236msm38;5;252m48;5;234m39;85H7m38;5;59m48;5;234m61;10H?12l?25h?25lm38;5;252m48;5;234m38;5;81m48;5;236mcm38;5;252m48;5;234m39;85H7m38;5;59m48;5;234m71;11H?12l?25h?25lm38;5;252m48;5;234m38;5;81m48;5;236mrm38;5;252m48;5;234m39;85H7m38;5;59m48;5;234m81;12H?12l?25h?25lm38;5;252m48;5;234m38;5;81m48;5;236mim38;5;252m48;5;234m39;85H7m38;5;59m48;5;234m91;13H?12l?25h?25lm38;5;252m48;5;234m38;5;81m48;5;236mpm38;5;252m48;5;234m39;85H7m38;5;59m48;5;234m101;14H?12l?25h?25lm38;5;252m48;5;234m38;5;81m48;5;236mtm38;5;252m48;5;234m39;86H7m38;5;59m48;5;234m11;15H?12l?25h?25lm38;5;252m48;5;234m38;5;81m48;5;236m m38;5;252m48;5;234m39;86H7m38;5;59m48;5;234m21;16H?12l?25h?25lm38;5;252m48;5;234m38;5;81m48;5;236mtm38;5;252m48;5;234m39;86H7m38;5;59m48;5;234m31;17H?12l?25h?25lm38;5;252m48;5;234m38;5;81m48;5;236mom38;5;252m48;5;234m39;86H7m38;5;59m48;5;234m41;18H?12l?25h?25lm38;5;252m48;5;234m38;5;81m48;5;236m m38;5;252m48;5;234m39;86H7m38;5;59m48;5;234m51;19H?12l?25h?25lm38;5;252m48;5;234m38;5;81m48;5;236mim38;5;252m48;5;234m39;86H7m38;5;59m48;5;234m61;20H?12l?25h?25lm38;5;252m48;5;234m38;5;81m48;5;236mnm38;5;252m48;5;234m39;86H7m38;5;59m48;5;234m71;21H?12l?25h?25lm38;5;252m48;5;234m38;5;81m48;5;236mdm38;5;252m48;5;234m39;86H7m38;5;59m48;5;234m81;22H?12l?25h?25lm38;5;252m48;5;234m38;5;81m48;5;236mem38;5;252m48;5;234m39;86H7m38;5;59m48;5;234m91;23H?12l?25h?25lm38;5;252m48;5;234m38;5;81m48;5;236mxm38;5;252m48;5;234m39;85H7m38;5;59m48;5;234m201;24H?12l?25h?25lm38;5;252m48;5;234m38;5;81m48;5;236m m38;5;252m48;5;234m39;86H7m38;5;59m48;5;234m11;25H?12l?25h?25lm38;5;252m48;5;234m38;5;81m48;5;236mem38;5;252m48;5;234m39;86H7m38;5;59m48;5;234m21;26H?12l?25h?25lm38;5;252m48;5;234m38;5;81m48;5;236mnm38;5;252m48;5;234m39;86H7m38;5;59m48;5;234m31;27H?12l?25h?25lm38;5;252m48;5;234m38;5;81m48;5;236mtm38;5;252m48;5;234m39;86H7m38;5;59m48;5;234m41;28H?12l?25h?25lm38;5;252m48;5;234m38;5;81m48;5;236mrm38;5;252m48;5;234m39;86H7m38;5;59m48;5;234m51;29H?12l?25h?25lm38;5;252m48;5;234m38;5;81m48;5;236mim38;5;252m48;5;234m39;86H7m38;5;59m48;5;234m61;30H?12l?25h?25lm38;5;252m48;5;234m38;5;81m48;5;236mem38;5;252m48;5;234m39;86H7m38;5;59m48;5;234m71;31H?12l?25h?25lm38;5;252m48;5;234m38;5;81m48;5;236msm38;5;252m48;5;234m39;86H7m38;5;59m48;5;234m81;32H?12l?25h?25lm38;5;252m48;5;234m38;5;81m48;5;236m m38;5;252m48;5;234m39;86H7m38;5;59m48;5;234m91;33H?12l?25h?25lm38;5;252m48;5;234m38;5;81m48;5;236mam38;5;252m48;5;234m39;85H7m38;5;59m48;5;234m301;34H?12l?25h?25lm38;5;252m48;5;234m38;5;81m48;5;236mnm38;5;252m48;5;234m39;86H7m38;5;59m48;5;234m11;35H?12l?25h?25lm38;5;252m48;5;234m38;5;81m48;5;236mdm38;5;252m48;5;234m39;86H7m38;5;59m48;5;234m21;36H?12l?25h?25lm38;5;252m48;5;234m38;5;81m48;5;236m m38;5;252m48;5;234m39;86H7m38;5;59m48;5;234m31;37H?12l?25h?25lm38;5;252m48;5;23448;5;236m m38;5;252m48;5;234m39;86H7m38;5;59m48;5;234m21;36H?12l?25h?25lm38;5;252m48;5;23448;5;236m m38;5;252m48;5;234m39;86H7m38;5;59m48;5;234m11;35H?12l?25h?25lm38;5;252m48;5;23448;5;236m m38;5;252m48;5;234m39;86H7m38;5;59m48;5;234m01;34H?12l?25h?25lm38;5;252m48;5;23448;5;236m m38;5;252m48;5;234m39;85H7m38;5;59m48;5;234m291;33H?12l?25h?25lm38;5;252m48;5;23448;5;236m m38;5;252m48;5;234m39;86H7m38;5;59m48;5;234m81;32H?12l?25h?25lm38;5;252m48;5;234m38;5;81m48;5;236m m38;5;252m48;5;234m39;86H7m38;5;59m48;5;234m91;33H?12l?25h?25lm38;5;252m48;5;234m38;5;81m48;5;236mfm38;5;252m48;5;234m39;85H7m38;5;59m48;5;234m301;34H?12l?25h?25lm38;5;252m48;5;234m38;5;81m48;5;236mom38;5;252m48;5;234m39;86H7m38;5;59m48;5;234m11;35H?12l?25h?25lm38;5;252m48;5;234m38;5;81m48;5;236mrm38;5;252m48;5;234m39;86H7m38;5;59m48;5;234m21;36H?12l?25h?25lm38;5;252m48;5;234m38;5;81m48;5;236m m38;5;252m48;5;234m39;86H7m38;5;59m48;5;234m31;37H?12l?25h?25lm38;5;252m48;5;234m38;5;81m48;5;236mum38;5;252m48;5;234m39;86H7m38;5;59m48;5;234m41;38H?12l?25h?25lm38;5;252m48;5;234m38;5;81m48;5;236msm38;5;252m48;5;234m39;86H7m38;5;59m48;5;234m51;39H?12l?25h?25lm38;5;252m48;5;234m40;1HK39;86H7m38;5;59m48;5;234m41;38H?12l?25h?25lm38;5;252m48;5;234m40;90H:1;38H40;90HK40;1H:?2004h?12l?25hwq
+39;49m?2004l?1l?12l?25h?1049l[master e7fd3a5] add script to index entries for us
+ 5 files changed, 45 insertions(+), 4 deletions(-)
+ rewrite scripts/index-entries.js (97%)
+ create mode 100644 src/entries.json
+bash-3.2$ git push
+Counting objects: 16, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (12/12), done.
+Writing objects: 100% (16/16), 2.30 KiB | 0 bytes/s, done.
+Total 16 (delta 8), reused 0 (delta 0)
+remote: Resolving deltas: 100% (8/8), completed with 6 local objects.K
+To git@github.com:reergymerej/silver-goggles.git
+   fb4ee94..e7fd3a5  master -> master
+bash-3.2$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	31mmodified:   public/03.txtm
+	31mmodified:   src/App.jsm
+
+no changes added to commit (use "git add" and/or "git commit -a")
+bash-3.2$ git add .
+bash-3.2$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	32mmodified:   public/03.txtm
+	32mmodified:   src/App.jsm
+
+bash-3.2$ git ocmmitKdiff --cached
+1mdiff --git a/public/03.txt b/public/03.txtmm
+1mindex b1bda24..155e2f1 100644mm
+1m--- a/public/03.txtmm
+1m+++ b/public/03.txtmm
+36m@@ -75,3 +75,11 @@m mDon't do that.mm
+ mm
+ We've got to constantly keep ourselves in check.  So, pride be damned.  Let'smm
+ find the easiest way to read files already sitting in npm waiting for us.mm
+32m+mm
+32m+m32m...mm
+32m+mm
+32m+m32me7fd3a5mm
+32m+mm
+32m+m32mWe've now got a script that reads our public directory and spits out some JSONmm
+32m+m32min our source directory.  We _should_ (I hope) be able to use Webpack to loadmm
+32m+m32mthis resource into the app and iterate over it.  Let's see!mm
+1mdiff --git a/src/App.js b/src/App.jsmm
+1mindex 92ff3e0..6b56470 100644mm
+1m--- a/src/App.jsmm
+1m+++ b/src/App.jsmm
+36m@@ -1,14 +1,20 @@mm
+ import React, { Component } from 'react';mm
+ import logo from './logo.svg';mm
+ import './App.css';mm
+32m+m32mimport entries from './entries.json'mm
+ mm
+ class App extends Component {mm
+   render() {mm
+     return (mm
+       <div className="App">mm
+31m-	    <a href="/01.txt">01.txt</a>mm
+31m-	    <a href="/02.txt">02.txt</a>mm
+31m-	    <a href="/03.txt">03.txt</a>mm
+32m+m32m	{mm
+32m+m32m	  entries.map(name => (mm
+32m+m32m	    <amm
+32m+m32m	      key={name}mm
+32m+m32m	      href={`/${name}`}mm
+32m+m32m	      >{name}</a>mm
+K32m+m32m	   ))mm
+32m+m32m	}mm
+       </div>mm
+     );mm
+   }mm
+KH36m@@)-75,3 +75,11 @@m mDon't do that.mm
+K?1lH
+bash-3.2$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	32mmodified:   public/03.txtm
+	32mmodified:   src/App.jsm
+
+bash-3.2$ git diff --cached Ksrc/
+1mdiff --git a/src/App.js b/src/App.jsmm
+1mindex 92ff3e0..6b56470 100644mm
+1m--- a/src/App.jsmm
+1m+++ b/src/App.jsmm
+36m@@ -1,14 +1,20 @@mm
+ import React, { Component } from 'react';mm
+ import logo from './logo.svg';mm
+ import './App.css';mm
+32m+m32mimport entries from './entries.json'mm
+ mm
+ class App extends Component {mm
+   render() {mm
+     return (mm
+       <div className="App">mm
+31m-	    <a href="/01.txt">01.txt</a>mm
+31m-	    <a href="/02.txt">02.txt</a>mm
+31m-	    <a href="/03.txt">03.txt</a>mm
+32m+m32m	{mm
+32m+m32m	  entries.map(name => (mm
+32m+m32m	    <amm
+32m+m32m	      key={name}mm
+32m+m32m	      href={`/${name}`}mm
+32m+m32m	      >{name}</a>mm
+32m+m32m	  ))mm
+32m+m32m	}mm
+       </div>mm
+     );mm
+   }mm
+K?1lbash-3.2$ Kgit commit -m 'dynamically render links to entries'
+[master 6332a4a] dynamically render links to entries
+ 2 files changed, 17 insertions(+), 3 deletions(-)
+bash-3.2$ git push
+Counting objects: 6, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 863 bytes | 0 bytes/s, done.
+Total 6 (delta 4), reused 0 (delta 0)
+remote: Resolving deltas: 100% (4/4), completed with 4 local objects.K
+To git@github.com:reergymerej/silver-goggles.git
+   e7fd3a5..6332a4a  master -> master
+bash-3.2$ gitKgit log
+33mcommit 6332a4acb1cf72cd2f6e990fd8fd020470a227a4mm
+Author: Jeremy Greer <jeremy.greer.atl@gmail.com>m
+Date:	Fri Nov 17 21:33:18 2017 -0600m
+m
+    dynamically render links to entriesm
+m
+33mcommit e7fd3a50a31695e87394ba56a630646c241231d2mm
+Author: Jeremy Greer <jeremy.greer.atl@gmail.com>m
+Date:	Fri Nov 17 21:27:37 2017 -0600m
+m
+    add script to index entries for usm
+m
+33mcommit 225841b09cc2feb0f2ddd26f4c373aba3e5b3273mm
+Author: Jeremy Greer <jeremy.greer.atl@gmail.com>m
+Date:	Fri Nov 17 21:12:30 2017 -0600m
+m
+    wrong node shebangm
+m
+33mcommit fb4ee94aba4a8a6c1dba60d3cfdc3a642bc5eafbmm
+Author: Jeremy Greer <jeremy.greer.atl@gmail.com>m
+Date:	Fri Nov 17 21:08:04 2017 -0600m
+m
+    start figuring way to generate index of entriesm
+m
+33mcommit 0944a232a6317a24a556b4b21b5db3487f2da8f6mm
+Author: Jeremy Greer <jeremy.greer.atl@gmail.com>m
+Date:	Fri Nov 17 20:58:33 2017 -0600m
+m
+    add notes to readme, 03m
+m
+33mcommit 3364740b5ad17fe13fdd5d6db882fa678708a30cmm
+Author: Jeremy Greer <jeremy.greer.atl@gmail.com>m
+Date:	Fri Nov 17 19:22:14 2017 -0600m
+m
+    learn how to log all terminal work with `script`m
+    T#m
+m
+33mcommit 845bc82d5ad7f2dc84f68df62e9650be86215229mm
+Author: Jeremy Greer <jeremy.greer.atl@gmail.com>m
+K?1lbash-3.2$ git add .
+bash-3.2$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	32mmodified:   public/03.txtm
+
+bash-3.2$ git commit -m 'final though on webpack loading JSON'
+[master 1f141a1] final though on webpack loading JSON
+ 1 file changed, 5 insertions(+)
+bash-3.2$ git push
+Counting objects: 4, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 520 bytes | 0 bytes/s, done.
+Total 4 (delta 3), reused 0 (delta 0)
+remote: Resolving deltas: 100% (3/3), completed with 3 local objects.K
+To git@github.com:reergymerej/silver-goggles.git
+   6332a4a..1f141a1  master -> master
+bash-3.2$ exit
+exit
+
+Script done on Fri Nov 17 21:35:11 2017
