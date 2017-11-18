@@ -21,7 +21,7 @@ class ClickableEntry extends React.Component {
     return (
       <a
         onClick={this.handleClick}
-        href="#"
+        href={`/entries/${this.props.entry.name}/commentary.txt`}
         className="ClickableEntry"
       >
         {this.props.entry.name}
