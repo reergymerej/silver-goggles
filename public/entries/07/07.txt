@@ -13,3 +13,8 @@ ref: d88786e
 ref: b15be57
 
 Let's try and pull the directories.
+
+ref: 5bb2e5a
+
+We've got it reading from the new structure with one file.  Now let's move the
+rest of them.
