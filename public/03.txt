@@ -1,0 +1,40 @@
+It's starting to become clear that we - I like saying "we" a lot when talking
+about projects.  I don't know if it's to share credit with everyone or to
+minimize the "I" references - need a better way to add entries.
+
+...
+
+As I was taking out the garbage, the idea for this started to change a bit.
+There are several things I want to show.  My thoughts, coming through in text,
+the commands and responses in the terminal, shown in the logs we're keeping
+now, search/web history, code at different stages, and probably screenshots
+later.  What if this could all be syncronized somehow?  Then the reader could
+go through the text and see links to the code, images as we refer to them, a
+sideline of the links we visited, and the commands/results in the terminal.  I
+suppose all of this kind of _is_ a web page.  The challenge comes from
+aggregating all the stuff.
+
+...
+
+I don't know how to synchronize the text to a timeline...not sure if that's
+even useful...but I can add timestamps to the files or blocks easily enough.
+
+`:r !date`
+
+Fri Nov 17 20:38:38 CST 2017
+
+One of the problems I run into constantly is distraction.  I just had to reel
+myself back in from looking at the code used to write a Chrome plugin that
+exports history to see if I could use a similar thing to include my browsing
+history here.  There were several detours until I finally snapped out of it
+and realized I was off course.  Adding my search results would be cool, but
+that's not a priority right now.  I can include links.  Evenutally, it may be
+a priority, but it's a distraction at this phase.  Shake it off and focus.
+
+So what the heck are we doing?  We're trying to figure out a way to make
+adding entries easier.
+
+... and immediately I'm distracted...
+
+I will probably forget the commands I've figured out that I want to use here,
+so I'm going to note them in the README.

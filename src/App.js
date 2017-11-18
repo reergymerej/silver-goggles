@@ -8,6 +8,7 @@ class App extends Component {
       <div className="App">
         <a href="/01.txt">01.txt</a>
         <a href="/02.txt">02.txt</a>
+        <a href="/03.txt">03.txt</a>
       </div>
     );
   }
