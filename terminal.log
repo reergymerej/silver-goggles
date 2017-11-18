@@ -518,4 +518,8 @@ bash-3.2$ [12@(reverse-i-search)`':[C[12Pbash-3.2$[Cgit commit -m '' --all
 bash-3.2$ git add .commit -m '' --allow-empty-message
 [master 498a6e9] 
  3 files changed, 18 insertions(+), 6 deletions(-)
+bash-3.2$ git add .
+bash-3.2$ git commit -m 'show com[K[K[Kentries lest n[K[K[K[Kist [K[K[K[K[Kist next to current entry'
+[master 39ee381] show entries list next to current entry
+ 4 files changed, 34 insertions(+), 12 deletions(-)
 bash-3.2$ 

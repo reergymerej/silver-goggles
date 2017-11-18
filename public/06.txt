@@ -158,3 +158,8 @@ error:
 ref: 498a6e9
 
 
+ref: 39ee381
+OK, it's starting to look sane.
+
+Now, since we don't know how to show the resources yet, let's just go back to
+showing the basic commentary.

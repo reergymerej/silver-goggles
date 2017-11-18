@@ -4,7 +4,10 @@ import entries from './entries.json'
 
 const Entry = (props) => (
   <div>
-    {JSON.stringify(props.entry)}
+    <h2>{props.entry.name}</h2>
+    <pre>
+      {props.entry.commentary}
+    </pre>
   </div>
 )
 
@@ -19,6 +22,7 @@ class ClickableEntry extends React.Component {
       <a
         onClick={this.handleClick}
         href="#"
+        className="ClickableEntry"
       >
         {this.props.entry.name}
       </a>
