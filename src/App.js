@@ -7,6 +7,7 @@ class App extends Component {
     return (
       <div className="App">
         <a href="/01.txt">01.txt</a>
+        <a href="/02.txt">02.txt</a>
       </div>
     );
   }

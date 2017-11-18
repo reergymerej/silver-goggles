@@ -1,0 +1,30 @@
+While driving to the store and whatnot I got a chance to think about this a
+little bit more.  More than anything, I want this to be _REALLY_ easy to add
+entries to.  Ideally, it could even be a terminal thing that uploads after the
+fact.  I want it to be _very_ easy to add content.
+
+I also want a way for the reader to simulate being here with me while I go
+through things.  There's already the idea of timestamping text.  That's cool.
+I'll also want to show lots of terminal commands and results.  Maybe I can
+just route it to a file and include it as a resource.  Eventually, we'll want
+to include screenshots and/or videos/gifs as well.
+
+Eric Elliot has his whole shotgun ride along thing.  That's cool, but video
+isn't searchable... unless it's transcribed.  Whatever.  I'm no Elliot.  I can
+do my own thing here.
+
+One consideration is, I want the content to be adaptable.  Right now it's just
+formatted text, so it looks like those old html spec docs you run into here
+and there.  It would be nice if, as the project progressed, the content is
+displayed better.  Adding markdown parsing is an obvious way to do that.  I'm
+not sure right now about images and videos.
+
+
+#idea - I may run across passwords or email coming through in the text.  There
+should be some type of auto-redact process.
+
+
+As an aside, it's fun to start a project, even if it seems dumb, because you
+start to get all these other ideas as you go along.  Another point is you are
+never quite sure what the idea is at first.  It invariably changes as you go
+along, which is part of what I want to capture here.
