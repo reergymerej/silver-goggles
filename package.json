@@ -10,7 +10,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "yarn entries && react-scripts build",
+    "build": "react-scripts build",
     "heroku-postbuild": "./scripts/index-entries.js",
     "test": "react-scripts test --env=jsdom",
     "entries": "./scripts/index-entries.js",
