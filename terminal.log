@@ -514,4 +514,8 @@ bash-3.2$ git add .
 bash-3.2$ git [12@(reverse-i-search)`':[C[C[C[C[Cc': git commit -m '' --allow-empty-message[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1@o[C[C[C[C[C[C[C[14Pbash-3.2$[C[C[C[C[C[C
 [master ae048fa] 
  3 files changed, 58 insertions(+), 2 deletions(-)
+bash-3.2$ [12@(reverse-i-search)`':[C[12Pbash-3.2$[Cgit commit -m '' --allow-empty-message[C[C[C[C[C[C[C[C[C[C[C[C[C[Cadd .[K
+bash-3.2$ git add .commit -m '' --allow-empty-message
+[master 498a6e9] 
+ 3 files changed, 18 insertions(+), 6 deletions(-)
 bash-3.2$ 

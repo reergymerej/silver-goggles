@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import entries from './entries.json'
 
@@ -39,16 +38,21 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        {
-          entries.map(entry => (
-            <ClickableEntry
-              key={entry.name}
-              onClick={this.handleEntryClicked}
-            />
-          ))
-        }
-        <div>
-          <Entry entry={this.state.currentEntry} />
+        <div className="entries">
+          {
+            entries.map(entry => (
+              <ClickableEntry
+                key={entry.name}
+                onClick={this.handleEntryClicked}
+                entry={entry}
+              />
+            ))
+          }
+        </div>
+        <div className="entry">
+          { this.state.currentEntry &&
+            <Entry entry={this.state.currentEntry} />
+          }
         </div>
       </div>
     );

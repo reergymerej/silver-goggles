@@ -1,5 +1,15 @@
 .App {
-  text-align: center;
+  margin: 1em;
+  display: flex;
+}
+
+.App .entries {
+
+}
+
+.App .entry {
+  margin-left: 1em;
+  flex: 1;
 }
 
 .App a {
