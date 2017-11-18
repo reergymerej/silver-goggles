@@ -13,8 +13,11 @@ const files = dir.files(dirPath, 'file', null, {
 }).filter(name => name.match(regex))
 
 const translateTextEntry = (entryFileName) => {
-  console.log(entryFileName)
-  return entryFileName
+  return {
+    commentary: entryFileName,
+    resources: {
+    },
+  }
 }
 
 const entries = files.map(translateTextEntry)

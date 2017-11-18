@@ -390,4 +390,15 @@ Total 5 (delta 2), reused 0 (delta 0)
 remote: Resolving deltas:   0% (0/2)   [Kremote: Resolving deltas:  50% (1/2)   [Kremote: Resolving deltas: 100% (2/2)   [Kremote: Resolving deltas: 100% (2/2), completed with 2 local objects.[K
 To git@github.com:reergymerej/silver-goggles.git
    6f9037f..a8d4115  master -> master
-bash-3.2$ 
+bash-3.2$ ./[K[Kgit add . && git commit --m[K[Km 'start c[Kaltering entry indexing script'
+[master 1537923] start altering entry indexing script
+ 3 files changed, 416 insertions(+), 1 deletion(-)
+bash-3.2$ ./ [Kscripts/index-entries.js
+01.txt
+02.txt
+03.txt
+04.txt
+05.txt
+06.txt
+["01.txt","02.txt","03.txt","04.txt","05.txt","06.txt"]
+bash-3.2$ ./scripts/index-entries.js[C[C[C[C[C[C[C[C[C[Cgit add . && git commit -m 'start altering entry indexing script'[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K-allow-empt
