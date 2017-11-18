@@ -3,7 +3,10 @@ import logo from './logo.svg';
 import './App.css';
 import entries from './entries.json'
 
-const Entry = () => (
+const Entry = (props) => (
+  <div>
+    {JSON.stringify(props.entry)}
+  </div>
 )
 
 class App extends Component {

@@ -102,3 +102,13 @@ They weren't meaningful.  We should probably allow for them in the future,
 though.  Either using dates or allowing optional titles or something.
 
 ... There's no time like the present.  Let's add the name of the file for now.
+
+https://nodejs.org/api/path.html#path_path_basename_path_ext
+
+...
+
+They data looks good, now let's get the entries rendering.
+
+31c1362
+
+Whoops.

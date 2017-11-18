@@ -502,4 +502,7 @@ bash-3.2$ git commit -m 'fi [Kx basename re[K[Kmethod call'
 [master 331c144] fix basename method call
  3 files changed, 39 insertions(+), 3 deletions(-)
  rewrite src/entries.json (100%)
+bash-3.2$ git add . && git commit -m 'start rene[Kdering entries'
+[master 31c1362] start rendering entries
+ 2 files changed, 24 insertions(+), 4 deletions(-)
 bash-3.2$ 
