@@ -9,12 +9,12 @@ const regex = /\.txt$/
 
 const files = dir.files(dirPath, 'file', null, {
   sync: true,
-  shortName: true,
+  shortName: false,
 }).filter(name => name.match(regex))
 
 const translateTextEntry = (entryFileName) => {
   return {
-    commentary: entryFileName,
+    commentary: fs.readFileSync(entryFileName, 'utf8'),
     resources: {
     },
   }
