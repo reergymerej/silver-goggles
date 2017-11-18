@@ -30,8 +30,10 @@ const TextBlock = (props) => (
   </pre>
 )
 
-const GitRefBlock = () => (
-  <a href="asdf/asdf">a Git reference</a>
+const GitRefBlock = (props) => (
+  <a href={`https://github.com/reergymerej/silver-goggles/commit/${props.value}`}>
+    {props.value}
+  </a>
 )
 
 const ParsedCommentary = (props) => {
@@ -43,7 +45,7 @@ const ParsedCommentary = (props) => {
           const BlockType = block.type === TYPE.TEXT
             ? TextBlock
             : GitRefBlock
-          return <BlockType value={block.value} />
+          return <BlockType key={i} value={block.value} />
         })
       }
     </div>
