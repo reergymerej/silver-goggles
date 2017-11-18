@@ -13,11 +13,16 @@ const entryDirs = dir.files(entriesPath, 'dir', null, {
 
 const getEntryFromDir = (entryDir) => {
   const commentaryPath = path.resolve(entryDir, 'commentary.txt')
+  const terminalLogPath = path.resolve(entryDir, 'terminal.log')
   const commentary = fs.readFileSync(commentaryPath, 'utf8')
+  const terminalLog = fs.readFileSync(terminalLogPath, 'utf8')
   return {
     name: path.basename(entryDir),
     commentary,
     resources: {
+      terminal: [
+        terminalLog,
+      ],
     },
   }
 }
