@@ -19,18 +19,26 @@ const readFileIfExists = (filePath) => {
   }
 }
 
+const getTerminalLogResource = (entryDir, entryRootUri) => {
+  const terminalLogPath = path.resolve(entryDir, 'terminal.log')
+  const terminalLog = readFileIfExists(terminalLogPath)
+  return terminalLog && {
+    uri: `${entryRootUri}terminal.log`,
+    content: terminalLog,
+  }
+}
+
 const getEntryFromDir = (entryDir) => {
   const commentaryPath = path.resolve(entryDir, 'commentary.txt')
-  const terminalLogPath = path.resolve(entryDir, 'terminal.log')
   const commentary = readFileIfExists(commentaryPath)
-  const terminalLog = readFileIfExists(terminalLogPath)
   const name = path.basename(entryDir)
+  const entryRootUri = `/entries/${name}/`
   return {
-    uri: `/entries/${name}/commentary.txt`,
+    uri: `${entryRootUri}/commentary.txt`,
     name,
     commentary,
     resources: {
-      terminal: terminalLog && `${name}/terminal.log`,
+      terminal: getTerminalLogResource(entryDir, entryRootUri),
     },
   }
 }
