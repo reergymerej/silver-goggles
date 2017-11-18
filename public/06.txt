@@ -163,3 +163,12 @@ OK, it's starting to look sane.
 
 Now, since we don't know how to show the resources yet, let's just go back to
 showing the basic commentary.
+
+
+ref: 1dd78d8
+
+Cool.  Now we're getting somehere.  It's time to take a break.  Let's commit
+all this stuff and push it up.
+
+
+Sat Nov 18 10:53:04 CST 2017

@@ -522,4 +522,11 @@ bash-3.2$ git add .
 bash-3.2$ git commit -m 'show com[K[K[Kentries lest n[K[K[K[Kist [K[K[K[K[Kist next to current entry'
 [master 39ee381] show entries list next to current entry
  4 files changed, 34 insertions(+), 12 deletions(-)
-bash-3.2$ 
+bash-3.2$ git d[Kadd . && git commit --[Km '' --allow-empty-message
+[master 1dd78d8] 
+ 4 files changed, 31 insertions(+), 43 deletions(-)
+ rewrite src/App.css (76%)
+bash-3.2$ exit
+exit
+
+Script done on Sat Nov 18 10:53:12 2017

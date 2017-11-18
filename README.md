@@ -12,7 +12,7 @@ This will log everything in the terminal.  Once finished, `exit` to stop
 recording.  Clean up the results with
 
 ```
-col -bfp < terminal.log > terminal.log.clean
+col -bfp < terminal.log > public/06.terminal.log
 ```
 
 
