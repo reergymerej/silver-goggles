@@ -1,15 +1,16 @@
 import React from 'react'
 
 const parseCommentary = (commentary) => {
-  return [
-    0,
-    1,
-    2,
-  ]
+  const gitRegex = /ref:git:([a-z0-9]+)/gi
+  const parts = commentary.split(gitRegex)
+  // These are all just strings.  We have to return them with some indicator of
+  // what type of data they are.
+  return parts
 }
 
 const TextBlock = (props) => (
   <pre>
+    some text
     {props.value}
   </pre>
 )
@@ -23,8 +24,8 @@ const ParsedCommentary = (props) => {
   return (
     <div>
       {
-        parsedCommentaryBlocks.map(block => {
-          if (block % 2 === 0) {
+        parsedCommentaryBlocks.map((block, i) => {
+          if (i % 2 === 0) {
             return <TextBlock />
           }
           return <GitRefBlock />
