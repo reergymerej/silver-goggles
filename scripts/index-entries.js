@@ -12,7 +12,7 @@ const entryDirs = dir.files(entriesPath, 'dir', null, {
 })
 
 const getEntryFromDir = (entryDir) => {
-  const commentaryPath = path.resolve(entryFileName, 'commentary.txt')
+  const commentaryPath = path.resolve(entryDir, 'commentary.txt')
   const commentary = fs.readFileSync(commentaryPath, 'utf8')
   return {
     name: path.basename(entryDir),
@@ -23,7 +23,8 @@ const getEntryFromDir = (entryDir) => {
 }
 
 const entries = entryDirs.map(getEntryFromDir)
+console.log(entries)
 
 const outPath = path.resolve(__dirname, '../src/entries.json')
 const output = JSON.stringify(entries)
-// fs.writeFileSync(outPath, output)
+fs.writeFileSync(outPath, output)
