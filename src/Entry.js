@@ -14,6 +14,14 @@ const Entry = (props) => {
       <pre>
         {props.entry.commentary}
       </pre>
+      <a href="asdf/asdf">a Git reference</a>
+      <pre>
+        {props.entry.commentary}
+      </pre>
+      <a href="asdf/asdf">a Git reference</a>
+      <pre>
+        {props.entry.commentary}
+      </pre>
     </div>
   )
 }
