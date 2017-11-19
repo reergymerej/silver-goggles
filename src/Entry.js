@@ -1,4 +1,5 @@
 import React from 'react'
+import GitRefBlock from './GitRefBlock'
 
 const TYPE = {
   TEXT: 'TEXT',
@@ -28,12 +29,6 @@ const TextBlock = (props) => (
   <pre>
     {props.value}
   </pre>
-)
-
-const GitRefBlock = (props) => (
-  <a href={`https://github.com/reergymerej/silver-goggles/commit/${props.value}`}>
-    {props.value}
-  </a>
 )
 
 const ParsedCommentary = (props) => {
