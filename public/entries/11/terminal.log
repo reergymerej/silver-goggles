@@ -1,0 +1,33 @@
+Script started on Sat Nov 18 19:18:25 2017
+?1034hbash-3.2$ mv ~/Desktop/Screen\ Shot\ 2017-11-18\ at\ 7.17.41\ PM.png /K./Ksrc/peKpublic/entries/1
+10/ 11/
+txth-3.2$ mv ~/Desktop/Screen\ Shot\ 2017-11-18\ at\ 7.17.41\ PM.png ./public/entries/11/commentary.t
+bash-3.2$ mkdir sKpublic/entries/11/imagesK
+ngsh-3.2$ mv ~/Desktop/Screen\ Shot\ 2017-11-18\ at\ 7.17.41\ PM.png ./Kpublic/entries/11/images/01.p
+ngsh-3.2$ mv ~/Desktop/Screen\ Shot\ 2017-11-18\ at\ 7.20.15\ PM.png ./public/entries/11/images/02.p
+bash-3.2$ ./scripts/index-entries.js
+bash-3.2$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	31mmodified:   public/index.htmlm
+	31mmodified:   scripts/index-entries.jsm
+	31mmodified:   src/entries.jsonm
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	31mpublic/entries/11/m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+bash-3.2$ git add srcKcripts/
+bash-3.2$ git commit -m 'turnKmake entry dir read not recursive'
+[master 25e4819] make entry dir read not recursive
+ 1 file changed, 1 insertion(+)
+bash-3.2$
+bash-3.2$ exit
+
+Script done on Sat Nov 18 20:02:00 2017

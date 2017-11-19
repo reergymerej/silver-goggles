@@ -1,0 +1,24 @@
+
+Sat Nov 18 19:18:04 CST 2017
+
+ref:images:01.png
+
+The site is looking nifty, but what the heck is that images dir?
+
+ref:images:02.png
+
+And oh crap if you click on it.
+
+TODO: We need some TDD love.  I actually really enjoy TDD, but I don't want to
+kill the momentum yet.
+
+It appears `node-dir` is recursive by default.
+
+https://github.com/fshost/node-dir#filesdir-type-callback-options
+
+ref:git:25e4819
+
+...
+
+As I was walking the dog, I was wondering if we should actually keep the
+patches as local resources.
