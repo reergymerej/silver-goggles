@@ -1,6 +1,6 @@
 import React from 'react'
 import './App.css'
-import entries from './entries.json'
+import entries from '../entries.json'
 import ClickableEntry from './ClickableEntry'
 import Entry from './Entry'
 

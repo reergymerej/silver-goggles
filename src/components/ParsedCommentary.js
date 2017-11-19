@@ -1,5 +1,5 @@
 import React from 'react'
-import { TYPE } from './constants'
+import { TYPE } from '../constants'
 import GitRefBlock from './GitRefBlock'
 
 const TextBlock = (props) => (

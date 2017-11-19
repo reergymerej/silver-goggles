@@ -1,5 +1,5 @@
 import React from 'react'
-import { TYPE } from './constants'
+import { TYPE } from '../constants'
 import ParsedCommentary from './ParsedCommentary'
 
 class Entry extends React.Component {
