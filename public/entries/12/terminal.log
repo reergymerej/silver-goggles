@@ -1,0 +1,641 @@
+Script started on Sat Nov 18 20:14:35 2017
+?1034hbash-3.2$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	31mmodified:   src/Entry.jsm
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	31mpublic/entries/12/m
+	31msrc/GitRefBlock.jsm
+
+no changes added to commit (use "git add" and/or "git commit -a")
+bash-3.2$ git add src/
+bash-3.2$ git commit -m 'split GitRefBlock' iK itKnto own file'
+[master b192528] split GitRefBlock into own file
+ 2 files changed, 11 insertions(+), 6 deletions(-)
+ create mode 100644 src/GitRefBlock.js
+bash-3.2$ yarn add eslint --dev
+2K1G1myarn add v1.3.222m
+2K1G2m[1/4]22m 🔍  Resolving packages...
+1G⠁ 0K1G⠂ eslint0K1G⠄ eslint0K1G⡀ eslint0K1G⢀ eslint0K1G⠠ json-stable-stringify-without-jsonify@^1.0.10K1G⠐ json-stable-stringify-without-jsonify@^1.0.10K1G⠈ json-stable-stringify-without-jsonify@^1.0.10K1G⠁ json-stable-stringify-without-jsonify@^1.0.10K1G⠂ json-stable-stringify-without-jsonify@^1.0.10K2K1G2K1G2m[2/4]22m 🚚  Fetching packages...
+2K1G1G[------------------------------------------------------------------------------------------] 0/10221G[##########------------------------------------------------------------------------------] 112/10221G[#####################-------------------------------------------------------------------] 243/10221G[##################################------------------------------------------------------] 400/10221G[################################################----------------------------------------] 552/10221G[##############################################################--------------------------] 720/10221G[############################################################################------------] 881/10221G[#######################################################################################] 1020/10221G[#######################################################################################] 1021/10222K1G2m[3/4]22m 🔗  Linking dependencies...
+1G[#######################################################################################] 1022/10222K1G2K1G1G[------------------------------------------------------------------------------------------] 0/10872K1G2K1G1G[------------------------------------------------------------------------------------------] 0/13791G[######################------------------------------------------------------------------] 349/13791G[##################################------------------------------------------------------] 539/13791G[####################################################------------------------------------] 813/13791G[#########################################################################--------------] 1155/13791G[#######################################################################################] 1379/13792K1G2K1G1G[------------------------------------------------------------------------------------------] 0/20021G[#####################-------------------------------------------------------------------] 473/20021G[####################################----------------------------------------------------] 828/20021G[#################################################--------------------------------------] 1117/20022K1G2m[4/4]22m 📃  Building fresh packages...
+2K1G
+2K1G
+2K1G
+2K1G
+1G⠁ 0K1G1A⠁ 0K1G1B1G2A⠁ 0K1G2B1G3A⠁ 0K1G3B1G4A⠁ 0K1G4B1G4A2K4B1G3A2K3B1G2A2K2B1G1A2K1B2K1G4A1G[#################################################--------------------------------------] 1133/20022K1G32msuccess39m Saved lockfile.
+2K1G32msuccess39m Saved 2 new dependencies.
+├─ eslint@4.11.0
+└─ json-stable-stringify-without-jsonify@1.0.1
+2K1G2K1G✨   Done in 4.38s.
+bash-3.2$ yeslintKK./node_modules/.bin/eslint --init
+?25l32m?39m 1mHow would you like to configure ESLint?22m0m 0m2m(Use arrow keys)22m
+36m❯ Answer questions about your style39m
+  Use a popular style guide
+  Inspect your JavaScript file(s) 34D34C2K1A2K1A2K1A2KG32m?39m 1mHow would you like to configure ESLint?22m0m 0m36mAnswer questions about your style39m75D75C
+?25h32m?39m 1mAre you using ECMAScript 6 features?22m0m 0m2m(y/N) 22m45D45C2KG32m?39m 1mAre you using ECMAScript 6 features?22m0m 0m2m(y/N) 22my46D46C2KG32m?39m 1mAre you using ECMAScript 6 features?22m0m 0m36mYes39m42D42C
+32m?39m 1mAre you using ES6 modules?22m0m 0m2m(y/N) 22m35D35C2KG32m?39m 1mAre you using ES6 modules?22m0m 0m2m(y/N) 22my36D36C2KG32m?39m 1mAre you using ES6 modules?22m0m 0m36mYes39m32D32C
+?25l32m?39m 1mWhere will your code run?22m0m 0m(Press 36m1m<space>22m39m to select, 36m1m<a>22m39m to toggle all, 36m1m<i>22m39m to inverse selection)
+36m❯39m32m◉39m Browser
+ ◯ Node7D7C2K1A2K1A2KG32m?39m 1mWhere will your code run?22m0m 0m
+ 32m◉39m Browser
+36m❯39m◯ Node7D7C2K1A2K1A2KG32m?39m 1mWhere will your code run?22m0m 0m
+ 32m◉39m Browser
+36m❯39m32m◉39m Node7D7C2K1A2K1A2KG32m?39m 1mWhere will your code run?22m0m 0m
+36m❯39m32m◉39m Browser
+ 32m◉39m Node7D7C2K1A2K1A2KG32m?39m 1mWhere will your code run?22m0m 0m36mBrowser, Node39m41D41C
+?25h32m?39m 1mDo you use CommonJS?22m0m 0m2m(y/N) 22m29D29C2KG32m?39m 1mDo you use CommonJS?22m0m 0m2m(y/N) 22mn30D30C2KG32m?39m 1mDo you use CommonJS?22m0m 0m36mNo39m25D25C
+32m?39m 1mDo you use JSX?22m0m 0m2m(y/N) 22m24D24C2KG32m?39m 1mDo you use JSX?22m0m 0m2m(y/N) 22my25D25C2KG32m?39m 1mDo you use JSX?22m0m 0m36mYes39m21D21C
+32m?39m 1mDo you use React?22m0m 0m2m(y/N) 22m26D26C2KG32m?39m 1mDo you use React?22m0m 0m2m(y/N) 22my27D27C2KG32m?39m 1mDo you use React?22m0m 0m36mYes39m23D23C
+?25l32m?39m 1mWhat style of indentation do you use?22m0m 0m2m(Use arrow keys)22m
+36m❯ Tabs39m
+  Spaces 9D9C2K1A2K1A2KG32m?39m 1mWhat style of indentation do you use?22m0m 0m
+  Tabs
+36m❯ Spaces39m 9D9C2K1A2K1A2KG32m?39m 1mWhat style of indentation do you use?22m0m 0m36mSpaces39m46D46C
+?25h?25l32m?39m 1mWhat quotes do you use for strings?22m0m 0m2m(Use arrow keys)22m
+36m❯ Double39m
+  Single 9D9C2K1A2K1A2KG32m?39m 1mWhat quotes do you use for strings?22m0m 0m
+  Double
+36m❯ Single39m 9D9C2K1A2K1A2KG32m?39m 1mWhat quotes do you use for strings?22m0m 0m36mSingle39m44D44C
+?25h?25l32m?39m 1mWhat line endings do you use?22m0m 0m2m(Use arrow keys)22m
+36m❯ Unix39m
+  Windows 10D10C2K1A2K1A2KG32m?39m 1mWhat line endings do you use?22m0m 0m
+  Unix
+36m❯ Windows39m 10D10C2K1A2K1A2KG32m?39m 1mWhat line endings do you use?22m0m 0m
+36m❯ Unix39m
+  Windows 10D10C2K1A2K1A2KG32m?39m 1mWhat line endings do you use?22m0m 0m36mUnix39m36D36C
+?25h32m?39m 1mDo you require semicolons?22m0m 0m2m(Y/n) 22m35D35C2KG32m?39m 1mDo you require semicolons?22m0m 0m2m(Y/n) 22mn36D36C2KG32m?39m 1mDo you require semicolons?22m0m 0m36mNo39m31D31C
+?25l32m?39m 1mWhat format do you want your config file to be in?22m0m 0m2m(Use arrow keys)22m
+36m❯ JavaScript39m
+  YAML
+  JSON 7D7C2K1A2K1A2K1A2KG32m?39m 1mWhat format do you want your config file to be in?22m0m 0m36mJavaScript39m63D63C
+?25hInstalling eslint-plugin-react@latest
+K?25h37;40mnpm0mm0m30;43mWARN0mu0m35mgentlyRm0msnot0removinge/Users/jeremygreer/Ideas/blog/site/node_modules/.bin/jestsasmit wasn't installed by /Users/jeremygreer/Ideas/blog/site/node_modules/jest
+K?25h37;40mnpm0m 0m30;43mWARN0m░0m35mgentlyRm0mlnot2removing3/Users/jeremygreer/Ideas/blog/site/node_modules/.bin/uglifyjs as it wasn't installed by /Users/jeremygreer/Ideas/blog/site/node_modules/uglify-js
+K?25h37;40mnpm0mm0m30;43mWARN0mu0m35mgentlyRm0mcnotiremovingm/Users/jeremygreer/Ideas/blog/site/node_modules/html-minifier/node_modules/.bin/uglifyjs as it wasn't installed by /Users/jeremygreer/Ideas/blog/site/node_modules/html-minifier/node_modules/uglify-js
+0m37;40mnpm0m 0m30;43mWARN0m 0m35mgentlyRm0m not removing /Users/jeremygreer/Ideas/blog/site/node_modules/fsevents/node_modules/.bin/node-pre-gyp as it wasn't installed by /Users/jeremygreer/Ideas/blog/site/node_modules/fsevents/node_modules/node-pre-gyp
+0m37;40mnpm0m 0m30;43mWARN0m 0m35mgentlyRm0m not removing /Users/jeremygreer/Ideas/blog/site/node_modules/.bin/esparse as it wasn't installed by /Users/jeremygreer/Ideas/blog/site/node_modules/esprima
+0m37;40mnpm0m 0m30;43mWARN0m 0m35mgentlyRm0m not removing /Users/jeremygreer/Ideas/blog/site/node_modules/.bin/esvalidate as it wasn't installed by /Users/jeremygreer/Ideas/blog/site/node_modules/esprima
+0m37;40mnpm0m 0m30;43mWARN0m 0m35mgentlyRm0m not removing /Users/jeremygreer/Ideas/blog/site/node_modules/espree/node_modules/.bin/acorn as it wasn't installed by /Users/jeremygreer/Ideas/blog/site/node_modules/espree/node_modules/acorn
+0m37;40mnpm0m 0m30;43mWARN0m 0m35mgentlyRm0m not removing /Users/jeremygreer/Ideas/blog/site/node_modules/.bin/browserslist as it wasn't installed by /Users/jeremygreer/Ideas/blog/site/node_modules/browserslist
+0m37;40mnpm0m 0m30;43mWARN0m 0m35mgentlyRm0m not removing /Users/jeremygreer/Ideas/blog/site/node_modules/autoprefixer/node_modules/.bin/browserslist as it wasn't installed by /Users/jeremygreer/Ideas/blog/site/node_modules/autoprefixer/node_modules/browserslist
+K?25h37;40mnpm0m 0m30;43mWARN0m░0m35mgentlyRm0mtnot-removingm/Users/jeremygreer/Ideas/blog/site/node_modules/chokidar/node_modules/fsevents/node_modules/.bin/node-pre-gyp as it wasn't installed by /Users/jeremygreer/Ideas/blog/site/node_modules/chokidar/node_modules/fsevents/node_modules/node-pre-gyp
+K?25h37;40mnpm0mm0m34;40mnotice0m35m0mtcreatedmanlockfilelasepackage-lock.json.gYourshould.commitsthistfile.eslint-pl0mK
+0m37;40mnpm0m 0m30;43mWARN0m35m0m eslint-plugin-react@7.5.0 requires a peer of eslint@^3.0.0 || ^4.0.0 but none was installed.
+0m
++ eslint-plugin-react@7.5.0
+added 1 package, removed 1282 packages and updated 32 packages in 11.342s
+Installing eslint-plugin-react@latest
+K?25h37;40mnpm0mm0m30;43mWARN0m35m0mneslint-plugin-react@7.5.0yrequireslanpeeruofneslint@^3.0.0p||t^4.0.0lbutsnone-wasminstalled.
+0m
++ eslint-plugin-react@7.5.0
+removed 97 packages and updated 1 package in 1.045s
+
+33m
+   ╭─────────────────────────────────────╮39m
+   33m│39m				       33m│39m
+   33m│39m   Update available 2m5.3.022m0m → 0m32m5.5.139m    33m│39m
+   33m│39m     Run 36mnpm i -g npm39m to update      33m│39m
+   33m│39m				       33m│39m
+33m   ╰─────────────────────────────────────╯
+39m
+Successfully created .eslintrc.js file in /Users/jeremygreer/Ideas/blog/site
+?25hbash-3.2$ npm -v
+5.3.0
+bash-3.2$ npm i -g npm
+K?25h/usr/local/bin/npm░->0/usr/local/lib/node_modules/npm/bin/npm-cli.jsimraf@2.6.20mKckage-json0m_/usr/local/lib/n0mKK0mK
+/usr/local/bin/npx -> /usr/local/lib/node_modules/npm/bin/npx-cli.js
+K?25h+ npm@5.5.1m90m░░░░░░0m⸩  ⠴0postinstall:r32minfo0m 35mlifecycle0mnnpm@5.5.1~postinstall:inpm@5.5.10mKl/lib/node_modul0mK
+added 52 packages, removed 180 packages and updated 47 packages in 10.081s
+bash-3.2$ npmni -g npKyarn lint
+2K1G1myarn run v1.3.222m
+2K1G2m$ eslint src --config .eslintrc.js22m
+/bin/sh: eslint: command not found
+2K1G31merror39m Command failed with exit code 127.
+2K1G34minfo39m Visit 1mhttps://yarnpkg.com/en/docs/cli/run22m for documentation about this command.
+bash-3.2$ ./node_modules/K.bin/eslKloose-envifyK
+bash-3.2$ yarn
+2K1G1myarn install v1.3.222m
+2K1G2m[1/4]22m 🔍  Resolving packages...
+1G⠁ 0K1G⠂ eslint-plugin-react@^7.5.00K1G⠄ eslint-plugin-react@^7.5.00K1G⡀ eslint-plugin-react@^7.5.00K1G⢀ eslint-plugin-react@^7.5.00K2K1G2K1G2m[2/4]22m 🚚  Fetching packages...
+2K1G1G[------------------------------------------------------------------------------------------] 0/10231G[##########------------------------------------------------------------------------------] 120/10231G[######################------------------------------------------------------------------] 256/10231G[#####################################---------------------------------------------------] 432/10231G[####################################################------------------------------------] 608/10231G[####################################################################--------------------] 792/10231G[##################################################################################------] 956/10231G[#######################################################################################] 1022/10232K1G2m[3/4]22m 🔗  Linking dependencies...
+1G[#######################################################################################] 1023/10232K1G2K1G1G[------------------------------------------------------------------------------------------] 0/10892K1G2K1G1G[-----------------------------------------------------------------------------------------] 0/208911G[#--------------------------------------------------------------------------------------] 332/208911G[###------------------------------------------------------------------------------------] 661/208911G[####-----------------------------------------------------------------------------------] 955/208911G[#####---------------------------------------------------------------------------------] 1332/208911G[#######-------------------------------------------------------------------------------] 1620/208911G[########------------------------------------------------------------------------------] 1897/208911G[#########-----------------------------------------------------------------------------] 2216/208911G[###########---------------------------------------------------------------------------] 2587/208911G[############--------------------------------------------------------------------------] 2996/208911G[##############------------------------------------------------------------------------] 3348/208911G[###############-----------------------------------------------------------------------] 3662/208911G[################----------------------------------------------------------------------] 3992/208911G[##################--------------------------------------------------------------------] 4267/208911G[###################-------------------------------------------------------------------] 4650/208911G[####################------------------------------------------------------------------] 4971/208911G[######################----------------------------------------------------------------] 5311/208911G[#######################---------------------------------------------------------------] 5656/208911G[#########################-------------------------------------------------------------] 6005/208911G[##########################------------------------------------------------------------] 6299/208911G[###########################-----------------------------------------------------------] 6493/208911G[############################----------------------------------------------------------] 6813/208911G[#############################---------------------------------------------------------] 7119/208911G[###############################-------------------------------------------------------] 7428/208911G[################################------------------------------------------------------] 7707/208911G[#################################-----------------------------------------------------] 7996/208911G[##################################----------------------------------------------------] 8322/208911G[##################################----------------------------------------------------] 8362/208911G[####################################--------------------------------------------------] 8693/208911G[#####################################-------------------------------------------------] 8991/208911G[######################################------------------------------------------------] 9331/208911G[########################################----------------------------------------------] 9676/208911G[#########################################---------------------------------------------] 9991/208911G[##########################################-------------------------------------------] 10279/208911G[###########################################------------------------------------------] 10552/208911G[############################################-----------------------------------------] 10861/208911G[#############################################----------------------------------------] 11177/208911G[###############################################--------------------------------------] 11489/208911G[################################################-------------------------------------] 11815/208911G[##################################################-----------------------------------] 12182/208911G[###################################################----------------------------------] 12517/208911G[####################################################---------------------------------] 12824/208911G[#####################################################--------------------------------] 13089/208911G[#######################################################------------------------------] 13449/208911G[########################################################-----------------------------] 13741/208911G[#########################################################----------------------------] 14029/208911G[##########################################################---------------------------] 14320/208911G[############################################################-------------------------] 14652/208911G[#############################################################------------------------] 14980/208911G[##############################################################-----------------------] 15281/208911G[################################################################---------------------] 15670/208911G[#################################################################--------------------] 16016/208911G[###################################################################------------------] 16406/208911G[####################################################################-----------------] 16713/208911G[#####################################################################----------------] 17012/208911G[#######################################################################--------------] 17339/208911G[########################################################################-------------] 17665/208911G[#########################################################################------------] 17968/208911G[##########################################################################-----------] 18243/208911G[############################################################################---------] 18578/208911G[#############################################################################--------] 18860/208911G[##############################################################################-------] 19220/208911G[################################################################################-----] 19544/208911G[#################################################################################----] 19864/208911G[##################################################################################---] 20156/208911G[###################################################################################--] 20462/208911G[#####################################################################################] 20786/208911G[#####################################################################################] 20891/208912K1G2K1G1G[------------------------------------------------------------------------------------------] 0/20041G[#################-----------------------------------------------------------------------] 384/20041G[####################################----------------------------------------------------] 826/20041G[################################################---------------------------------------] 1096/20042K1G2m[4/4]22m 📃  Building fresh packages...
+2K1G
+2K1G
+2K1G
+2K1G
+1G⠁ 0K1G1A⠁ 0K1G1B1G2A⠁ 0K1G2B1G3A⠁ 0K1G3B1G4A⠁ 0K1G4B1G[#################################################--------------------------------------] 1135/20041G2m[-/3]22m ⠂ waiting...0K1G1A2m[-/3]22m ⠂ waiting...0K1G1B1G2A2m[3/3]22m ⠂ fsevents0K1G2B1G3A2m[2/3]22m ⠂ fsevents0K1G3B1G4A2m[1/3]22m ⠂ uglifyjs-webpack-plugin0K1G4B1G2m[-/3]22m ⠄ waiting...0K1G1A2m[-/3]22m ⠄ waiting...0K1G1B1G2A2m[3/3]22m ⠄ fsevents0K1G2B1G3A2m[2/3]22m ⠄ fsevents0K1G3B1G4A2m[1/3]22m ⠄ uglifyjs-webpack-plugin0K1G4B1G2m[-/3]22m ⡀ waiting...0K1G1A2m[-/3]22m ⡀ waiting...0K1G1B1G2A2m[3/3]22m ⡀ fsevents0K1G2B1G3A2m[2/3]22m ⡀ fsevents0K1G3B1G4A2m[-/3]22m ⡀ waiting...0K1G4B1G2m[-/3]22m ⢀ waiting...0K1G1A2m[-/3]22m ⢀ waiting...0K1G1B1G2A2m[3/3]22m ⢀ fsevents0K1G2B1G3A2m[2/3]22m ⢀ fsevents0K1G3B1G4A2m[-/3]22m ⢀ waiting...0K1G4B1G2m[-/3]22m ⠠ waiting...0K1G1A2m[-/3]22m ⠠ waiting...0K1G1B1G2A2m[-/3]22m ⠠ waiting...0K1G2B1G3A2m[2/3]22m ⠠ fsevents: node-pre-gyp info ok0K1G3B1G4A2m[-/3]22m ⠠ waiting...0K1G4B1G4A2K4B1G3A2K3B1G2A2K2B1G1A2K1B2K1G4A2K1G32msuccess39m Saved lockfile.
+2K1G2K1G✨   Done in 8.24s.
+bash-3.2$ yarn lint
+2K1G1myarn run v1.3.222m
+2K1G2m$ eslint src --config .eslintrc.js22m
+
+4m/Users/jeremygreer/Ideas/blog/site/src/App.js24m
+  2m8:922m  31merror39m  Parsing error: Unexpected token =
+
+4m/Users/jeremygreer/Ideas/blog/site/src/App.test.js24m
+  2m1:822m   31merror39m  'React' is defined but never used  2mno-unused-vars22m
+  2m1:2622m  31merror39m  Extra semicolon		     2msemi22m
+  2m2:3322m  31merror39m  Extra semicolon		     2msemi22m
+  2m3:822m   31merror39m  'App' is defined but never used    2mno-unused-vars22m
+  2m3:2422m  31merror39m  Extra semicolon		     2msemi22m
+  2m5:122m   31merror39m  'it' is not defined		     2mno-undef22m
+  2m6:4422m  31merror39m  Extra semicolon		     2msemi22m
+  2m7:3222m  31merror39m  Extra semicolon		     2msemi22m
+  2m8:322m   31merror39m  Extra semicolon		     2msemi22m
+
+4m/Users/jeremygreer/Ideas/blog/site/src/ClickableEntry.js24m
+  2m4:1522m  31merror39m  Parsing error: Unexpected token =
+
+4m/Users/jeremygreer/Ideas/blog/site/src/Entry.js24m
+   2m1:822m   31merror39m  'React' is defined but never used			  2mno-unused-vars22m
+  2m34:722m   31merror39m  'ParsedCommentary' is assigned a value but never used  2mno-unused-vars22m
+  2m40:1722m  31merror39m  'BlockType' is assigned a value but never used	  2mno-unused-vars22m
+
+4m/Users/jeremygreer/Ideas/blog/site/src/GitRefBlock.js24m
+  2m2:822m  31merror39m  'React' is defined but never used  2mno-unused-vars22m
+
+4m/Users/jeremygreer/Ideas/blog/site/src/index.js24m
+  2m1:822m   31merror39m  'React' is defined but never used  2mno-unused-vars22m
+  2m1:2622m  31merror39m  Extra semicolon		     2msemi22m
+  2m2:3322m  31merror39m  Extra semicolon		     2msemi22m
+  2m3:2122m  31merror39m  Extra semicolon		     2msemi22m
+  2m4:822m   31merror39m  'App' is defined but never used    2mno-unused-vars22m
+  2m4:2422m  31merror39m  Extra semicolon		     2msemi22m
+  2m5:6022m  31merror39m  Extra semicolon		     2msemi22m
+  2m7:5822m  31merror39m  Extra semicolon		     2msemi22m
+  2m8:2422m  31merror39m  Extra semicolon		     2msemi22m
+
+4m/Users/jeremygreer/Ideas/blog/site/src/registerServiceWorker.js24m
+   2m19:222m   31merror39m  Extra semicolon		  2msemi22m
+   2m24:7122m  31merror39m  Extra semicolon		  2msemi22m
+   2m29:1322m  31merror39m  Extra semicolon		  2msemi22m
+   2m33:6622m  31merror39m  Extra semicolon		  2msemi22m
+   2m37:3922m  31merror39m  Extra semicolon		  2msemi22m
+   2m40:3122m  31merror39m  Extra semicolon		  2msemi22m
+   2m42:722m   31merror39m  Extra semicolon		  2msemi22m
+   2m51:5722m  31merror39m  Extra semicolon		  2msemi22m
+   2m59:1522m  31merror39m  Unexpected console statement  2mno-console22m
+   2m59:7122m  31merror39m  Extra semicolon		  2msemi22m
+   2m64:1522m  31merror39m  Unexpected console statement  2mno-console22m
+   2m64:6422m  31merror39m  Extra semicolon		  2msemi22m
+   2m67:1022m  31merror39m  Extra semicolon		  2msemi22m
+   2m68:822m   31merror39m  Extra semicolon		  2msemi22m
+   2m71:722m   31merror39m  Unexpected console statement  2mno-console22m
+   2m71:7222m  31merror39m  Extra semicolon		  2msemi22m
+   2m72:722m   31merror39m  Extra semicolon		  2msemi22m
+   2m87:3722m  31merror39m  Extra semicolon		  2msemi22m
+   2m88:1322m  31merror39m  Extra semicolon		  2msemi22m
+   2m89:1122m  31merror39m  Extra semicolon		  2msemi22m
+   2m92:3122m  31merror39m  Extra semicolon		  2msemi22m
+   2m96:722m   31merror39m  Unexpected console statement  2mno-console22m
+   2m98:822m   31merror39m  Extra semicolon		  2msemi22m
+   2m99:722m   31merror39m  Extra semicolon		  2msemi22m
+  2m105:3222m  31merror39m  Extra semicolon		  2msemi22m
+  2m106:722m   31merror39m  Extra semicolon		  2msemi22m
+
+31m1m✖ 50 problems (50 errors, 0 warnings)22m39m
+31m1m22m39m31m1m  35 errors, 0 warnings potentially fixable with the `--fix` option.22m39m
+31m1m22m39m
+2K1G31merror39m Command failed with exit code 1.
+2K1G34minfo39m Visit 1mhttps://yarnpkg.com/en/docs/cli/run22m for documentation about this command.
+bash-3.2$ yarn lint --fix
+2K1G1myarn run v1.3.222m
+2K1G2m$ eslint src --config .eslintrc.js --fix22m
+
+4m/Users/jeremygreer/Ideas/blog/site/src/App.js24m
+  2m8:922m  31merror39m  Parsing error: Unexpected token =
+
+4m/Users/jeremygreer/Ideas/blog/site/src/App.test.js24m
+  2m1:822m  31merror39m  'React' is defined but never used  2mno-unused-vars22m
+  2m3:822m  31merror39m  'App' is defined but never used    2mno-unused-vars22m
+  2m5:122m  31merror39m  'it' is not defined		    2mno-undef22m
+
+4m/Users/jeremygreer/Ideas/blog/site/src/ClickableEntry.js24m
+  2m4:1522m  31merror39m  Parsing error: Unexpected token =
+
+4m/Users/jeremygreer/Ideas/blog/site/src/Entry.js24m
+   2m1:822m   31merror39m  'React' is defined but never used			  2mno-unused-vars22m
+  2m34:722m   31merror39m  'ParsedCommentary' is assigned a value but never used  2mno-unused-vars22m
+  2m40:1722m  31merror39m  'BlockType' is assigned a value but never used	  2mno-unused-vars22m
+
+4m/Users/jeremygreer/Ideas/blog/site/src/GitRefBlock.js24m
+  2m2:822m  31merror39m  'React' is defined but never used  2mno-unused-vars22m
+
+4m/Users/jeremygreer/Ideas/blog/site/src/index.js24m
+  2m1:822m  31merror39m  'React' is defined but never used  2mno-unused-vars22m
+  2m4:822m  31merror39m  'App' is defined but never used    2mno-unused-vars22m
+
+4m/Users/jeremygreer/Ideas/blog/site/src/registerServiceWorker.js24m
+  2m59:1522m  31merror39m  Unexpected console statement  2mno-console22m
+  2m64:1522m  31merror39m  Unexpected console statement  2mno-console22m
+  2m71:722m   31merror39m  Unexpected console statement  2mno-console22m
+  2m96:722m   31merror39m  Unexpected console statement  2mno-console22m
+
+31m1m✖ 15 problems (15 errors, 0 warnings)22m39m
+31m1m22m39m
+2K1G31merror39m Command failed with exit code 1.
+2K1G34minfo39m Visit 1mhttps://yarnpkg.com/en/docs/cli/run22m for documentation about this command.
+bash-3.2$ yarn lint --fix
+2K1G1myarn run v1.3.222m
+2K1G2m$ eslint src --config .eslintrc.js --fix22m
+
+4m/Users/jeremygreer/Ideas/blog/site/src/App.js24m
+  2m8:922m  31merror39m  Parsing error: Unexpected token =
+
+4m/Users/jeremygreer/Ideas/blog/site/src/App.test.js24m
+  2m1:822m  31merror39m  'React' is defined but never used  2mno-unused-vars22m
+  2m3:822m  31merror39m  'App' is defined but never used    2mno-unused-vars22m
+  2m5:122m  31merror39m  'it' is not defined		    2mno-undef22m
+
+4m/Users/jeremygreer/Ideas/blog/site/src/ClickableEntry.js24m
+  2m4:1522m  31merror39m  Parsing error: Unexpected token =
+
+4m/Users/jeremygreer/Ideas/blog/site/src/Entry.js24m
+   2m1:822m   31merror39m  'React' is defined but never used			  2mno-unused-vars22m
+  2m34:722m   31merror39m  'ParsedCommentary' is assigned a value but never used  2mno-unused-vars22m
+  2m40:1722m  31merror39m  'BlockType' is assigned a value but never used	  2mno-unused-vars22m
+
+4m/Users/jeremygreer/Ideas/blog/site/src/GitRefBlock.js24m
+  2m2:822m  31merror39m  'React' is defined but never used  2mno-unused-vars22m
+
+4m/Users/jeremygreer/Ideas/blog/site/src/index.js24m
+  2m1:822m  31merror39m  'React' is defined but never used  2mno-unused-vars22m
+  2m4:822m  31merror39m  'App' is defined but never used    2mno-unused-vars22m
+
+31m1m✖ 11 problems (11 errors, 0 warnings)22m39m
+31m1m22m39m
+2K1G31merror39m Command failed with exit code 1.
+2K1G34minfo39m Visit 1mhttps://yarnpkg.com/en/docs/cli/run22m for documentation about this command.
+bash-3.2$ yarn add babel-eslint@7 --dev
+2K1G1myarn add v1.3.222m
+2K1G2m[1/4]22m 🔍  Resolving packages...
+1G⠁ 0K1G⠂ babel-eslint@70K1G⠄ babel-eslint@70K1G⡀ babel-eslint@70K2K1G2K1G2m[2/4]22m 🚚  Fetching packages...
+2K1G1G[------------------------------------------------------------------------------------------] 0/10231G[##########------------------------------------------------------------------------------] 120/10231G[######################------------------------------------------------------------------] 255/10231G[#####################################---------------------------------------------------] 431/10231G[####################################################------------------------------------] 600/10231G[###################################################################---------------------] 776/10231G[################################################################################--------] 928/10232K1G2m[3/4]22m 🔗  Linking dependencies...
+1G[#######################################################################################] 1023/10232K1G2K1G1G[------------------------------------------------------------------------------------------] 0/10892K1G2K1G1G[------------------------------------------------------------------------------------------] 0/20041G[#################-----------------------------------------------------------------------] 384/20041G[##################################------------------------------------------------------] 779/20041G[###############################################----------------------------------------] 1093/20042K1G2m[4/4]22m 📃  Building fresh packages...
+2K1G
+2K1G
+2K1G
+2K1G
+1G⠁ 0K1G1A⠁ 0K1G1B1G2A⠁ 0K1G2B1G3A⠁ 0K1G3B1G4A⠁ 0K1G4B1G4A2K4B1G3A2K3B1G2A2K2B1G1A2K1B2K1G4A1G[#################################################--------------------------------------] 1135/20042K1G32msuccess39m Saved lockfile.
+2K1G32msuccess39m Saved 0 new dependencies.
+2K1G2K1G✨   Done in 3.15s.
+CCCCCCCCCCCCCCC14Plinte--fixint@7 --dev
+2K1G1myarn run v1.3.222m
+2K1G2m$ eslint src --config .eslintrc.js --fix22m
+
+4m/Users/jeremygreer/Ideas/blog/site/src/App.js24m
+  2m8:922m  31merror39m  Parsing error: Unexpected token =
+
+4m/Users/jeremygreer/Ideas/blog/site/src/App.test.js24m
+  2m1:822m  31merror39m  'React' is defined but never used  2mno-unused-vars22m
+  2m3:822m  31merror39m  'App' is defined but never used    2mno-unused-vars22m
+  2m5:122m  31merror39m  'it' is not defined		    2mno-undef22m
+
+4m/Users/jeremygreer/Ideas/blog/site/src/ClickableEntry.js24m
+  2m4:1522m  31merror39m  Parsing error: Unexpected token =
+
+4m/Users/jeremygreer/Ideas/blog/site/src/Entry.js24m
+   2m1:822m   31merror39m  'React' is defined but never used			  2mno-unused-vars22m
+  2m34:722m   31merror39m  'ParsedCommentary' is assigned a value but never used  2mno-unused-vars22m
+  2m40:1722m  31merror39m  'BlockType' is assigned a value but never used	  2mno-unused-vars22m
+
+4m/Users/jeremygreer/Ideas/blog/site/src/GitRefBlock.js24m
+  2m2:822m  31merror39m  'React' is defined but never used  2mno-unused-vars22m
+
+4m/Users/jeremygreer/Ideas/blog/site/src/index.js24m
+  2m1:822m  31merror39m  'React' is defined but never used  2mno-unused-vars22m
+  2m4:822m  31merror39m  'App' is defined but never used    2mno-unused-vars22m
+
+31m1m✖ 11 problems (11 errors, 0 warnings)22m39m
+31m1m22m39m
+2K1G31merror39m Command failed with exit code 1.
+2K1G34minfo39m Visit 1mhttps://yarnpkg.com/en/docs/cli/run22m for documentation about this command.
+bash-3.2$ yarn lint --fix
+2K1G1myarn run v1.3.222m
+2K1G2m$ eslint src --config .eslintrc.js --fix22m
+
+4m/Users/jeremygreer/Ideas/blog/site/src/App.js24m
+  2m4:822m  31merror39m  'ClickableEntry' is defined but never used  2mno-unused-vars22m
+  2m5:822m  31merror39m  'Entry' is defined but never used	     2mno-unused-vars22m
+
+4m/Users/jeremygreer/Ideas/blog/site/src/App.test.js24m
+  2m1:822m  31merror39m  'React' is defined but never used  2mno-unused-vars22m
+  2m3:822m  31merror39m  'App' is defined but never used    2mno-unused-vars22m
+  2m5:122m  31merror39m  'it' is not defined		    2mno-undef22m
+
+4m/Users/jeremygreer/Ideas/blog/site/src/Entry.js24m
+   2m1:822m   31merror39m  'React' is defined but never used			  2mno-unused-vars22m
+  2m34:722m   31merror39m  'ParsedCommentary' is assigned a value but never used  2mno-unused-vars22m
+  2m40:1722m  31merror39m  'BlockType' is assigned a value but never used	  2mno-unused-vars22m
+
+4m/Users/jeremygreer/Ideas/blog/site/src/GitRefBlock.js24m
+  2m2:822m  31merror39m  'React' is defined but never used  2mno-unused-vars22m
+
+4m/Users/jeremygreer/Ideas/blog/site/src/index.js24m
+  2m1:822m  31merror39m  'React' is defined but never used  2mno-unused-vars22m
+  2m4:822m  31merror39m  'App' is defined but never used    2mno-unused-vars22m
+
+31m1m✖ 11 problems (11 errors, 0 warnings)22m39m
+31m1m22m39m
+2K1G31merror39m Command failed with exit code 1.
+2K1G34minfo39m Visit 1mhttps://yarnpkg.com/en/docs/cli/run22m for documentation about this command.
+bash-3.2$ yarn lint --fix
+2K1G1myarn run v1.3.222m
+2K1G2m$ eslint src --config .eslintrc.js --fix22m
+2K1G✨   Done in 0.68s.
+bash-3.2$ yarn lint --fix
+2K1G1myarn run v1.3.222m
+2K1G2m$ eslint src --config .eslintrc.js --fix22m
+
+4m/Users/jeremygreer/Ideas/blog/site/src/App.js24m
+  2m4:822m  31merror39m  'ClickableEntry' is defined but never used  2mno-unused-vars22m
+  2m5:822m  31merror39m  'Entry' is defined but never used	     2mno-unused-vars22m
+
+4m/Users/jeremygreer/Ideas/blog/site/src/App.test.js24m
+  2m1:822m  31merror39m  'React' is defined but never used  2mno-unused-vars22m
+  2m3:822m  31merror39m  'App' is defined but never used    2mno-unused-vars22m
+  2m5:122m  31merror39m  'it' is not defined		    2mno-undef22m
+
+4m/Users/jeremygreer/Ideas/blog/site/src/Entry.js24m
+   2m1:822m   31merror39m  'React' is defined but never used			  2mno-unused-vars22m
+  2m34:722m   31merror39m  'ParsedCommentary' is assigned a value but never used  2mno-unused-vars22m
+  2m40:1722m  31merror39m  'BlockType' is assigned a value but never used	  2mno-unused-vars22m
+
+4m/Users/jeremygreer/Ideas/blog/site/src/GitRefBlock.js24m
+  2m2:822m  31merror39m  'React' is defined but never used  2mno-unused-vars22m
+
+4m/Users/jeremygreer/Ideas/blog/site/src/index.js24m
+  2m1:822m  31merror39m  'React' is defined but never used  2mno-unused-vars22m
+  2m4:822m  31merror39m  'App' is defined but never used    2mno-unused-vars22m
+
+31m1m✖ 11 problems (11 errors, 0 warnings)22m39m
+31m1m22m39m
+2K1G31merror39m Command failed with exit code 1.
+2K1G34minfo39m Visit 1mhttps://yarnpkg.com/en/docs/cli/run22m for documentation about this command.
+bash-3.2$ yarn lint --fix
+2K1G1myarn run v1.3.222m
+2K1G2m$ eslint src --config .eslintrc.js --fix22m
+
+4m/Users/jeremygreer/Ideas/blog/site/src/App.test.js24m
+  2m5:122m  31merror39m  'it' is not defined  2mno-undef22m
+
+31m1m✖ 1 problem (1 error, 0 warnings)22m39m
+31m1m22m39m
+2K1G31merror39m Command failed with exit code 1.
+2K1G34minfo39m Visit 1mhttps://yarnpkg.com/en/docs/cli/run22m for documentation about this command.
+bash-3.2$ yarn lint --fix
+2K1G1myarn run v1.3.222m
+2K1G2m$ eslint src --config .eslintrc.js --fix22m
+
+4m/Users/jeremygreer/Ideas/blog/site/src/App.test.js24m
+  2m5:122m  31merror39m  'it' is not defined  2mno-undef22m
+
+31m1m✖ 1 problem (1 error, 0 warnings)22m39m
+31m1m22m39m
+2K1G31merror39m Command failed with exit code 1.
+2K1G34minfo39m Visit 1mhttps://yarnpkg.com/en/docs/cli/run22m for documentation about this command.
+bash-3.2$ yarn lint --fix
+2K1G1myarn run v1.3.222m
+2K1G2m$ eslint src --config .eslintrc.js --fix22m
+2K1G✨   Done in 0.72s.
+bash-3.2$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	31mmodified:   package.jsonm
+	31mmodified:   src/App.jsm
+	31mmodified:   src/App.test.jsm
+	31mmodified:   src/index.jsm
+	31mmodified:   src/registerServiceWorker.jsm
+	31mmodified:   yarn.lockm
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	31m.eslintignorem
+	31m.eslintrc.jsm
+	31mpackage-lock.jsonm
+	31mpublic/entries/12/m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+bash-3.2$ rm package-lock.json
+bash-3.2$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	31mmodified:   package.jsonm
+	31mmodified:   src/App.jsm
+	31mmodified:   src/App.test.jsm
+	31mmodified:   src/index.jsm
+	31mmodified:   src/registerServiceWorker.jsm
+	31mmodified:   yarn.lockm
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	31m.eslintignorem
+	31m.eslintrc.jsm
+	31mpublic/entries/12/m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+bash-3.2$ git add .
+bash-3.2$ git reset hKHEKEAD public/
+bash-3.2$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	32mnew file:   .eslintignorem
+	32mnew file:   .eslintrc.jsm
+	32mmodified:   package.jsonm
+	32mmodified:   src/App.jsm
+	32mmodified:   src/App.test.jsm
+	32mmodified:   src/index.jsm
+	32mmodified:   src/registerServiceWorker.jsm
+	32mmodified:   yarn.lockm
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	31mpublic/entries/12/m
+
+bash-3.2$ git ocmmKcommit -m 'get some hot linty aK action'
+bash-3.2$ git commit -m 'get some hot lint action'
+[master e22e421] get some hot lint action
+ 8 files changed, 148 insertions(+), 44 deletions(-)
+ create mode 100644 .eslintignore
+ create mode 100644 .eslintrc.js
+bash-3.2$ git push
+Counting objects: 16, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (15/15), done.
+Writing objects: 100% (16/16), 2.37 KiB | 0 bytes/s, done.
+Total 16 (delta 11), reused 0 (delta 0)
+remote: Resolving deltas: 100% (11/11), completed with 9 local objects.K
+To git@github.com:reergymerej/silver-goggles.git
+   dcbdaa9..e22e421  master -> master
+bash-3.2$ ./scripts/index-entries.js
+bash-3.2$ giKmv ~/Desktop/Screen\ Shot\ 2017-11-18\ at\ 9.07.04\ PM.png public/entries/
+bash-3.2$ mkdir public/entries/12/images
+ACCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCKg
+bash-3.2$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	31mmodified:   src/Entry.jsm
+	31mmodified:   src/GitRefBlock.jsm
+	31mmodified:   src/entries.jsonm
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	31mpublic/entries/12/m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+bash-3.2$ git add src/
+bash-3.2$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	32mmodified:   src/Entry.jsm
+	32mmodified:   src/GitRefBlock.jsm
+	32mmodified:   src/entries.jsonm
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	31mpublic/entries/12/m
+
+bash-3.2$ git commit -m '' --allow-empty-message
+[master 7d419bf]
+ 3 files changed, 50 insertions(+), 25 deletions(-)
+ rewrite src/GitRefBlock.js (71%)
+bash-3.2$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	31mmodified:   src/GitRefBlock.jsm
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	31mpublic/entries/12/m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+bash-3.2$ gt adKit add src/
+bash-3.2$ git commit -m 'fix bad prop call, log commit hash when clicking ref'
+bash-3.2$ git commit -m 'fix bad prop call, log commit hash when clicking ref'
+[master b0d7648] fix bad prop call, log commit hash when clicking ref
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+bash-3.2$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 2 commits.
+  (use "git push" to publish your local commits)
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	31mmodified:   src/Entry.jsm
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	31mpublic/entries/12/m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+bash-3.2$ git add src/
+bash-3.2$ git commit -m 'logKKdKchange Entry to react toKacknowledge gitKGit ref clikKcKks'
+[master 5744667] change Entry to acknowledge Git ref clicks
+ 1 file changed, 25 insertions(+), 15 deletions(-)
+bash-3.2$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 3 commits.
+  (use "git push" to publish your local commits)
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	31mmodified:   src/App.jsm
+	31mmodified:   src/Entry.jsm
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	31mpublic/entries/12/m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+bash-3.2$ git add src/
+bash-3.2$ git commit -m 'K' --allow-emptyK-message
+[master ab0fa7e]
+ 2 files changed, 14 insertions(+), 3 deletions(-)
+bash-3.2$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 4 commits.
+  (use "git push" to publish your local commits)
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	31mmodified:   src/App.jsm
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	31mpublic/entries/12/m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+bash-3.2$ git add src/
+bash-3.2$ git commit -m '' --Kallow-empty-message
+[master 14cdd95]
+ 1 file changed, 15 insertions(+), 6 deletions(-)
+bash-3.2$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 5 commits.
+  (use "git push" to publish your local commits)
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	31mmodified:   src/App.cssm
+	31mmodified:   src/App.jsm
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	31mpublic/entries/12/m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+bash-3.2$ git add src/
+bash-3.2$ git comimKmit -m 'render ifreaKame'
+[master 7174d6a] render iframe
+ 2 files changed, 8 insertions(+)
+bash-3.2$ exit
+
+Script done on Sat Nov 18 21:49:18 2017

@@ -45,9 +45,8 @@ class App extends React.Component {
         }
         { this.state.currentResource &&
           <div className="resource">
-            { JSON.stringify(this.state.currentResource) }
             <iframe
-              src={`https://github.com/reergymerej/silver-goggles/commit/${this.state.currentResource.value}`}
+              src={`https://github.com/reergymerej/silver-goggles/commit/${this.state.currentResource.value}.diff`}
             ></iframe>
           </div>
         }

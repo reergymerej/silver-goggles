@@ -1,0 +1,144 @@
+
+Sat Nov 18 20:14:41 CST 2017
+
+After poking around the site a little bit, it seems that opening diffs in a
+separate tab or window is really annoying really fast.  Let's work on loading
+them next to the content so we can look at both.
+
+How do we want to do this?
+
+http://asciiflow.com/
+
++------------------------------+------------------+
+|-----|                        |                  |
+|-----|                        |  git             |
+|-----|       commentary       |                  |
++-----+                        |                  |
+|     |                        |                  |
+|     |                        |                  |
+|     |                        |                  |
+|     |                        |                  |
+|     |                        +------------------+
+|     |                        |------------------|
+|     |                        |------------------|
++-----+-------------------------------------------+
+
+I'd like to have stuff stay heirarchical from left to right.  We can
+eventually have something like this where various resources are contained in
+an accordion.  That means we'd have something like
+
+ResourcePanel
+  Resource
+
+
+Stop.  I'm getting that engineering bug again.  Let's just render the diff in
+an iframe when we click on it.
+
+...
+
+First, real quick, because it's bothering the crap out of my not having it,
+we're going to set up the linters.  I'm not going to comment on it, just do it
+and share the commit afterward.
+
+Hey, the terminal logging should come in handy too!
+
+ref:git:e22e421
+
+That's better.  I hate setting that up.  There are so many rabbit holes to go
+down.
+
+Upon reflection, I should have split that up into two parts: adding the linter
+setup and fixing the code.  It would have made it easier for you to see in the
+diff.  Live and learn.
+
+The main tricks are to use `./node_modules/.bin/eslint --init`, walk through
+the questionaire, change the parser to `babel-eslint`, leave only the jsx
+parserOptions config and set the suggested react/jsx-uses-react.  Check the
+diff or the terminal log for more details.
+
+...
+
+Now where were we?
+
+Let's render an iframe with our Github stuff when we click on a git ref.
+
+ref:git:7d419bf
+ref:images:01.png
+
+Whoops.
+
+```
+Uncaught TypeError: _this.props.onSelect is not a function
+    at GitRefBlock._this.handleClick (GitRefBlock.js:6)
+    at HTMLUnknownElement.callCallback (react-dom.development.js:540)
+    at Object.invokeGuardedCallbackDev (react-dom.development.js:579)
+    at Object.invokeGuardedCallback (react-dom.development.js:436
+```
+
+Double-whoops.  Not only do we need to start using proptypes to catch this
+simple stuff, I need to stop relying on images.  They should only be used as a
+last resort.  The whole point of this thing is it's text-based so you can
+easily find stuff.  Error stacks in screenshots don't do us a lot of good.
+
+ref:git:b0d7648
+
+ref:git:5744667
+
+Now we've got it logging something when we click.  We chained the handler up a
+few levels, which is tedious, but it's explicit and easy to follow.  Trickery
+like spreading props and calling the handler meant for Parent from Child save
+a little time, but they lead to confusion later.
+
+So looking at the page heirarchy, we've got a list of entries, the current
+entry, and now we need the resources.  We'll need to pass the event up one
+more layer to get to the shared root for all three.
+
+ref:git:ab0fa7e
+
+That gets the event up to App.js for us.  Now that it's here, we just set
+state with the currently selected resource and render an iframe.
+
+ref:git:14cdd95
+
+I just anticipated a bug - after opening an entry then opening a resource, you
+select a new entry but the old resource remains open - which was fixed easily
+by clearing the `currentResource`, but it feels bad.  Originally, I wanted to
+maintain the heirarchy - the resources should be within the Entry - but I made
+them siblings in the app.  Not only did this require bouncing the callback one
+level higher, it just introduced more cleanup logic.  If the resources were
+all contained within the Entry, neither would be an issue.  I let the CSS
+convenience dictate the design of the components, which is dumb.
+
+We'll have to come back and fix that.  See how quickly the "tech debt
+snowplow" starts going?  Be careful.
+
+...
+
+ref:git:7174d6a
+
+We're almost there, except.
+
+```
+Refused to display 'https://github.com/reergymerej/silver-goggles/commit/25e4819' in a frame because an ancestor violates the following Content Security Policy directive: "frame-ancestors 'none'".
+```
+
+I have not seen that before.  Is the becaue of the Webpack server?
+
+This seems reasonable.
+https://stackoverflow.com/a/38068052/1319850
+
+I wonder if the .diff version will work.
+
+Appending `.diff` did not work.  Github really does not want you stealing
+their stuff.  That's understandable.
+
+https://stackoverflow.com/questions/38535491/trying-to-render-i-frame-ancestor-violates-the-following-content-security-polic
+
+I guess this answers the earlier question about whether or not the patches
+should be part of this code.  They should.
+
+
+However, tonight is done.  We will do it tomorrow.
+
+
+Sat Nov 18 21:49:05 CST 2017
