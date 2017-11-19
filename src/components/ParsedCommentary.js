@@ -3,7 +3,60 @@ import { TYPE } from '../constants'
 import GitRefBlock from './GitRefBlock'
 import TextBlock from './TextBlock'
 
-const parseCommentary = (commentary) => {
+const ImageRefBlock = () => <div />
+
+const tokenPatterns = [
+  {
+    regex: /ref:git:([a-z0-9]+)/gi,
+  },
+]
+
+const parseString = 
+
+export const parseCommentary = (commentary, patterns = []) => {
+  const result = [
+      {
+        type: undefined,
+        value: 'asdf asdf ',
+      },
+  ]
+
+  patterns.forEach(pattern => {
+    const match = pattern.regex.exec(commentary)
+
+    if (match) {
+      console.log('match', match)
+      console.log('found at', match.index)
+
+      const matchedBlock = {
+        type: pattern.type,
+        match,
+      }
+      result.push(matchedBlock)
+    }
+  })
+
+
+  result.push(
+      {
+        type: undefined,
+        value: ' qwer qwer',
+      },
+  )
+
+
+  return result
+  return [
+    {
+      type: 'number',
+      value: '1234',
+      match: (/[0-9]+/g).exec('1234'),
+    },
+  ]
+
+
+
+
   const gitRegex = /(ref:git:[a-z0-9]+)/gi
   const hashRegex = /ref:git:([a-z0-9]+)/gi
   const parts = commentary.split(gitRegex)
@@ -20,6 +73,14 @@ const parseCommentary = (commentary) => {
     })
 }
 
+const getBlockComponent = (type) => {
+  const types = {
+    [TYPE.TEXT]: TextBlock,
+    [TYPE.GIT]: GitRefBlock,
+  }
+  return types[type] || ImageRefBlock
+}
+
 class ParsedCommentary extends React.Component {
   handleBlockTypeClick = value => {
     // We don't actually need this middleman step here, since it just calls the
@@ -34,9 +95,7 @@ class ParsedCommentary extends React.Component {
       <div>
         {
           parsedCommentaryBlocks.map((block, i) => {
-            const BlockType = block.type === TYPE.TEXT
-              ? TextBlock
-              : GitRefBlock
+            const BlockType = getBlockComponent(block.type)
             return (
               <BlockType
                 key={i}

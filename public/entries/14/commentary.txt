@@ -1,0 +1,78 @@
+
+Sun Nov 19 09:39:08 CST 2017
+
+Now that I've done it 14 times, I'm starting to think that it sucks creating
+these new entries.  Maybe I'm just tired and too distracted.
+
+So Enzyme isn't happy, saying...
+
+```
+          Enzyme Internal Error: Enzyme expects an adapter to be configured, but found none. To
+          configure an adapter, you should call `Enzyme.configure({ adapter: new Adapter() })`
+          before using any of Enzyme's top level APIs, where `Adapter` is the adapter
+          corresponding to the library currently being tested. For example:
+
+          import Adapter from 'enzyme-adapter-react-15';
+```
+
+We can look through `package.json` to see our dependency versions, or we can
+do it with yarn.
+
+```
+yarn list --pattern enzyme
+```
+
+ref:terminal
+
+We've added the adapter, but maybe it's just not being set up when Jest runs.
+Let's check it by logging in it.
+
+```
+// jest.setup.js
+import Enzyme from 'enzyme'
+import Adapter from 'enzyme-adapter-react-16'
+
+console.log('Hello!')
+
+Enzyme.configure({ adapter: new Adapter() })
+```
+
+Nope, it was not logged.
+
+...
+
+After configuring and googling a little, it turns out there's a magic file you
+can use to add a setup step to CRA apps called `src/setupTests.js`.
+
+https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#initializing-test-environment
+
+ref:git:e931bee
+
+We've probably got some junk in node_modules we don't need now, but that's not
+uncommon.
+
+Let's get back to testing our ParsedCommentary component.
+
+ref:images:01.png
+
+Here's an image of the setup I use while writing tests.  It's a little
+cramped, but it's what works (on a laptop).
+
+ref:git:2283e88
+
+We've got a real test in place.  Now we need to build on it.  Let's see if the
+GitRefBlocks come through.
+
+ref:git:455ae12
+
+Good.  Now let's see if we can get images to show.
+
+...
+
+
+Sun Nov 19 11:05:05 CST 2017
+
+OK, this is fun, but I'm totally getting sidetracked and recreating my
+react-smart-text package.  It probably going to be faster to modify that.  It
+may also be an interesting exercise to see how this whole documentation thing
+works when switching projects.
