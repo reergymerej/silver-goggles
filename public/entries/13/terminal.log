@@ -1,0 +1,1096 @@
+Script started on Sun Nov 19 06:04:29 2017
+?1034hbash-3.2$ scK./scripts/index-entries.js
+bash-3.2$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	31mmodified:   .eslintrc.jsm
+	31mmodified:   src/Entry.jsm
+	31mmodified:   src/entries.jsonm
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	31mpublic/entries/13/m
+	31msrc/ParsedCommentary.jsm
+	31msrc/constants.jsm
+
+no changes added to commit (use "git add" and/or "git commit -a")
+bash-3.2$ git add .eslintKKrc.js
+bash-3.2$ git commit -m 'catch undefined JSX components'
+[master 72c2b73] catch undefined JSX components
+ 1 file changed, 1 insertion(+)
+bash-3.2$ git show
+33mcommit 72c2b7342fae51c9a2f17cb6d6fe18428013ce54mm
+Author: Jeremy Greer <jeremy.greer.atl@gmail.com>m
+Date:	Sun Nov 19 06:16:59 2017 -0600m
+m
+    catch undefined JSX componentsm
+m
+1mdiff --git a/.eslintrc.js b/.eslintrc.jsmm
+1mindex e8fc00c..1a71f0a 100644mm
+1m--- a/.eslintrc.jsmm
+1m+++ b/.eslintrc.jsmm
+36m@@ -38,5 +38,6 @@m mmodule.exports = {mm
+     ],mm
+     "react/jsx-uses-react": "error",mm
+     "react/jsx-uses-vars": "error",mm
+32m+m32m    "react/jsx-no-undef": ["error", { "allowGlobals": true }]mm
+   }mm
+ };mm
+K?1lbash-3.2$ git show > public/Kentries/12/
+bash-3.2$ mkdir public/entries/12/Kgit/
+CCCCCCCCCCgitishowKoKpKgitrshow1>/public/entries/12/git/72c2b7342fae51c9a2f17cb6d6fe18428013ce54
+bash-3.2$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	31mmodified:   src/Entry.jsm
+	31mmodified:   src/entries.jsonm
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	31mpublic/entries/12/git/m
+	31mpublic/entries/13/m
+	31msrc/ParsedCommentary.jsm
+	31msrc/constants.jsm
+
+no changes added to commit (use "git add" and/or "git commit -a")
+bash-3.2$ git add src/
+bash-3.2$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	32mmodified:   src/Entry.jsm
+	32mcopied:     src/Entry.js -> src/ParsedCommentary.jsm
+	32mnew file:   src/constants.jsm
+	32mmodified:   src/entries.jsonm
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	31mpublic/entries/12/git/m
+	31mpublic/entries/13/m
+
+bash-3.2$ git commit Kgit reset HEAD src/entries.json
+Unstaged changes after reset:
+M	src/entries.json
+bash-3.2$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	32mmodified:   src/Entry.jsm
+	32mcopied:     src/Entry.js -> src/ParsedCommentary.jsm
+	32mnew file:   src/constants.jsm
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	31mmodified:   src/entries.jsonm
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	31mpublic/entries/12/git/m
+	31mpublic/entries/13/m
+
+bash-3.2$ git commit -m 'move ParsedCommanateKtary and constanKts into wKown files'
+[master 6611b02] move ParsedCommantary and constants into own files
+ 3 files changed, 46 insertions(+), 134 deletions(-)
+ rewrite src/Entry.js (65%)
+ copy src/{Entry.js => ParsedCommentary.js} (64%)
+ create mode 100644 src/constants.js
+bash-3.2$ git show
+33mcommit 6611b02a51e8bd15f7559dcf725cda5803c6a21bmm
+Author: Jeremy Greer <jeremy.greer.atl@gmail.com>m
+Date:	Sun Nov 19 06:25:15 2017 -0600m
+m
+    move ParsedCommantary and constants into own filesm
+m
+1mdiff --git a/src/Entry.js b/src/Entry.jsmm
+1mindex 81dda61..395b8e4 100644mm
+1m--- a/src/Entry.jsmm
+1m+++ b/src/Entry.jsmm
+36m@@ -1,64 +1,6 @@mm
+ import React from 'react'mm
+31m-import GitRefBlock from './GitRefBlock'mm
+31m-mm
+31m-const TYPE = {mm
+31m-  TEXT: 'TEXT',mm
+31m-  GIT: 'GIT',mm
+31m-}mm
+31m-mm
+31m-const parseCommentary = (commentary) => {mm
+31m-  const gitRegex = /(ref:git:[a-z0-9]+)/gimm
+31m-  const hashRegex = /ref:git:([a-z0-9]+)/gimm
+31m-  const parts = commentary.split(gitRegex)mm
+31m-  return partsmm
+31m-	.map(part => {mm
+31m-	  const hashExec = hashRegex.exec(part)mm
+31m-	  const commitHash = hashExec && hashExec[1]mm
+31m-	  const type = commitHash ? TYPE.GIT : TYPE.TEXTmm
+31m-	  const value = type === TYPE.GIT ? commitHash : partmm
+31m-	  return {mm
+31m-	    type,mm
+31m-	    value,mm
+31m-	  }mm
+31m-	})mm
+31m-}mm
+31m-mm
+31m-const TextBlock = (props) => (mm
+31m-  <pre>mm
+31m-	{props.value}mm
+K?1lbash-3.2$ git show > src/puKentries.jsonKpublic/entries/12/git/6611b02a51e8bd15f7559dcf725cda5803c6a21b
+bash-3.2$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 2 commits.
+  (use "git push" to publish your local commits)
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	31mmodified:   src/entries.jsonm
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	31mpublic/entries/12/git/m
+	31mpublic/entries/13/m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+bash-3.2$ git add .
+bash-3.2$ git commit -m '' --allow-empty-message
+[master 2336c4e]
+ 4 files changed, 196 insertions(+), 1 deletion(-)
+ create mode 100644 public/entries/12/git/6611b02a51e8bd15f7559dcf725cda5803c6a21b
+ create mode 100644 public/entries/12/git/72c2b7342fae51c9a2f17cb6d6fe18428013ce54
+ create mode 100644 public/entries/13/commentary.txt
+bash-3.2$ git push
+Counting objects: 21, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (20/20), done.
+Writing objects: 100% (21/21), 10.88 KiB | 0 bytes/s, done.
+Total 21 (delta 12), reused 0 (delta 0)
+remote: Resolving deltas: 100% (12/12), completed with 7 local objects.K
+To git@github.com:reergymerej/silver-goggles.git
+   4e8313e..2336c4e  master -> master
+bash-3.2$ yarn add react-smart-text
+2K1G1myarn add v1.3.222m
+2K1G2m[1/4]22m 🔍  Resolving packages...
+1G⠁ 0K1G⠂ react-smart-text0K1G⠄ react-smart-text0K1G⡀ react-smart-text0K1G⢀ react-smart-text0K1G⠠ react-smart-text0K1G⠐ react-smart-text0K1G⠈ react-smart-text0K1G⠁ react-smart-text0K2K1G2K1G2m[2/4]22m 🚚  Fetching packages...
+2K1G1G[------------------------------------------------------------------------------------------] 0/10241G[##########------------------------------------------------------------------------------] 112/10241G[#####################-------------------------------------------------------------------] 248/10241G[###################################-----------------------------------------------------] 406/10241G[################################################----------------------------------------] 554/10241G[##############################################################--------------------------] 717/10241G[##########################################################################--------------] 864/10241G[######################################################################################-] 1016/10241G[#######################################################################################] 1023/10242K1G2m[3/4]22m 🔗  Linking dependencies...
+2K1G33mwarning39m " > react-smart-text@0.1.2" has incorrect peer dependency "react@^15.5.4".
+1G[#######################################################################################] 1024/10242K1G2K1G1G[------------------------------------------------------------------------------------------] 0/10902K1G2K1G1G[-----------] 0/111G[###########] 11/112K1G2K1G1G[------------------------------------------------------------------------------------------] 0/20061G[#################-----------------------------------------------------------------------] 384/20061G[###################################-----------------------------------------------------] 797/20061G[###############################################----------------------------------------] 1090/20062K1G2m[4/4]22m 📃  Building fresh packages...
+2K1G
+2K1G
+2K1G
+2K1G
+1G⠁ 0K1G1A⠁ 0K1G1B1G2A⠁ 0K1G2B1G3A⠁ 0K1G3B1G4A⠁ 0K1G4B1G4A2K4B1G3A2K3B1G2A2K2B1G1A2K1B2K1G4A1G[#################################################--------------------------------------] 1136/20062K1G32msuccess39m Saved lockfile.
+2K1G32msuccess39m Saved 1 new dependency.
+└─ react-smart-text@0.1.2
+2K1G2K1G✨   Done in 4.24s.
+bash-3.2$ yarn lint
+2K1G1myarn run v1.3.222m
+2K1G2m$ eslint src --config .eslintrc.js22m
+
+4m/Users/jeremygreer/Ideas/blog/site/src/ParsedCommentary.js24m
+   2m4:822m   31merror39m  'GitRefBlock' is defined but never used		 2mno-unused-vars22m
+   2m8:1222m  31merror39m  'emailRegex' is not defined				 2mno-undef22m
+   2m9:1622m  31merror39m  'Email' is not defined				 2mno-undef22m
+  2m13:722m   31merror39m  'TextBlock' is assigned a value but never used	 2mno-unused-vars22m
+  2m19:722m   31merror39m  'parseCommentary' is assigned a value but never used  2mno-unused-vars22m
+
+31m1m✖ 5 problems (5 errors, 0 warnings)22m39m
+31m1m22m39m
+2K1G31merror39m Command failed with exit code 1.
+2K1G34minfo39m Visit 1mhttps://yarnpkg.com/en/docs/cli/run22m for documentation about this command.
+CCCCCCCCCCCCCCCremoverreact-smart-textt
+2K1G1myarn remove v1.3.222m
+2K1G2m[1/2]22m Removing module react-smart-text...
+2K1G2m[2/2]22m Regenerating lockfile and installing missing dependencies...
+1G⠁ 0K2K1G2K1G1G[------------------------------------------------------------------------------------------] 0/10231G[############----------------------------------------------------------------------------] 136/10231G[########################----------------------------------------------------------------] 281/10231G[#######################################-------------------------------------------------] 448/10231G[#####################################################-----------------------------------] 616/10231G[####################################################################--------------------] 792/10231G[##################################################################################------] 952/10231G[#######################################################################################] 1023/10232K1G2K1G1G[------------------------------------------------------------------------------------------] 0/10892K1G2K1G1G[------------------------------------------------------------------------------------------] 0/20041G[#################-----------------------------------------------------------------------] 384/20041G[###############################---------------------------------------------------------] 717/20041G[#############################################------------------------------------------] 1038/20041G[#################################################--------------------------------------] 1135/20042K1G
+2K1G
+2K1G
+2K1G
+1G⠁ 0K1G1A⠁ 0K1G1B1G2A⠁ 0K1G2B1G3A⠁ 0K1G3B1G4A⠁ 0K1G4B1G2m[-/3]22m ⠂ waiting...0K1G1A2m[-/3]22m ⠂ waiting...0K1G1B1G2A2m[3/3]22m ⠂ fsevents0K1G2B1G3A2m[2/3]22m ⠂ fsevents0K1G3B1G4A2m[1/3]22m ⠂ uglifyjs-webpack-plugin0K1G4B1G2m[-/3]22m ⠄ waiting...0K1G1A2m[-/3]22m ⠄ waiting...0K1G1B1G2A2m[3/3]22m ⠄ fsevents0K1G2B1G3A2m[2/3]22m ⠄ fsevents0K1G3B1G4A2m[1/3]22m ⠄ uglifyjs-webpack-plugin0K1G4B1G2m[-/3]22m ⡀ waiting...0K1G1A2m[-/3]22m ⡀ waiting...0K1G1B1G2A2m[3/3]22m ⡀ fsevents0K1G2B1G3A2m[2/3]22m ⡀ fsevents0K1G3B1G4A2m[-/3]22m ⡀ waiting...0K1G4B1G2m[-/3]22m ⢀ waiting...0K1G1A2m[-/3]22m ⢀ waiting...0K1G1B1G2A2m[3/3]22m ⢀ fsevents0K1G2B1G3A2m[2/3]22m ⢀ fsevents0K1G3B1G4A2m[-/3]22m ⢀ waiting...0K1G4B1G2m[-/3]22m ⠠ waiting...0K1G1A2m[-/3]22m ⠠ waiting...0K1G1B1G2A2m[-/3]22m ⠠ waiting...0K1G2B1G3A2m[2/3]22m ⠠ fsevents: info using node@8.5.0 | darwin | x640K1G3B1G4A2m[-/3]22m ⠠ waiting...0K1G4B1G4A2K4B1G3A2K3B1G2A2K2B1G1A2K1B2K1G4A2K1G32msuccess39m Uninstalled packages.
+2K1G2K1G✨   Done in 3.35s.
+bash-3.2$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	31mmodified:   public/entries/13/commentary.txtm
+	31mmodified:   src/ParsedCommentary.jsm
+
+no changes added to commit (use "git add" and/or "git commit -a")
+bash-3.2$ git diff src/ParsedCommentary.js
+1mdiff --git a/src/ParsedCommentary.js b/src/ParsedCommentary.jsmm
+1mindex ee6e7c7..b4eae35 100644mm
+1m--- a/src/ParsedCommentary.jsmm
+1m+++ b/src/ParsedCommentary.jsmm
+36m@@ -1,7 +1,15 @@mm
+ import React from 'react'mm
+32m+m32mimport SmartText from 'react-smart-text'mm
+ import { TYPE } from './constants'mm
+ import GitRefBlock from './GitRefBlock'mm
+ mm
+32m+m32mconst replacements = [mm
+32m+m32m  {mm
+32m+m32m    regex: emailRegex,mm
+32m+m32m    component: Email,mm
+32m+m32m  },mm
+32m+m32m]mm
+32m+mm
+ const TextBlock = (props) => (mm
+   <pre>mm
+     {props.value}mm
+36m@@ -34,24 +42,10 @@m mclass ParsedCommentary extends React.Component {mm
+ mm
+   render() {mm
+     const { props } = thismm
+31m-	const parsedCommentaryBlocks = parseCommentary(props.commentary)mm
+     return (mm
+31m-	  <div>mm
+31m-	    {mm
+31m-	      parsedCommentaryBlocks.map((block, i) => {mm
+31m-		const BlockType = block.type === TYPE.TEXTmm
+31m-		  ? TextBlockmm
+31m-		  : GitRefBlockmm
+31m-		return (mm
+31m-		  <BlockTypemm
+31m-		    key={i}mm
+31m-		    value={block.value}mm
+31m-		    onClick={this.handleBlockTypeClick}mm
+31m-		  />mm
+31m-		)mm
+K31m-	       })mm
+31m-	    }mm
+31m-	  </div>mm
+32m+m32m      <SmartText replacements={replacements}>mm
+32m+m32m	{props.commentary}mm
+32m+m32m      </SmartText>mm
+     )mm
+   }mm
+ }mm
+K?1lbash-3.2$ git reset src/ParsedCommentary.js
+Unstaged changes after reset:
+M	public/entries/13/commentary.txt
+M	src/ParsedCommentary.js
+bash-3.2$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	31mmodified:   public/entries/13/commentary.txtm
+	31mmodified:   src/ParsedCommentary.jsm
+
+no changes added to commit (use "git add" and/or "git commit -a")
+bash-3.2$ git checkout src/KParsedCommentary.js
+bash-3.2$ yearn KaKarn test
+2K1G1myarn run v1.3.222m
+2K1G2m$ react-scripts test --env=jsdom22m
+2J3JH1m2mDetermining test suites to run...1m22m999DK1mNo tests found related to files changed since last commit.
+22m2mPress `a` to run all tests, or run Jest with `--watchAll`.22m
+999DK
+1A999DK
+1mWatch Usage22m
+2m › Press 22ma2m to run all tests.22m
+2m › Press 22mp2m to filter by a filename regex pattern.22m
+2m › Press 22mt2m to filter by a test name regex pattern.22m
+2m › Press 22mq2m to quit watch mode.22m
+2m › Press 22mEnter2m to trigger a test run.22m
+2K1G✨   Done in 4.51s.
+bash-3.2$ yarn test -- Kwatch
+2K1G1myarn run v1.3.222m
+2K1G2m$ react-scripts test --env=jsdom --watch22m
+2J3JH1m2mDetermining test suites to run...1m22m999DK1mNo tests found related to files changed since last commit.
+22m2mPress `a` to run all tests, or run Jest with `--watchAll`.22m
+999DK
+1A999DK
+1mWatch Usage22m
+2m › Press 22ma2m to run all tests.22m
+2m › Press 22mp2m to filter by a filename regex pattern.22m
+2m › Press 22mt2m to filter by a test name regex pattern.22m
+2m › Press 22mq2m to quit watch mode.22m
+2m › Press 22mEnter2m to trigger a test run.22m
+2J3JH1m2mDetermining test suites to run...1m22m999DK
+1A
+0m7m33m1m RUNS 22m39m27m0m 2msrc/22m1mApp.test.js22m
+1A0m7m1m32m PASS 39m22m27m0m 2msrc/22m1mApp.test.js22m
+
+0m7m33m1m RUNS 22m39m27m0m 2msrc/22m1mApp.test.js22m
+1A  32m✓39m 2mrenders without crashing (17ms)22m
+
+0m7m33m1m RUNS 22m39m27m0m 2msrc/22m1mApp.test.js22m
+1A
+
+0m7m33m1m RUNS 22m39m27m0m 2msrc/22m1mApp.test.js22m
+1A999DK1mTest Suites: 22m1m32m1 passed39m22m, 1 total
+1mTests:       22m1m32m1 passed39m22m, 1 total
+1mSnapshots:   22m0 total
+1mTime:22m	  1.272s
+2mRan all test suites22m2m.22m
+
+1mWatch Usage: 22m2mPress 22mw2m to show more.22m2K1G✨   Done in 6.81s.
+bash-3.2$ ls
+README.md	build		package.json	public		src		yarn.lock
+README.md~	node_modules	package.json~	scripts 	terminal.log
+bash-3.2$ cd src/
+bash-3.2$ ls
+App.css 			Entry.js			componentsApp.js
+App.css~			Entry.js~			constants.js
+App.js~ 			GitRefBlock.js			entries.json
+App.test.js			GitRefBlock.js~ 		index.css
+App.test.js~			ParsedCommentary.js		index.js
+ClickableEntry.js		ParsedCommentary.js~		logo.svg
+ClickableEntry.js~		components			registerServiceWorker.js
+bash-3.2$ find Kmv App.* components
+bash-3.2$ ls
+ClickableEntry.js		ParsedCommentary.js		index.css
+ClickableEntry.js~		ParsedCommentary.js~		index.js
+Entry.js			components			logo.svg
+Entry.js~			componentsApp.js		registerServiceWorker.js
+GitRefBlock.js			constants.js
+GitRefBlock.js~ 		entries.json
+bash-3.2$ mv Entry.js* components
+bash-3.2$ ls
+ClickableEntry.js		ParsedCommentary.js~		index.css
+ClickableEntry.js~		components			index.js
+GitRefBlock.js			componentsApp.js		logo.svg
+GitRefBlock.js~ 		constants.js			registerServiceWorker.js
+ParsedCommentary.js		entries.json
+bash-3.2$ mv ClickableEntry.js* components
+bash-3.2$ mv GitRefBlock.js KcoK*  CoKcomponents
+bash-3.2$ ls
+ParsedCommentary.js		constants.js			logo.svg
+ParsedCommentary.js~		entries.json			registerServiceWorker.js
+components			index.css
+componentsApp.js		index.js
+bash-3.2$ mv ParsedCommentary.js* components
+bash-3.2$ ls
+components			entries.json			logo.svg
+componentsApp.js		index.css			registerServiceWorker.js
+constants.js			index.js
+bash-3.2$ cat componentsApp.js
+import React from 'react'
+import './App.css'
+import entries from './entries.json'
+import ClickableEntry from './ClickableEntry'
+import Entry from './Entry'
+
+class App extends React.Component {
+  state = {
+    currentEntry: null,
+    currentResource: null,
+  }
+
+  handleEntryClicked = (entry) => {
+    this.setState({
+      currentEntry: entry,
+      currentResource: null,
+    })
+  }
+
+  handleEntryResourceSelected = resource => {
+    this.setState({ currentResource: resource })
+  }
+
+  render() {
+    return (
+      <div className="App">
+	<div className="entries">
+	  {
+	    entries.map(entry => (
+	      <ClickableEntry
+		key={entry.name}
+		onClick={this.handleEntryClicked}
+		entry={entry}
+	      />
+	    ))
+	  }
+	</div>
+	{ this.state.currentEntry &&
+	  <div className="entry">
+	    <Entry
+	      entry={this.state.currentEntry}
+	      onResourceSelected={this.handleEntryResourceSelected}
+	    />
+	  </div>
+	}
+	{ this.state.currentResource &&
+	  <div className="resource">
+	    <iframe
+	      src={`https://github.com/reergymerej/silver-goggles/commit/${this.state.currentResource.value}.diff`}
+	    ></iframe>
+	  </div>
+	}
+      </div>
+    )
+  }
+}
+
+export default App
+bash-3.2$ Kls components
+App.css 		App.test.js~		Entry.js~		ParsedCommentary.js~
+App.css~		ClickableEntry.js	GitRefBlock.js
+App.js~ 		ClickableEntry.js~	GitRefBlock.js~
+App.test.js		Entry.js		ParsedCommentary.js
+bash-3.2$ mv componentsApp.js components/App.js
+bash-3.2$ ls
+components			index.css			registerServiceWorker.js
+constants.js			index.js
+entries.json			logo.svg
+bash-3.2$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	31mmodified:   ../public/entries/13/commentary.txtm
+	31mdeleted:    App.cssm
+	31mdeleted:    App.jsm
+	31mdeleted:    App.test.jsm
+	31mdeleted:    ClickableEntry.jsm
+	31mdeleted:    Entry.jsm
+	31mdeleted:    GitRefBlock.jsm
+	31mdeleted:    ParsedCommentary.jsm
+	31mmodified:   index.jsm
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	31mcomponents/m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+bash-3.2$ git adKgit add .
+bash-3.2$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	32mrenamed:    App.css -> components/App.cssm
+	32mrenamed:    App.js -> components/App.jsm
+	32mrenamed:    App.test.js -> components/App.test.jsm
+	32mrenamed:    ClickableEntry.js -> components/ClickableEntry.jsm
+	32mrenamed:    Entry.js -> components/Entry.jsm
+	32mrenamed:    GitRefBlock.js -> components/GitRefBlock.jsm
+	32mrenamed:    ParsedCommentary.js -> components/ParsedCommentary.jsm
+	32mmodified:   index.jsm
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	31mmodified:   ../public/entries/13/commentary.txtm
+
+bash-3.2$ gitKcd ..
+bash-3.2$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	32mrenamed:    src/App.css -> src/components/App.cssm
+	32mrenamed:    src/App.js -> src/components/App.jsm
+	32mrenamed:    src/App.test.js -> src/components/App.test.jsm
+	32mrenamed:    src/ClickableEntry.js -> src/components/ClickableEntry.jsm
+	32mrenamed:    src/Entry.js -> src/components/Entry.jsm
+	32mrenamed:    src/GitRefBlock.js -> src/components/GitRefBlock.jsm
+	32mrenamed:    src/ParsedCommentary.js -> src/components/ParsedCommentary.jsm
+	32mmodified:   src/index.jsm
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	31mmodified:   public/entries/13/commentary.txtm
+
+bash-3.2$ git commit -m 'move components into dir'
+[master c7b2b98] move components into dir
+ 8 files changed, 4 insertions(+), 4 deletions(-)
+ rename src/{ => components}/App.css (100%)
+ rename src/{ => components}/App.js (97%)
+ rename src/{ => components}/App.test.js (100%)
+ rename src/{ => components}/ClickableEntry.js (100%)
+ rename src/{ => components}/Entry.js (95%)
+ rename src/{ => components}/GitRefBlock.js (100%)
+ rename src/{ => components}/ParsedCommentary.js (97%)
+bash-3.2$ git show c7b2b98 > public/entries/1K3/giKmKkdKir >Kpublic/entries/13/git
+bash-3.2$ show c7b2b98 > public/entries/13/git/c7b2b98
+bash: show: command not found
+bash-3.2$ 1@g1@i1@t1@8 > public/entries/13/git/c7b2b98
+bash-3.2$ ti Kgit push
+Counting objects: 8, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (8/8), done.
+Writing objects: 100% (8/8), 2.10 KiB | 0 bytes/s, done.
+Total 8 (delta 3), reused 0 (delta 0)
+remote: Resolving deltas: 100% (3/3), completed with 3 local objects.K
+To git@github.com:reergymerej/silver-goggles.git
+   2336c4e..c7b2b98  master -> master
+bash-3.2$ yarn test
+2K1G1myarn run v1.3.222m
+2K1G2m$ react-scripts test --env=jsdom22m
+2J3JH1m2mDetermining test suites to run...1m22m999DK
+1A
+0m7m33m1m RUNS 22m39m27m0m 2msrc/components/22m1mApp.test.js22m
+1A0m7m1m32m PASS 39m22m27m0m 2msrc/components/22m1mApp.test.js22m
+
+0m7m33m1m RUNS 22m39m27m0m 2msrc/components/22m1mApp.test.js22m
+1A  32m✓39m 2mrenders without crashing (20ms)22m
+
+0m7m33m1m RUNS 22m39m27m0m 2msrc/components/22m1mApp.test.js22m
+1A
+
+0m7m33m1m RUNS 22m39m27m0m 2msrc/components/22m1mApp.test.js22m
+1A999DK1mTest Suites: 22m1m32m1 passed39m22m, 1 total
+1mTests:       22m1m32m1 passed39m22m, 1 total
+1mSnapshots:   22m0 total
+1mTime:22m	  0.934s
+2mRan all test suites22m2m related to changed files22m2m.22m
+
+1mWatch Usage22m
+2m › Press 22ma2m to run all tests.22m
+2m › Press 22mp2m to filter by a filename regex pattern.22m
+2m › Press 22mt2m to filter by a test name regex pattern.22m
+2m › Press 22mq2m to quit watch mode.22m
+2m › Press 22mEnter2m to trigger a test run.22m
+2J3JH1m2mDetermining test suites to run...1m22m999DK
+1A
+0m7m33m1m RUNS 22m39m27m0m 2msrc/components/22m1mApp.test.js22m
+1A0m7m1m32m PASS 39m22m27m0m 2msrc/components/22m1mApp.test.js22m
+
+0m7m33m1m RUNS 22m39m27m0m 2msrc/components/22m1mApp.test.js22m
+1A
+0m7m33m1m RUNS 22m39m27m0m 2msrc/components/22m1mParsedCommentary.test.js22m
+1A
+0m7m33m1m RUNS 22m39m27m0m 2msrc/components/22m1mParsedCommentary.test.js22m
+1A0m7m1m31m FAIL 39m22m27m0m 2msrc/components/22m1mParsedCommentary.test.js22m
+
+0m7m33m1m RUNS 22m39m27m0m 2msrc/components/22m1mParsedCommentary.test.js22m
+1A  1m● 22mTest suite failed to run
+
+    Your test suite must contain at least one test.
+
+      2mat onResult (22m0m36mnode_modules/jest-cli/build/TestRunner.js39m0m2m:110:20)22m
+	  at <anonymous>
+
+
+0m7m33m1m RUNS 22m39m27m0m 2msrc/components/22m1mParsedCommentary.test.js22m
+1A999DK1mTest Suites: 22m1m31m1 failed39m22m, 1m32m1 passed39m22m, 2 total
+1mTests:       22m1m32m1 passed39m22m, 1 total
+1mSnapshots:   22m0 total
+1mTime:22m	  0.162s, estimated 1s
+2mRan all test suites22m2m related to changed files22m2m.22m
+
+1mWatch Usage: 22m2mPress 22mw2m to show more.22m2J3JH1m2mDetermining test suites to run...1m22m999DK
+1A
+0m7m33m1m RUNS 22m39m27m0m 2msrc/components/22m1mApp.test.js22m
+1A0m7m1m32m PASS 39m22m27m0m 2msrc/components/22m1mApp.test.js22m
+
+0m7m33m1m RUNS 22m39m27m0m 2msrc/components/22m1mApp.test.js22m
+1A
+0m7m33m1m RUNS 22m39m27m0m 2msrc/components/22m1mParsedCommentary.test.js22m
+1A0m7m1m31m FAIL 39m22m27m0m 2msrc/components/22m1mParsedCommentary.test.js22m
+
+0m7m33m1m RUNS 22m39m27m0m 2msrc/components/22m1mParsedCommentary.test.js22m
+1A  1m● 22mTest suite failed to run
+
+    /Users/jeremygreer/Ideas/blog/site/src/components/ParsedCommentary.test.js: Unexpected token (7:2)
+      0m 90m 5 | 39m  it(32m'should render <TextBlock />'39m33m,39m () 33m=>39m {
+       90m 6 | 39m    36mconst39m wrapper 33m=39m
+      31m1m>22m39m90m 7 | 39m  })
+       90m   | 39m  31m1m^22m39m
+       90m 8 | 39m})
+       90m 9 | 39m0m
+
+
+0m7m33m1m RUNS 22m39m27m0m 2msrc/components/22m1mParsedCommentary.test.js22m
+1A999DK1mTest Suites: 22m1m31m1 failed39m22m, 1m32m1 passed39m22m, 2 total
+1mTests:       22m1m32m1 passed39m22m, 1 total
+1mSnapshots:   22m0 total
+1mTime:22m	  0.172s, estimated 1s
+2mRan all test suites22m2m related to changed files22m2m.22m
+
+1mWatch Usage: 22m2mPress 22mw2m to show more.22m2J3JH1m2mDetermining test suites to run...1m22m999DK
+1A
+0m7m33m1m RUNS 22m39m27m0m 2msrc/components/22m1mApp.test.js22m
+1A0m7m1m32m PASS 39m22m27m0m 2msrc/components/22m1mApp.test.js22m
+
+0m7m33m1m RUNS 22m39m27m0m 2msrc/components/22m1mApp.test.js22m
+1A
+0m7m33m1m RUNS 22m39m27m0m 2msrc/components/22m1mParsedCommentary.test.js22m
+1A0m7m1m31m FAIL 39m22m27m0m 2msrc/components/22m1mParsedCommentary.test.js22m
+
+0m7m33m1m RUNS 22m39m27m0m 2msrc/components/22m1mParsedCommentary.test.js22m
+1A  1m● 22mTest suite failed to run
+
+    Cannot find module 'enzyme' from 'ParsedCommentary.test.js'
+
+      2mat Resolver.resolveModule (22m0m36mnode_modules/jest-resolve/build/index.js39m0m2m:179:17)22m
+      2mat Object.<anonymous> (22m0m36msrc/components/ParsedCommentary.test.js39m0m2m:1:117)22m
+
+
+0m7m33m1m RUNS 22m39m27m0m 2msrc/components/22m1mParsedCommentary.test.js22m
+1A999DK1mTest Suites: 22m1m31m1 failed39m22m, 1m32m1 passed39m22m, 2 total
+1mTests:       22m1m32m1 passed39m22m, 1 total
+1mSnapshots:   22m0 total
+1mTime:22m	  0.158s, estimated 1s
+2mRan all test suites22m2m related to changed files22m2m.22m
+
+1mWatch Usage: 22m2mPress 22mw2m to show more.22m2K1G✨   Done in 315.86s.
+bash-3.2$ yarn add enzyme --dev
+2K1G1myarn add v1.3.222m
+2K1G2m[1/4]22m 🔍  Resolving packages...
+1G⠁ 0K1G⠂ enzyme0K1G⠄ enzyme0K1G⡀ enzyme0K1G⢀ enzyme0K1G⠠ enzyme0K1G⠐ rst-selector-parser@^2.2.30K1G⠈ parse5@^3.0.10K1G⠁ object-keys@^1.0.100K1G⠂ object-keys@^1.0.100K1G⠄ entities@^1.1.10K1G⡀ nearley@^2.7.100K1G⢀ es-abstract@^1.6.10K1G⠠ es-abstract@^1.6.10K1G⠐ @types/node@*0K1G⠈ randexp@^0.4.20K1G⠁ ret@~0.1.100K1G⠂ ret@~0.1.100K1G⠄ ret@~0.1.100K1G⡀ ret@~0.1.100K1G⢀ ret@~0.1.100K2K1G2K1G2m[2/4]22m 🚚  Fetching packages...
+2K1G1G[------------------------------------------------------------------------------------------] 0/10461G[#########-------------------------------------------------------------------------------] 104/10461G[#####################-------------------------------------------------------------------] 248/10461G[###################################-----------------------------------------------------] 414/10461G[################################################----------------------------------------] 568/10461G[#############################################################---------------------------] 728/10461G[##########################################################################--------------] 883/10461G[#####################################################################################--] 1023/10461G[######################################################################################-] 1032/10461G[######################################################################################-] 1034/10461G[#######################################################################################] 1043/10461G[#######################################################################################] 1045/10462K1G2m[3/4]22m 🔗  Linking dependencies...
+1G[#######################################################################################] 1046/10462K1G2K1G1G[------------------------------------------------------------------------------------------] 0/11122K1G2K1G1G[-------------------------------------------------------------------------------------------] 0/5121G[################################################################-------------------------] 371/5121G[#########################################################################################] 512/5122K1G2K1G1G[------------------------------------------------------------------------------------------] 0/20451G[##############--------------------------------------------------------------------------] 330/20451G[#############################-----------------------------------------------------------] 666/20451G[#############################################------------------------------------------] 1059/20452K1G2m[4/4]22m 📃	Building fresh packages...
+2K1G
+2K1G
+2K1G
+2K1G
+1G⠁ 0K1G1A⠁ 0K1G1B1G2A⠁ 0K1G2B1G3A⠁ 0K1G3B1G4A⠁ 0K1G4B1G4A2K4B1G3A2K3B1G2A2K2B1G1A2K1B2K1G4A1G[#################################################--------------------------------------] 1159/20452K1G32msuccess39m Saved lockfile.
+2K1G32msuccess39m Saved 22 new dependencies.
+├─ @types/node@8.0.53
+├─ cheerio@1.0.0-rc.2
+├─ colors@0.5.1
+├─ discontinuous-range@1.0.0
+├─ domhandler@2.4.1
+├─ enzyme@3.2.0
+├─ function.prototype.name@1.0.3
+├─ htmlparser2@3.9.2
+├─ is-subset@0.1.1
+├─ lodash.flattendeep@4.4.0
+├─ nearley@2.11.0
+├─ nomnom@1.6.2
+├─ object-is@1.0.1
+├─ object.assign@4.0.4
+├─ object.entries@1.0.4
+├─ object.values@1.0.4
+├─ parse5@3.0.3
+├─ railroad-diagrams@1.0.0
+├─ randexp@0.4.6
+├─ ret@0.1.15
+├─ rst-selector-parser@2.2.3
+└─ underscore@1.4.4
+2K1G2K1G✨   Done in 5.22s.
+bash-3.2$ touchKouch jest.config.js
+CCCCCCCCCCyarnhtestKyarneadddenzyme-adapter-react-16 --dev
+2K1G1myarn add v1.3.222m
+2K1G2m[1/4]22m 🔍  Resolving packages...
+1G⠁ 0K1G⠂ enzyme-adapter-react-160K1G⠄ enzyme-adapter-react-160K1G⡀ enzyme-adapter-react-160K1G⢀ enzyme-adapter-react-160K1G⠠ enzyme-adapter-react-160K1G⠐ enzyme-adapter-react-160K1G⠈ enzyme-adapter-react-160K1G⠁ react-test-renderer@^16.0.0-00K1G⠂ react-test-renderer@^16.0.0-00K1G⠄ react-test-renderer@^16.0.0-00K1G⡀ react-test-renderer@^16.0.0-00K2K1G2K1G2m[2/4]22m 🚚  Fetching packages...
+2K1G1G[------------------------------------------------------------------------------------------] 0/10491G[##########------------------------------------------------------------------------------] 118/10491G[#####################-------------------------------------------------------------------] 248/10491G[####################################----------------------------------------------------] 424/10491G[##################################################--------------------------------------] 599/10491G[#################################################################-----------------------] 775/10491G[#############################################################################-----------] 920/10491G[#######################################################################################] 1046/10491G[#######################################################################################] 1048/10492K1G2m[3/4]22m 🔗  Linking dependencies...
+1G[#######################################################################################] 1049/10492K1G2K1G1G[------------------------------------------------------------------------------------------] 0/11152K1G2K1G1G[----------------------------] 0/281G[############################] 28/282K1G2K1G1G[------------------------------------------------------------------------------------------] 0/20511G[#######################-----------------------------------------------------------------] 526/20511G[#####################################---------------------------------------------------] 869/20511G[################################################---------------------------------------] 1141/20512K1G2m[4/4]22m 📃  Building fresh packages...
+2K1G
+2K1G
+2K1G
+2K1G
+1G⠁ 0K1G1A⠁ 0K1G1B1G2A⠁ 0K1G2B1G3A⠁ 0K1G3B1G4A⠁ 0K1G4B1G4A2K4B1G3A2K3B1G2A2K2B1G1A2K1B2K1G4A1G[#################################################--------------------------------------] 1162/20512K1G32msuccess39m Saved lockfile.
+2K1G32msuccess39m Saved 3 new dependencies.
+├─ enzyme-adapter-react-16@1.1.0
+├─ enzyme-adapter-utils@1.1.1
+└─ react-test-renderer@16.1.1
+2K1G2K1G✨   Done in 3.92s.
+bash-3.2$ yarn jtKKjest
+2K1G1myarn run v1.3.222m
+2K1G2m$ /Users/jeremygreer/Ideas/blog/site/node_modules/.bin/jest22m
+999DK999DK31m31m1m1m● 1mValidation Error22m:
+
+  Module 1mjest.setup.js22m in the 1msetupTestFrameworkScriptFile22m option was not found.
+
+  1mConfiguration Documentation:22m
+  https://facebook.github.io/jest/docs/configuration.html
+31m39m
+2K1G31merror39m Command failed with exit code 1.
+2K1G34minfo39m Visit 1mhttps://yarnpkg.com/en/docs/cli/run22m for documentation about this command.
+bash-3.2$ yarn jest
+2K1G1myarn run v1.3.222m
+2K1G2m$ /Users/jeremygreer/Ideas/blog/site/node_modules/.bin/jest22m
+999DK999DK31m31m1m1m● 1mValidation Error22m:
+
+  Module 1mjest.setup.js22m in the 1msetupTestFrameworkScriptFile22m option was not found.
+
+  1mConfiguration Documentation:22m
+  https://facebook.github.io/jest/docs/configuration.html
+31m39m
+2K1G31merror39m Command failed with exit code 1.
+2K1G34minfo39m Visit 1mhttps://yarnpkg.com/en/docs/cli/run22m for documentation about this command.
+bash-3.2$ yarn jest
+2K1G1myarn run v1.3.222m
+2K1G2m$ /Users/jeremygreer/Ideas/blog/site/node_modules/.bin/jest22m
+1m2mDetermining test suites to run...1m22m999DK
+1A
+0m7m33m1m RUNS 22m39m27m0m 2msrc/components/22m1mApp.test.js22m
+1A0m7m1m31m FAIL 39m22m27m0m 2msrc/components/22m1mApp.test.js22m
+
+0m7m33m1m RUNS 22m39m27m0m 2msrc/components/22m1mApp.test.js22m
+1A  1m● 22mTest suite failed to run
+
+    /Users/jeremygreer/Ideas/blog/site/jest.setup.js:1
+    ({"Object.<anonymous>":function(module,exports,require,__dirname,__filename,global,jest){import Enzyme from 'enzyme';
+											     ^^^^^^
+
+    SyntaxError: Unexpected token import
+
+      2mat ScriptTransformer._transformAndBuildScript (22m0m36mnode_modules/jest-runtime/build/ScriptTransformer.js39m0m2m:289:17)22m
+	  at <anonymous>
+      2mat process._tickCallback (22m0m36minternal/process/next_tick.js39m0m2m:188:7)22m
+
+
+0m7m33m1m RUNS 22m39m27m0m 2msrc/components/22m1mApp.test.js22m
+1A
+0m7m33m1m RUNS 22m39m27m0m 2msrc/components/22m1mParsedCommentary.test.js22m
+1A0m7m1m31m FAIL 39m22m27m0m 2msrc/components/22m1mParsedCommentary.test.js22m
+
+0m7m33m1m RUNS 22m39m27m0m 2msrc/components/22m1mParsedCommentary.test.js22m
+1A  1m● 22mTest suite failed to run
+
+    /Users/jeremygreer/Ideas/blog/site/jest.setup.js:1
+    ({"Object.<anonymous>":function(module,exports,require,__dirname,__filename,global,jest){import Enzyme from 'enzyme';
+											     ^^^^^^
+
+    SyntaxError: Unexpected token import
+
+      2mat ScriptTransformer._transformAndBuildScript (22m0m36mnode_modules/jest-runtime/build/ScriptTransformer.js39m0m2m:289:17)22m
+	  at <anonymous>
+      2mat process._tickCallback (22m0m36minternal/process/next_tick.js39m0m2m:188:7)22m
+
+
+0m7m33m1m RUNS 22m39m27m0m 2msrc/components/22m1mParsedCommentary.test.js22m
+1A999DK1mTest Suites: 22m1m31m2 failed39m22m, 2 total
+1mTests:       22m0 total
+1mSnapshots:   22m0 total
+1mTime:22m	  0.698s, estimated 1s
+2mRan all test suites22m2m.22m
+2K1G31merror39m Command failed with exit code 1.
+2K1G34minfo39m Visit 1mhttps://yarnpkg.com/en/docs/cli/run22m for documentation about this command.
+bash-3.2$ yarn add babel-jest
+2K1G1myarn add v1.3.222m
+2K1G2m[1/4]22m 🔍  Resolving packages...
+1G⠁ 0K1G⠂ babel-jest0K1G⠄ babel-jest0K1G⡀ babel-jest0K1G⢀ babel-jest0K1G⠠ babel-jest0K1G⠐ babel-plugin-syntax-object-rest-spread@^6.13.00K1G⠈ babel-plugin-syntax-object-rest-spread@^6.13.00K2K1G2K1G2m[2/4]22m 🚚  Fetching packages...
+2K1G1G[------------------------------------------------------------------------------------------] 0/10521G[##########------------------------------------------------------------------------------] 117/10521G[####################--------------------------------------------------------------------] 240/10521G[###################################-----------------------------------------------------] 414/10521G[################################################----------------------------------------] 576/10521G[###############################################################-------------------------] 752/10521G[############################################################################------------] 912/10521G[#######################################################################################] 1048/10521G[#######################################################################################] 1051/10522K1G2m[3/4]22m 🔗  Linking dependencies...
+2K1G33mwarning39m " > babel-jest@21.2.0" has unmet peer dependency "babel-core@^6.0.0 || ^7.0.0-alpha || ^7.0.0-beta || ^7.0.0".
+1G[#######################################################################################] 1052/10522K1G2K1G1G[------------------------------------------------------------------------------------------] 0/11212K1G2K1G1G[------------------------------------] 0/361G[####################################] 36/362K1G2K1G1G[------------------------------------------------------------------------------------------] 0/20571G[###################---------------------------------------------------------------------] 438/20571G[####################################----------------------------------------------------] 847/20571G[################################################---------------------------------------] 1131/20572K1G2m[4/4]22m 📃  Building fresh packages...
+2K1G
+2K1G
+2K1G
+2K1G
+1G⠁ 0K1G1A⠁ 0K1G1B1G2A⠁ 0K1G2B1G3A⠁ 0K1G3B1G4A⠁ 0K1G4B1G4A2K4B1G3A2K3B1G2A2K2B1G1A2K1B2K1G4A1G[#################################################--------------------------------------] 1168/20572K1G32msuccess39m Saved lockfile.
+2K1G32msuccess39m Saved 3 new dependencies.
+├─ babel-jest@21.2.0
+├─ babel-plugin-jest-hoist@21.2.0
+└─ babel-preset-jest@21.2.0
+2K1G2K1G✨   Done in 3.77s.
+bash-3.2$ yarn add babel-core --dev
+2K1G1myarn add v1.3.222m
+2K1G2m[1/4]22m 🔍  Resolving packages...
+1G⠁ 0K1G⠂ babel-core0K1G⠄ babel-core0K1G⡀ babel-core0K1G⢀ babel-core0K2K1G2K1G2m[2/4]22m 🚚  Fetching packages...
+2K1G33mwarning39m Pattern ["babel-core@^6.26.0"] is trying to unpack in the same destination "/Users/jeremygreer/Library/Caches/Yarn/v1/npm-babel-core-6.26.0-af32f78b31a6fcef119c87b0fd8d9753f03a0bb8" as pattern ["babel-core@6.26.0","babel-core@^6.0.0","babel-core@^6.26.0"]. This could result in a non deterministic behavior, skipping.
+2K1G1G[------------------------------------------------------------------------------------------] 0/10521G[###########-----------------------------------------------------------------------------] 132/10521G[######################------------------------------------------------------------------] 263/10521G[###################################-----------------------------------------------------] 416/10521G[################################################----------------------------------------] 576/10521G[##############################################################--------------------------] 744/10521G[############################################################################------------] 904/10521G[#######################################################################################] 1052/10522K1G2m[3/4]22m 🔗  Linking dependencies...
+2K1G33mwarning39m " > babel-jest@21.2.0" has unmet peer dependency "babel-core@^6.0.0 || ^7.0.0-alpha || ^7.0.0-beta || ^7.0.0".
+2K1G2K1G1G[------------------------------------------------------------------------------------------] 0/11212K1G2K1G1G[------------------------------------------------------------------------------------------] 0/20571G[################------------------------------------------------------------------------] 367/20571G[###################################-----------------------------------------------------] 813/20571G[#############################################------------------------------------------] 1066/20572K1G2m[4/4]22m 📃  Building fresh packages...
+2K1G
+2K1G
+2K1G
+2K1G
+1G⠁ 0K1G1A⠁ 0K1G1B1G2A⠁ 0K1G2B1G3A⠁ 0K1G3B1G4A⠁ 0K1G4B1G4A2K4B1G3A2K3B1G2A2K2B1G1A2K1B2K1G4A1G[#################################################--------------------------------------] 1168/20572K1G32msuccess39m Saved 0 new dependencies.
+2K1G2K1G✨   Done in 3.32s.
+CCCCCCCCCCCCCCCCCCCC1@a1@rCCCCCCCCCCCCCCCCCC6Pjestv
+bash-3.2$ yarKn test
+2K1G1myarn run v1.3.222m
+2K1G2m$ react-scripts test --env=jsdom22m
+2J3JH1m2mDetermining test suites to run...1m22m999DK
+
+1mTest Suites: 22m0 of 2 total
+1mTests:       22m0 total
+1mSnapshots:   22m0 total
+1ATime:22m	  0s
+0m7m33m1m RUNS 22m39m27m0m 2msrc/components/22m1mParsedCommentary.test.js22m
+0m7m33m1m RUNS 22m39m27m0m 2msrc/components/22m1mApp.test.js22m
+
+1mTest Suites: 22m0 of 2 total
+1mTests:       22m0 total
+1mSnapshots:   22m0 total
+1A0m7m1m32m PASS 39m22m27m0m 2msrc/components/22m1mApp.test.js22m
+
+0m7m33m1m RUNS 22m39m27m0m 2msrc/components/22m1mParsedCommentary.test.js22m
+0m7m33m1m RUNS 22m39m27m0m 2msrc/components/22m1mApp.test.js22m
+
+1mTest Suites: 22m0 of 2 total
+1mTests:       22m0 total
+1mSnapshots:   22m0 total
+1ATime:22m	  0s
+0m7m33m1m RUNS 22m39m27m0m 2msrc/components/22m1mParsedCommentary.test.js22m
+
+1mTest Suites: 22m1m32m1 passed39m22m, 1 of 2 total
+1mTests:       22m1m32m1 passed39m22m, 1 total
+1mSnapshots:   22m0 total
+1A0m7m1m31m FAIL 39m22m27m0m 2msrc/components/22m1mParsedCommentary.test.js22m
+
+0m7m33m1m RUNS 22m39m27m0m 2msrc/components/22m1mParsedCommentary.test.js22m
+
+1mTest Suites: 22m1m32m1 passed39m22m, 1 of 2 total
+1mTests:       22m1m32m1 passed39m22m, 1 total
+1mSnapshots:   22m0 total
+1ATi1m●222mTest suite failed to run
+
+    ReferenceError: define is not defined
+
+      2mat Object.<anonymous> (22m0m36msrc/components/ParsedCommentary.test.js39m0m2m:4:1)22m
+      2mat handle (22m0m36mnode_modules/worker-farm/lib/child/index.js39m0m2m:44:8)22m
+      2mat process.<anonymous> (22m0m36mnode_modules/worker-farm/lib/child/index.js39m0m2m:51:3)22m
+      2mat emitTwo (22m0m36mevents.js39m0m2m:125:13)22m
+      2mat process.emit (22m0m36mevents.js39m0m2m:213:7)22m
+      2mat emit (22m0m36minternal/child_process.js39m0m2m:774:12)22m
+      2mat _combinedTickCallback (22m0m36minternal/process/next_tick.js39m0m2m:141:11)22m
+      2mat process._tickCallback (22m0m36minternal/process/next_tick.js39m0m2m:180:9)22m
+
+
+0m7m33m1m RUNS 22m39m27m0m 2msrc/components/22m1mParsedCommentary.test.js22m
+
+1mTest Suites: 22m1m32m1 passed39m22m, 1 of 2 total
+1mTests:       22m1m32m1 passed39m22m, 1 total
+1mSnapshots:   22m0 total
+1A999DK1mTest Suites: 22m1m31m1 failed39m22m, 1m32m1 passed39m22m, 2 total
+1mTests:       22m1m32m1 passed39m22m, 1 total
+1mSnapshots:   22m0 total
+1mTime:22m	  1.054s
+2mRan all test suites22m2m related to changed files22m2m.22m
+
+1mWatch Usage22m
+2m › Press 22ma2m to run all tests.22m
+2m › Press 22mp2m to filter by a filename regex pattern.22m
+2m › Press 22mt2m to filter by a test name regex pattern.22m
+2m › Press 22mq2m to quit watch mode.22m
+2m › Press 22mEnter2m to trigger a test run.22m
+2J3JH1m2mDetermining test suites to run...1m22m999DK
+1A
+0m7m33m1m RUNS 22m39m27m0m 2msrc/components/22m1mApp.test.js22m
+1A0m7m1m32m PASS 39m22m27m0m 2msrc/components/22m1mApp.test.js22m
+
+0m7m33m1m RUNS 22m39m27m0m 2msrc/components/22m1mApp.test.js22m
+1A
+0m7m33m1m RUNS 22m39m27m0m 2msrc/components/22m1mParsedCommentary.test.js22m
+1A
+0m7m33m1m RUNS 22m39m27m0m 2msrc/components/22m1mParsedCommentary.test.js22m
+1A0m7m1m32m PASS 39m22m27m0m 2msrc/components/22m1mParsedCommentary.test.js22m
+
+0m7m33m1m RUNS 22m39m27m0m 2msrc/components/22m1mParsedCommentary.test.js22m
+1A999DK
+1mTest Suites: 22m1m32m2 passed39m22m, 2 total
+1mTests:       22m1m32m2 passed39m22m, 2 total
+1mSnapshots:   22m0 total
+1mTime:22m	  1.301s
+2mRan all test suites22m2m related to changed files22m2m.22m
+
+1mWatch Usage: 22m2mPress 22mw2m to show more.22m2J3JH1m2mDetermining test suites to run...1m22m999DK
+1A
+0m7m33m1m RUNS 22m39m27m0m 2msrc/components/22m1mParsedCommentary.test.js22m
+1A
+0m7m33m1m RUNS 22m39m27m0m 2msrc/components/22m1mApp.test.js22m
+1A
+0m7m33m1m RUNS 22m39m27m0m 2msrc/components/22m1mApp.test.js22m
+1A0m7m1m32m PASS 39m22m27m0m 2msrc/components/22m1mApp.test.js22m
+
+0m7m33m1m RUNS 22m39m27m0m 2msrc/components/22m1mApp.test.js22m
+1A999DK
+1mTest Suites: 22m1m33m1 skipped39m22m, 1m32m1 passed39m22m, 1 of 2 total
+1mTests:       22m1m33m1 skipped39m22m, 1m32m1 passed39m22m, 2 total
+1mSnapshots:   22m0 total
+1mTime:22m	  0.303s, estimated 1s
+2mRan all test suites22m2m related to changed files22m2m.22m
+
+1mWatch Usage: 22m2mPress 22mw2m to show more.22m2K1G✨   Done in 37.75s.
+bash-3.2$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	31mmodified:   package.jsonm
+	31mmodified:   public/entries/13/commentary.txtm
+	31mmodified:   src/components/ParsedCommentary.jsm
+	31mmodified:   yarn.lockm
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	31mjest.config.jsm
+	31mjest.setup.jsm
+	31mpublic/entries/13/git/m
+	31msrc/components/ParsedCommentary.test.jsm
+	31msrc/components/TextBlock.jsm
+
+no changes added to commit (use "git add" and/or "git commit -a")
+bash-3.2$ git add package.json yarK jest.config.js jest.setup.js
+bash-3.2$ git diff
+1mdiff --git a/public/entries/13/commentary.txt b/public/entries/13/commentary.txtmm
+1mindex 89be156..bed0225 100644mm
+1m--- a/public/entries/13/commentary.txtmm
+1m+++ b/public/entries/13/commentary.txtmm
+36m@@ -23,4 +23,59 @@m mAside - I just stored that commit in this entries resources.  Maybe we can domm
+ that going forward.  I'm sure there's a tool out there that can color it andmm
+ make it pretty, which is all we were using Github for.mm
+ mm
+32m+m32m...mm
+ mm
+32m+m32mIt just ocurred to me that I've done this whole "parse text into components"mm
+32m+m32mthing a couple times before.  The last time I created an npm module for it.  Imm
+32m+m32mwonder if it will do the job here.mm
+32m+mm
+32m+m32mhttps://www.npmjs.com/package/react-smart-textmm
+32m+mm
+32m+m32mTrying out npm packages in other projects is a great way to see if they'remm
+32m+m32mactually useful outside of their original intent.  Already, I can see thatmm
+32m+m32mthere's a superficial dependency the React version.mm
+32m+mm
+32m+m32mhttps://github.com/understory-dev/react-smart-text/issues/7mm
+32m+mm
+32m+m32mI anticipate that it will mostly work for us, but our resource components willmm
+32m+m32mneed the regex used to identify them.  Let's see if that is provided.mm
+32m+mm
+32m+m32m...mm
+32m+mm
+32m+m32mIt looks like it _does_ support passing down the regex and the match results,mm
+32m+m32mwhich is cool, but it doesn't allow for additional props.  In our case, wemm
+32m+m32mwant the components replacing the text to have callbacks.  That doesn't appearmm
+32m+m32mto be possible.  That's some good insight.  Maybe that's why no one downloadsmm
+32m+m32mthis package; it's usability is too narrow.mm
+32m+mm
+32m+m32mhttps://github.com/understory-dev/react-smart-text/issues/8mm
+32m+mm
+32m+m32mref:terminalmm
+32m+mm
+32m+m32mWe've rolled back the changes.mm
+32m+mm
+K?1lbash-3.2$ git diff --cached
+1mdiff --git a/jest.config.js b/jest.config.jsmm
+1mnew file mode 100644mm
+1mindex 0000000..597f503mm
+1m--- /dev/nullmm
+1m+++ b/jest.config.jsmm
+36m@@ -0,0 +1,5 @@mm
+32m+m32mmodule.exports = {mm
+32m+m32m  bail: true,mm
+32m+m32m  verbose: true,mm
+32m+m32m  setupTestFrameworkScriptFile: './jest.setup.js',mm
+32m+m32m}mm
+1mdiff --git a/jest.setup.js b/jest.setup.jsmm
+1mnew file mode 100644mm
+1mindex 0000000..88c8c3bmm
+1m--- /dev/nullmm
+1m+++ b/jest.setup.jsmm
+36m@@ -0,0 +1,4 @@mm
+32m+m32mimport Enzyme from 'enzyme'mm
+32m+m32mimport Adapter from 'enzyme-adapter-react-16'mm
+32m+mm
+32m+m32mEnzyme.configure({ adapter: new Adapter() })mm
+1mdiff --git a/package.json b/package.jsonmm
+1mindex d6f214b..fcbe9d8 100644mm
+1m--- a/package.jsonmm
+1m+++ b/package.jsonmm
+36m@@ -3,6 +3,7 @@mm
+   "version": "0.1.0",mm
+   "private": true,mm
+   "dependencies": {mm
+32m+m32m    "babel-jest": "^21.2.0",mm
+     "node-dir": "^0.1.17",mm
+     "react": "^16.1.1",mm
+     "react-dom": "^16.1.1",mm
+36m@@ -18,7 +19,10 @@mm
+     "lint": "eslint src --config .eslintrc.js"mm
+   },mm
+   "devDependencies": {mm
+32m+m32m    "babel-core": "^6.26.0",mm
+     "babel-eslint": "7",mm
+K32m+m32m    "enzyme": "^3.2.0",mm
+32m+m32m    "enzyme-adapter-react-16": "^1.1.0",mm
+     "eslint": "^4.11.0",mm
+     "eslint-plugin-react": "^7.5.0"mm
+   }mm
+K?1lbash-3.2$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	32mnew file:   jest.config.jsm
+	32mnew file:   jest.setup.jsm
+	32mmodified:   package.jsonm
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	31mmodified:   public/entries/13/commentary.txtm
+	31mmodified:   src/components/ParsedCommentary.jsm
+	31mmodified:   yarn.lockm
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	31mpublic/entries/13/git/m
+	31msrc/components/ParsedCommentary.test.jsm
+	31msrc/components/TextBlock.jsm
+
+bash-3.2$ git commit -m 'add enzyme'
+[master 7c306d9] add enzyme
+ 3 files changed, 13 insertions(+)
+ create mode 100644 jest.config.js
+ create mode 100644 jest.setup.js
+bash-3.2$ git show 7c306d9 > public/entries/1K3/git/
+bash: public/entries/13/git/: Is a directory
+bash-3.2$ git show 7c306d9 > public/entries/13/git/7c306d9
+bash-3.2$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	31mmodified:   public/entries/13/commentary.txtm
+	31mmodified:   src/components/ParsedCommentary.jsm
+	31mmodified:   yarn.lockm
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	31mpublic/entries/13/git/m
+	31msrc/components/ParsedCommentary.test.jsm
+	31msrc/components/TextBlock.jsm
+
+no changes added to commit (use "git add" and/or "git commit -a")
+bash-3.2$ git add .
+bash-3.2$ git commit -m 'finisK' K--allow-empty-message
+[master a5cc28b]
+ 7 files changed, 895 insertions(+), 15 deletions(-)
+ create mode 100644 public/entries/13/git/7c306d9
+ create mode 100644 public/entries/13/git/c7b2b98
+ create mode 100644 src/components/ParsedCommentary.test.js
+ create mode 100644 src/components/TextBlock.js
+bash-3.2$ exit
+
+Script done on Sun Nov 19 09:33:37 2017
