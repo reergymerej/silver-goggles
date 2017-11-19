@@ -1,0 +1,17 @@
+commit 72c2b7342fae51c9a2f17cb6d6fe18428013ce54
+Author: Jeremy Greer <jeremy.greer.atl@gmail.com>
+Date:   Sun Nov 19 06:16:59 2017 -0600
+
+    catch undefined JSX components
+
+diff --git a/.eslintrc.js b/.eslintrc.js
+index e8fc00c..1a71f0a 100644
+--- a/.eslintrc.js
++++ b/.eslintrc.js
+@@ -38,5 +38,6 @@ module.exports = {
+     ],
+     "react/jsx-uses-react": "error",
+     "react/jsx-uses-vars": "error",
++    "react/jsx-no-undef": ["error", { "allowGlobals": true }]
+   }
+ };

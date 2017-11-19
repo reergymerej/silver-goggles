@@ -1,0 +1,26 @@
+
+Sun Nov 19 06:04:35 CST 2017
+
+It seems like we're recreating html.
+
+Let's go something fun like show images.  We could show them inline or stick
+with the convention of showing resources in the resource panel on the right.
+Eiher way, we'll need to scan the text and identify them like we did for Git
+references.
+
+
+I use lint rules extending AirBnB's at work, so I am not used to some of the
+setup.  On thing I've noticed is undefined components being used are not
+picked up.
+
+https://github.com/yannickcr/eslint-plugin-react/issues/74
+
+ref:git:72c2b7342fae51c9a2f17cb6d6fe18428013ce54
+
+And now they are.  ;)
+
+Aside - I just stored that commit in this entries resources.  Maybe we can do
+that going forward.  I'm sure there's a tool out there that can color it and
+make it pretty, which is all we were using Github for.
+
+
