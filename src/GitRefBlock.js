@@ -3,7 +3,7 @@ import React from 'react'
 class GitRefBlock extends React.Component {
   handleClick = event => {
     event.preventDefault()
-    this.props.onSelect(this.props.value)
+    this.props.onClick(this.props.value)
   }
 
   render() {
