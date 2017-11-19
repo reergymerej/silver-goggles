@@ -10,8 +10,6 @@ const parseCommentary = (commentary) => {
   const gitRegex = /(ref:git:[a-z0-9]+)/gi
   const hashRegex = /ref:git:([a-z0-9]+)/gi
   const parts = commentary.split(gitRegex)
-  // These are all just strings.  We have to return them with some indicator of
-  // what type of data they are.
   return parts
     .map(part => {
       const hashExec = hashRegex.exec(part)
@@ -33,7 +31,9 @@ const TextBlock = (props) => (
 
 class ParsedCommentary extends React.Component {
   handleBlockTypeClick = value => {
-    console.log('user engaged with ref', value)
+    // We don't actually need this middleman step here, since it just calls the
+    // handler with the same thing, but I want to be explicit for now.
+    this.props.onCommitSelected(value)
   }
 
   render() {
@@ -60,20 +60,30 @@ class ParsedCommentary extends React.Component {
   }
 }
 
-const Entry = (props) => {
-  const { terminal } = props.entry.resources
-  const terminalUri = terminal && terminal.uri
-  return (
-    <div>
-      <h2>{props.entry.name}</h2>
+class Entry extends React.Component {
+  handleCommitSelected = hash => {
+    console.log('check out', hash)
+  }
+
+  render() {
+    const { props } = this
+    const { terminal } = props.entry.resources
+    const terminalUri = terminal && terminal.uri
+    return (
       <div>
-        { terminalUri &&
-          <a href={terminalUri}>terminal.log</a>
-        }
+        <h2>{props.entry.name}</h2>
+        <div>
+          { terminalUri &&
+            <a href={terminalUri}>terminal.log</a>
+          }
+        </div>
+        <ParsedCommentary
+          commentary={props.entry.commentary}
+          onCommitSelected={this.handleCommitSelected}
+        />
       </div>
-      <ParsedCommentary commentary={props.entry.commentary} />
-    </div>
-  )
+    )
+  }
 }
 
 export default Entry
