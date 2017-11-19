@@ -23,4 +23,66 @@ Aside - I just stored that commit in this entries resources.  Maybe we can do
 that going forward.  I'm sure there's a tool out there that can color it and
 make it pretty, which is all we were using Github for.
 
+...
 
+It just ocurred to me that I've done this whole "parse text into components"
+thing a couple times before.  The last time I created an npm module for it.  I
+wonder if it will do the job here.
+
+https://www.npmjs.com/package/react-smart-text
+
+Trying out npm packages in other projects is a great way to see if they're
+actually useful outside of their original intent.  Already, I can see that
+there's a superficial dependency the React version.
+
+https://github.com/understory-dev/react-smart-text/issues/7
+
+I anticipate that it will mostly work for us, but our resource components will
+need the regex used to identify them.  Let's see if that is provided.
+
+...
+
+It looks like it _does_ support passing down the regex and the match results,
+which is cool, but it doesn't allow for additional props.  In our case, we
+want the components replacing the text to have callbacks.  That doesn't appear
+to be possible.  That's some good insight.  Maybe that's why no one downloads
+this package; it's usability is too narrow.
+
+https://github.com/understory-dev/react-smart-text/issues/8
+
+ref:terminal
+
+We've rolled back the changes.
+
+TODO: Remove our original addition of the terminal.log links.
+
+I'm looking at `parseCommentary` starting to think through how we want to
+handle it and my concious is yelling at me that now is the time for tests.
+It's about to get a little bit tricky.  Tests not only help define and certify
+the trickiness, but they can help guide how the code is written.  This will
+often lead to a slightly different way of doing things, which is less tricky.
+
+So, CRA gives us a Jest setup out of the box.  Let's play with it.
+
+ref:terminal
+
+We'll want to test the parsing logic on its own.  To do that, let's move it
+into a utility file.  Looking around, our `src/` dir is getting pretty junky,
+so let's put all the components in their own directory.
+
+ref:git:c7b2b98
+ref:terminal
+
+...
+
+I take back what I said earlier about putting this in its own file.  Imagining
+some weird string parsing utility floating around, used only by one module,
+made me change my mind.  We shouldn't care _how_ the magic happens, just that
+we put in the right string and the right components come out.
+
+ref:git:7c306d9
+
+We've got Jest set up now to work with Enzyme.  I don't want to reiterate
+everything I've put in that diff.  That's getting tedious.  All the info is in
+the diff.  Of course, the diff is _not_ in this commentary, it's an external
+resource.

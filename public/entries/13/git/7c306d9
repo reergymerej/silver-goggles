@@ -1,0 +1,50 @@
+commit 7c306d9f41d9dafd64541496cc84d57280f15c25
+Author: Jeremy Greer <jeremy.greer.atl@gmail.com>
+Date:   Sun Nov 19 07:55:23 2017 -0600
+
+    add enzyme
+
+diff --git a/jest.config.js b/jest.config.js
+new file mode 100644
+index 0000000..597f503
+--- /dev/null
++++ b/jest.config.js
+@@ -0,0 +1,5 @@
++module.exports = {
++  bail: true,
++  verbose: true,
++  setupTestFrameworkScriptFile: './jest.setup.js',
++}
+diff --git a/jest.setup.js b/jest.setup.js
+new file mode 100644
+index 0000000..88c8c3b
+--- /dev/null
++++ b/jest.setup.js
+@@ -0,0 +1,4 @@
++import Enzyme from 'enzyme'
++import Adapter from 'enzyme-adapter-react-16'
++
++Enzyme.configure({ adapter: new Adapter() })
+diff --git a/package.json b/package.json
+index d6f214b..fcbe9d8 100644
+--- a/package.json
++++ b/package.json
+@@ -3,6 +3,7 @@
+   "version": "0.1.0",
+   "private": true,
+   "dependencies": {
++    "babel-jest": "^21.2.0",
+     "node-dir": "^0.1.17",
+     "react": "^16.1.1",
+     "react-dom": "^16.1.1",
+@@ -18,7 +19,10 @@
+     "lint": "eslint src --config .eslintrc.js"
+   },
+   "devDependencies": {
++    "babel-core": "^6.26.0",
+     "babel-eslint": "7",
++    "enzyme": "^3.2.0",
++    "enzyme-adapter-react-16": "^1.1.0",
+     "eslint": "^4.11.0",
+     "eslint-plugin-react": "^7.5.0"
+   }

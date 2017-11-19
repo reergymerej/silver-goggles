@@ -1,12 +1,7 @@
 import React from 'react'
 import { TYPE } from '../constants'
 import GitRefBlock from './GitRefBlock'
-
-const TextBlock = (props) => (
-  <pre>
-    {props.value}
-  </pre>
-)
+import TextBlock from './TextBlock'
 
 const parseCommentary = (commentary) => {
   const gitRegex = /(ref:git:[a-z0-9]+)/gi

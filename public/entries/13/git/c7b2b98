@@ -1,0 +1,557 @@
+commit c7b2b9888d106e926f7b10f77e92995d5ea28f7e
+Author: Jeremy Greer <jeremy.greer.atl@gmail.com>
+Date:   Sun Nov 19 06:54:39 2017 -0600
+
+    move components into dir
+
+diff --git a/src/App.css b/src/App.css
+deleted file mode 100644
+index 24ea648..0000000
+--- a/src/App.css
++++ /dev/null
+@@ -1,22 +0,0 @@
+-.App {
+-  margin: 1em;
+-  display: flex;
+-}
+-
+-.App .entries .ClickableEntry {
+-  display: block;
+-}
+-
+-.App .entry {
+-  margin-left: 1em;
+-  flex: 1;
+-}
+-
+-.App .entry h2 {
+-  margin-top: 0;
+-}
+-
+-.App .resource {
+-  margin-left: 1em;
+-  flex: 1;
+-}
+diff --git a/src/App.js b/src/App.js
+deleted file mode 100644
+index 31274f1..0000000
+--- a/src/App.js
++++ /dev/null
+@@ -1,58 +0,0 @@
+-import React from 'react'
+-import './App.css'
+-import entries from './entries.json'
+-import ClickableEntry from './ClickableEntry'
+-import Entry from './Entry'
+-
+-class App extends React.Component {
+-  state = {
+-    currentEntry: null,
+-    currentResource: null,
+-  }
+-
+-  handleEntryClicked = (entry) => {
+-    this.setState({
+-      currentEntry: entry,
+-      currentResource: null,
+-    })
+-  }
+-
+-  handleEntryResourceSelected = resource => {
+-    this.setState({ currentResource: resource })
+-  }
+-
+-  render() {
+-    return (
+-      <div className="App">
+-        <div className="entries">
+-          {
+-            entries.map(entry => (
+-              <ClickableEntry
+-                key={entry.name}
+-                onClick={this.handleEntryClicked}
+-                entry={entry}
+-              />
+-            ))
+-          }
+-        </div>
+-        { this.state.currentEntry &&
+-          <div className="entry">
+-            <Entry
+-              entry={this.state.currentEntry}
+-              onResourceSelected={this.handleEntryResourceSelected}
+-            />
+-          </div>
+-        }
+-        { this.state.currentResource &&
+-          <div className="resource">
+-            <iframe
+-              src={`https://github.com/reergymerej/silver-goggles/commit/${this.state.currentResource.value}.diff`}
+-            ></iframe>
+-          </div>
+-        }
+-      </div>
+-    )
+-  }
+-}
+-
+-export default App
+diff --git a/src/App.test.js b/src/App.test.js
+deleted file mode 100644
+index 76d121e..0000000
+--- a/src/App.test.js
++++ /dev/null
+@@ -1,8 +0,0 @@
+-import React from 'react'
+-import ReactDOM from 'react-dom'
+-import App from './App'
+-
+-it('renders without crashing', () => {
+-  const div = document.createElement('div')
+-  ReactDOM.render(<App />, div)
+-})
+diff --git a/src/ClickableEntry.js b/src/ClickableEntry.js
+deleted file mode 100644
+index c039c51..0000000
+--- a/src/ClickableEntry.js
++++ /dev/null
+@@ -1,23 +0,0 @@
+-import React from 'react'
+-
+-class ClickableEntry extends React.Component {
+-  handleClick = event => {
+-    event.preventDefault()
+-    this.props.onClick(this.props.entry)
+-  }
+-
+-  render() {
+-    const { uri } = this.props.entry
+-    return (
+-      <a
+-        onClick={this.handleClick}
+-        href={uri}
+-        className="ClickableEntry"
+-      >
+-        {this.props.entry.name}
+-      </a>
+-    )
+-  }
+-}
+-
+-export default ClickableEntry
+diff --git a/src/Entry.js b/src/Entry.js
+deleted file mode 100644
+index 395b8e4..0000000
+--- a/src/Entry.js
++++ /dev/null
+@@ -1,35 +0,0 @@
+-import React from 'react'
+-import { TYPE } from './constants'
+-import ParsedCommentary from './ParsedCommentary'
+-
+-class Entry extends React.Component {
+-  handleCommitSelected = value => {
+-    // FIXME: This looks like we're recreating the resource structure.
+-    this.props.onResourceSelected({
+-      type: TYPE.GIT,
+-      value,
+-    })
+-  }
+-
+-  render() {
+-    const { props } = this
+-    const { terminal } = props.entry.resources
+-    const terminalUri = terminal && terminal.uri
+-    return (
+-      <div>
+-        <h2>{props.entry.name}</h2>
+-        <div>
+-          { terminalUri &&
+-            <a href={terminalUri}>terminal.log</a>
+-          }
+-        </div>
+-        <ParsedCommentary
+-          commentary={props.entry.commentary}
+-          onCommitSelected={this.handleCommitSelected}
+-        />
+-      </div>
+-    )
+-  }
+-}
+-
+-export default Entry
+diff --git a/src/GitRefBlock.js b/src/GitRefBlock.js
+deleted file mode 100644
+index a9fe7ba..0000000
+--- a/src/GitRefBlock.js
++++ /dev/null
+@@ -1,22 +0,0 @@
+-import React from 'react'
+-
+-class GitRefBlock extends React.Component {
+-  handleClick = event => {
+-    event.preventDefault()
+-    this.props.onClick(this.props.value)
+-  }
+-
+-  render() {
+-    const { value } = this.props
+-    return (
+-      <a
+-        href={`https://github.com/reergymerej/silver-goggles/commit/${value}`}
+-        onClick={this.handleClick}
+-      >
+-        {value}
+-      </a>
+-    )
+-  }
+-}
+-
+-export default GitRefBlock
+diff --git a/src/ParsedCommentary.js b/src/ParsedCommentary.js
+deleted file mode 100644
+index ee6e7c7..0000000
+--- a/src/ParsedCommentary.js
++++ /dev/null
+@@ -1,59 +0,0 @@
+-import React from 'react'
+-import { TYPE } from './constants'
+-import GitRefBlock from './GitRefBlock'
+-
+-const TextBlock = (props) => (
+-  <pre>
+-    {props.value}
+-  </pre>
+-)
+-
+-const parseCommentary = (commentary) => {
+-  const gitRegex = /(ref:git:[a-z0-9]+)/gi
+-  const hashRegex = /ref:git:([a-z0-9]+)/gi
+-  const parts = commentary.split(gitRegex)
+-  return parts
+-    .map(part => {
+-      const hashExec = hashRegex.exec(part)
+-      const commitHash = hashExec && hashExec[1]
+-      const type = commitHash ? TYPE.GIT : TYPE.TEXT
+-      const value = type === TYPE.GIT ? commitHash : part
+-      return {
+-        type,
+-        value,
+-      }
+-    })
+-}
+-
+-class ParsedCommentary extends React.Component {
+-  handleBlockTypeClick = value => {
+-    // We don't actually need this middleman step here, since it just calls the
+-    // handler with the same thing, but I want to be explicit for now.
+-    this.props.onCommitSelected(value)
+-  }
+-
+-  render() {
+-    const { props } = this
+-    const parsedCommentaryBlocks = parseCommentary(props.commentary)
+-    return (
+-      <div>
+-        {
+-          parsedCommentaryBlocks.map((block, i) => {
+-            const BlockType = block.type === TYPE.TEXT
+-              ? TextBlock
+-              : GitRefBlock
+-            return (
+-              <BlockType
+-                key={i}
+-                value={block.value}
+-                onClick={this.handleBlockTypeClick}
+-              />
+-            )
+-          })
+-        }
+-      </div>
+-    )
+-  }
+-}
+-
+-export default ParsedCommentary
+diff --git a/src/components/App.css b/src/components/App.css
+new file mode 100644
+index 0000000..24ea648
+--- /dev/null
++++ b/src/components/App.css
+@@ -0,0 +1,22 @@
++.App {
++  margin: 1em;
++  display: flex;
++}
++
++.App .entries .ClickableEntry {
++  display: block;
++}
++
++.App .entry {
++  margin-left: 1em;
++  flex: 1;
++}
++
++.App .entry h2 {
++  margin-top: 0;
++}
++
++.App .resource {
++  margin-left: 1em;
++  flex: 1;
++}
+diff --git a/src/components/App.js b/src/components/App.js
+new file mode 100644
+index 0000000..fb3bf36
+--- /dev/null
++++ b/src/components/App.js
+@@ -0,0 +1,58 @@
++import React from 'react'
++import './App.css'
++import entries from '../entries.json'
++import ClickableEntry from './ClickableEntry'
++import Entry from './Entry'
++
++class App extends React.Component {
++  state = {
++    currentEntry: null,
++    currentResource: null,
++  }
++
++  handleEntryClicked = (entry) => {
++    this.setState({
++      currentEntry: entry,
++      currentResource: null,
++    })
++  }
++
++  handleEntryResourceSelected = resource => {
++    this.setState({ currentResource: resource })
++  }
++
++  render() {
++    return (
++      <div className="App">
++        <div className="entries">
++          {
++            entries.map(entry => (
++              <ClickableEntry
++                key={entry.name}
++                onClick={this.handleEntryClicked}
++                entry={entry}
++              />
++            ))
++          }
++        </div>
++        { this.state.currentEntry &&
++          <div className="entry">
++            <Entry
++              entry={this.state.currentEntry}
++              onResourceSelected={this.handleEntryResourceSelected}
++            />
++          </div>
++        }
++        { this.state.currentResource &&
++          <div className="resource">
++            <iframe
++              src={`https://github.com/reergymerej/silver-goggles/commit/${this.state.currentResource.value}.diff`}
++            ></iframe>
++          </div>
++        }
++      </div>
++    )
++  }
++}
++
++export default App
+diff --git a/src/components/App.test.js b/src/components/App.test.js
+new file mode 100644
+index 0000000..76d121e
+--- /dev/null
++++ b/src/components/App.test.js
+@@ -0,0 +1,8 @@
++import React from 'react'
++import ReactDOM from 'react-dom'
++import App from './App'
++
++it('renders without crashing', () => {
++  const div = document.createElement('div')
++  ReactDOM.render(<App />, div)
++})
+diff --git a/src/components/ClickableEntry.js b/src/components/ClickableEntry.js
+new file mode 100644
+index 0000000..c039c51
+--- /dev/null
++++ b/src/components/ClickableEntry.js
+@@ -0,0 +1,23 @@
++import React from 'react'
++
++class ClickableEntry extends React.Component {
++  handleClick = event => {
++    event.preventDefault()
++    this.props.onClick(this.props.entry)
++  }
++
++  render() {
++    const { uri } = this.props.entry
++    return (
++      <a
++        onClick={this.handleClick}
++        href={uri}
++        className="ClickableEntry"
++      >
++        {this.props.entry.name}
++      </a>
++    )
++  }
++}
++
++export default ClickableEntry
+diff --git a/src/components/Entry.js b/src/components/Entry.js
+new file mode 100644
+index 0000000..ca5c974
+--- /dev/null
++++ b/src/components/Entry.js
+@@ -0,0 +1,35 @@
++import React from 'react'
++import { TYPE } from '../constants'
++import ParsedCommentary from './ParsedCommentary'
++
++class Entry extends React.Component {
++  handleCommitSelected = value => {
++    // FIXME: This looks like we're recreating the resource structure.
++    this.props.onResourceSelected({
++      type: TYPE.GIT,
++      value,
++    })
++  }
++
++  render() {
++    const { props } = this
++    const { terminal } = props.entry.resources
++    const terminalUri = terminal && terminal.uri
++    return (
++      <div>
++        <h2>{props.entry.name}</h2>
++        <div>
++          { terminalUri &&
++            <a href={terminalUri}>terminal.log</a>
++          }
++        </div>
++        <ParsedCommentary
++          commentary={props.entry.commentary}
++          onCommitSelected={this.handleCommitSelected}
++        />
++      </div>
++    )
++  }
++}
++
++export default Entry
+diff --git a/src/components/GitRefBlock.js b/src/components/GitRefBlock.js
+new file mode 100644
+index 0000000..a9fe7ba
+--- /dev/null
++++ b/src/components/GitRefBlock.js
+@@ -0,0 +1,22 @@
++import React from 'react'
++
++class GitRefBlock extends React.Component {
++  handleClick = event => {
++    event.preventDefault()
++    this.props.onClick(this.props.value)
++  }
++
++  render() {
++    const { value } = this.props
++    return (
++      <a
++        href={`https://github.com/reergymerej/silver-goggles/commit/${value}`}
++        onClick={this.handleClick}
++      >
++        {value}
++      </a>
++    )
++  }
++}
++
++export default GitRefBlock
+diff --git a/src/components/ParsedCommentary.js b/src/components/ParsedCommentary.js
+new file mode 100644
+index 0000000..bd692ec
+--- /dev/null
++++ b/src/components/ParsedCommentary.js
+@@ -0,0 +1,59 @@
++import React from 'react'
++import { TYPE } from '../constants'
++import GitRefBlock from './GitRefBlock'
++
++const TextBlock = (props) => (
++  <pre>
++    {props.value}
++  </pre>
++)
++
++const parseCommentary = (commentary) => {
++  const gitRegex = /(ref:git:[a-z0-9]+)/gi
++  const hashRegex = /ref:git:([a-z0-9]+)/gi
++  const parts = commentary.split(gitRegex)
++  return parts
++    .map(part => {
++      const hashExec = hashRegex.exec(part)
++      const commitHash = hashExec && hashExec[1]
++      const type = commitHash ? TYPE.GIT : TYPE.TEXT
++      const value = type === TYPE.GIT ? commitHash : part
++      return {
++        type,
++        value,
++      }
++    })
++}
++
++class ParsedCommentary extends React.Component {
++  handleBlockTypeClick = value => {
++    // We don't actually need this middleman step here, since it just calls the
++    // handler with the same thing, but I want to be explicit for now.
++    this.props.onCommitSelected(value)
++  }
++
++  render() {
++    const { props } = this
++    const parsedCommentaryBlocks = parseCommentary(props.commentary)
++    return (
++      <div>
++        {
++          parsedCommentaryBlocks.map((block, i) => {
++            const BlockType = block.type === TYPE.TEXT
++              ? TextBlock
++              : GitRefBlock
++            return (
++              <BlockType
++                key={i}
++                value={block.value}
++                onClick={this.handleBlockTypeClick}
++              />
++            )
++          })
++        }
++      </div>
++    )
++  }
++}
++
++export default ParsedCommentary
+diff --git a/src/index.js b/src/index.js
+index a582512..6e6600f 100644
+--- a/src/index.js
++++ b/src/index.js
+@@ -1,7 +1,7 @@
+ import React from 'react'
+ import ReactDOM from 'react-dom'
+ import './index.css'
+-import App from './App'
++import App from './components/App'
+ import registerServiceWorker from './registerServiceWorker'
+ 
+ ReactDOM.render(<App />, document.getElementById('root'))
