@@ -1,0 +1,70 @@
+commit 858aaf8a832f4cba4b2a5327137b4ece59f5d9a1
+Author: Jeremy Greer <jeremy.greer.atl@gmail.com>
+Date:   Sun Nov 19 17:33:26 2017 -0600
+
+    restore ParsedCommentary to working state
+
+diff --git a/src/components/ParsedCommentary.js b/src/components/ParsedCommentary.js
+index c2dc908..c52db94 100644
+--- a/src/components/ParsedCommentary.js
++++ b/src/components/ParsedCommentary.js
+@@ -5,58 +5,7 @@ import TextBlock from './TextBlock'
+ 
+ const ImageRefBlock = () => <div />
+ 
+-const tokenPatterns = [
+-  {
+-    regex: /ref:git:([a-z0-9]+)/gi,
+-  },
+-]
+-
+-const parseString = 
+-
+-export const parseCommentary = (commentary, patterns = []) => {
+-  const result = [
+-      {
+-        type: undefined,
+-        value: 'asdf asdf ',
+-      },
+-  ]
+-
+-  patterns.forEach(pattern => {
+-    const match = pattern.regex.exec(commentary)
+-
+-    if (match) {
+-      console.log('match', match)
+-      console.log('found at', match.index)
+-
+-      const matchedBlock = {
+-        type: pattern.type,
+-        match,
+-      }
+-      result.push(matchedBlock)
+-    }
+-  })
+-
+-
+-  result.push(
+-      {
+-        type: undefined,
+-        value: ' qwer qwer',
+-      },
+-  )
+-
+-
+-  return result
+-  return [
+-    {
+-      type: 'number',
+-      value: '1234',
+-      match: (/[0-9]+/g).exec('1234'),
+-    },
+-  ]
+-
+-
+-
+-
++export const parseCommentary = (commentary) => {
+   const gitRegex = /(ref:git:[a-z0-9]+)/gi
+   const hashRegex = /ref:git:([a-z0-9]+)/gi
+   const parts = commentary.split(gitRegex)

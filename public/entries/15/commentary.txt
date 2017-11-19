@@ -1,0 +1,39 @@
+
+Sun Nov 19 17:16:22 CST 2017
+
+Hello, again!  This happens way more than I like to admit.  One thing lead to
+another and now I've found a possible bug in `react-smart-text` while
+implementing a new feature.  Now this project smells _very faintly_ like so
+many others that make me want to walk away and start a new project.  The
+complexity is creeping in and outweighing the coolness.
+
+What is this project supposed to be, anyway?
+
+It was just a blog, right?  Then it was a blog specifically tailored toward
+discussing code.  We threw some static resources in and it seems like that
+decision started to drive how the rest developed.
+
+I want it to be really easy to create an entry.  Creating filestructres and
+whatnot should not be my concern.  That's something the app should do, right?
+That could be easily done if we were creating the entry from within the app,
+but then we're we'd be working in a browser, which not desirable.
+
+...
+
+Maybe I'm just fried.  I've been sick all weekend and probably doing too much
+of this.  It's really not complex, I'm probably just tired of having to
+remember the steps to create an entry, log terminal, clean terminal logs, add
+various assets, and build it all.  That's _in addition_ to actually trying to
+develop and talk about it.  heh
+
+...
+
+Sometimes when you're hitting too many brick walls, it's nice to do something
+easy to give yourself a little win.  Let's bandage everything up and then just
+add a panel that shows terminal logs when they're available.
+
+ref:git:858aaf8
+
+This works.  It's not great, but at least it's a forward step.
+
+ref:git:6b4a5e0
