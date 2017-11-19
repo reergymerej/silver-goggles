@@ -31,20 +31,33 @@ const TextBlock = (props) => (
   </pre>
 )
 
-const ParsedCommentary = (props) => {
-  const parsedCommentaryBlocks = parseCommentary(props.commentary)
-  return (
-    <div>
-      {
-        parsedCommentaryBlocks.map((block, i) => {
-          const BlockType = block.type === TYPE.TEXT
-            ? TextBlock
-            : GitRefBlock
-          return <BlockType key={i} value={block.value} />
-        })
-      }
-    </div>
-  )
+class ParsedCommentary extends React.Component {
+  handleBlockTypeClick = value => {
+    console.log('user engaged with ref', value)
+  }
+
+  render() {
+    const { props } = this
+    const parsedCommentaryBlocks = parseCommentary(props.commentary)
+    return (
+      <div>
+        {
+          parsedCommentaryBlocks.map((block, i) => {
+            const BlockType = block.type === TYPE.TEXT
+              ? TextBlock
+              : GitRefBlock
+            return (
+              <BlockType
+                key={i}
+                value={block.value}
+                onClick={this.handleBlockTypeClick}
+              />
+            )
+          })
+        }
+      </div>
+    )
+  }
 }
 
 const Entry = (props) => {
