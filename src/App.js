@@ -1,5 +1,5 @@
-import React from 'react';
-import './App.css';
+import React from 'react'
+import './App.css'
 import entries from './entries.json'
 import ClickableEntry from './ClickableEntry'
 import Entry from './Entry'
@@ -33,8 +33,8 @@ class App extends React.Component {
           }
         </div>
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App
