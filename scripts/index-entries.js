@@ -9,6 +9,7 @@ const entriesPath = path.resolve(__dirname, '../public/entries')
 const entryDirs = dir.files(entriesPath, 'dir', null, {
   sync: true,
   shortName: false,
+  recursive: false,
 })
 
 const readFileIfExists = (filePath) => {
