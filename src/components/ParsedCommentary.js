@@ -5,58 +5,7 @@ import TextBlock from './TextBlock'
 
 const ImageRefBlock = () => <div />
 
-const tokenPatterns = [
-  {
-    regex: /ref:git:([a-z0-9]+)/gi,
-  },
-]
-
-const parseString = 
-
-export const parseCommentary = (commentary, patterns = []) => {
-  const result = [
-      {
-        type: undefined,
-        value: 'asdf asdf ',
-      },
-  ]
-
-  patterns.forEach(pattern => {
-    const match = pattern.regex.exec(commentary)
-
-    if (match) {
-      console.log('match', match)
-      console.log('found at', match.index)
-
-      const matchedBlock = {
-        type: pattern.type,
-        match,
-      }
-      result.push(matchedBlock)
-    }
-  })
-
-
-  result.push(
-      {
-        type: undefined,
-        value: ' qwer qwer',
-      },
-  )
-
-
-  return result
-  return [
-    {
-      type: 'number',
-      value: '1234',
-      match: (/[0-9]+/g).exec('1234'),
-    },
-  ]
-
-
-
-
+export const parseCommentary = (commentary) => {
   const gitRegex = /(ref:git:[a-z0-9]+)/gi
   const hashRegex = /ref:git:([a-z0-9]+)/gi
   const parts = commentary.split(gitRegex)
