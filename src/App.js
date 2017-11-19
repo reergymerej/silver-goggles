@@ -7,14 +7,18 @@ import Entry from './Entry'
 class App extends React.Component {
   state = {
     currentEntry: null,
+    currentResource: null,
   }
 
   handleEntryClicked = (entry) => {
-    this.setState({ currentEntry: entry })
+    this.setState({
+      currentEntry: entry,
+      currentResource: null,
+    })
   }
 
   handleEntryResourceSelected = resource => {
-    console.log('show me this resource', resource)
+    this.setState({ currentResource: resource })
   }
 
   render() {
@@ -31,14 +35,19 @@ class App extends React.Component {
             ))
           }
         </div>
-        <div className="entry">
-          { this.state.currentEntry &&
+        { this.state.currentEntry &&
+          <div className="entry">
             <Entry
               entry={this.state.currentEntry}
               onResourceSelected={this.handleEntryResourceSelected}
             />
-          }
-        </div>
+          </div>
+        }
+        { this.state.currentResource &&
+          <div className="resource">
+            { JSON.stringify(this.state.currentResource) }
+          </div>
+        }
       </div>
     )
   }
