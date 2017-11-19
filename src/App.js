@@ -13,6 +13,10 @@ class App extends React.Component {
     this.setState({ currentEntry: entry })
   }
 
+  handleEntryResourceSelected = resource => {
+    console.log('show me this resource', resource)
+  }
+
   render() {
     return (
       <div className="App">
@@ -29,7 +33,10 @@ class App extends React.Component {
         </div>
         <div className="entry">
           { this.state.currentEntry &&
-            <Entry entry={this.state.currentEntry} />
+            <Entry
+              entry={this.state.currentEntry}
+              onResourceSelected={this.handleEntryResourceSelected}
+            />
           }
         </div>
       </div>

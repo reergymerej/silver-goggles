@@ -61,8 +61,12 @@ class ParsedCommentary extends React.Component {
 }
 
 class Entry extends React.Component {
-  handleCommitSelected = hash => {
-    console.log('check out', hash)
+  handleCommitSelected = value => {
+    // FIXME: This looks like we're recreating the resource structure.
+    this.props.onResourceSelected({
+      type: TYPE.GIT,
+      value,
+    })
   }
 
   render() {
