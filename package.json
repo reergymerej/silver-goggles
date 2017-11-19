@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "babel-jest": "^21.2.0",
     "node-dir": "^0.1.17",
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
@@ -18,7 +19,10 @@
     "lint": "eslint src --config .eslintrc.js"
   },
   "devDependencies": {
+    "babel-core": "^6.26.0",
     "babel-eslint": "7",
+    "enzyme": "^3.2.0",
+    "enzyme-adapter-react-16": "^1.1.0",
     "eslint": "^4.11.0",
     "eslint-plugin-react": "^7.5.0"
   }
