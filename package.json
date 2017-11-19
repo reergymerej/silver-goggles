@@ -13,6 +13,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "heroku-postbuild": "./scripts/index-entries.js",
+    "test_": "jest --env=jsdom --config ./jest.config.js",
     "test": "react-scripts test --env=jsdom",
     "entries": "./scripts/index-entries.js",
     "eject": "react-scripts eject",
